@@ -1,13 +1,16 @@
 <head>
-  <title>madewith2</title>
+  <title>Made with Meteor and <3</title>
 </head>
 
 <body>
-  {{> hello}}
+  <div class="container">
+    <header class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="/">MadeWith Meteor</a>
+      </div>
+    </header>
+    <div id="main" class="row-fluid">
+      {{> appsList}}
+    </div>
+  </div>
 </body>
-
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
-</template>
