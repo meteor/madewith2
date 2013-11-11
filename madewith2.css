@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 
-.grid-block, .main, .post, .comments li, .comment-form {
+.grid-block, .main, .app, .comments li, .comment-form {
     background: #fff;
     border-radius: 3px;
     padding: 10px;
@@ -10,13 +10,16 @@
 body {
     background: #eee;
     color: #666666;
+    font-family: 'Helvetica';
 }
 .navbar { margin-bottom: 10px }
 .navbar .navbar-inner {
-    border-radius: 0px 0px 3px 3px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    font-size: 42px;
 }
 #spinner { height: 300px }
-.post {
+.app {
     *zoom: 1;
     -webkit-transition: all 300ms 0ms;
     -webkit-transition-delay: ease-in;
@@ -26,35 +29,35 @@ body {
     position: relative;
     opacity: 1;
 }
-.post:before, .post:after {
+.app:before, .app:after {
     content: "";
     display: table;
 }
-.post:after { clear: both }
-.post.invisible { opacity: 0 }
-.post .upvote {
+.app:after { clear: both }
+.app.invisible { opacity: 0 }
+.app .upvote {
     display: block;
     margin: 7px 12px 0 0;
     float: left;
 }
-.post .post-content { float: left }
-.post .post-content h3 {
+.app .app-content { float: left }
+.app .app-content h3 {
     margin: 0;
     line-height: 1.4;
     font-size: 18px;
 }
-.post .post-content h3 a {
+.app .app-content h3 a {
     display: inline-block;
     margin-right: 5px;
 }
-.post .post-content h3 span {
+.app .app-content h3 span {
     font-weight: normal;
     font-size: 14px;
     display: inline-block;
     color: #aaaaaa;
 }
-.post .post-content p { margin: 0 }
-.post .discuss {
+.app .app-content p { margin: 0 }
+.app .discuss {
     display: block;
     float: right;
     margin-top: 7px;
