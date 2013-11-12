@@ -1,14 +1,14 @@
 /* CSS declarations go here */
 
 .grid-block, .main, .app, .comments li, .comment-form {
-    background: #fff;
+    background: #eef;
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 body {
-    background: #eee;
+    background: #013;
     color: #666666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-image: url('/bg-tile-dark.png');
@@ -19,6 +19,14 @@ body {
     padding: 10px;
     font-size: 42px;
 }
+.brand {
+    color: #eef;
+}
+
+.brand:hover{
+    color: #eef;
+}
+
 #spinner { height: 300px }
 .app {
     *zoom: 1;
