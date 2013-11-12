@@ -1,14 +1,14 @@
 Meteor.subscribe('apps');
 
-/*Router.configure({
-  layoutTemplate: 'content'
-});*/
+Router.configure({
+  contentTemplate: 'content'
+});
 
 Router.map(function () {
 
   this.route('home', {
     path: '/', // match the root path
-    //template: 'appsList'
+    template: 'appsList'
   });
 
   this.route('appPage', {
