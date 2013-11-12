@@ -9,3 +9,4 @@ preserve-inputs
 bootstrap-3
 accounts-ui
 spiderable
+iron-router
