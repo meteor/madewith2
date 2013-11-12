@@ -5,3 +5,9 @@ Template.appItem.helpers({
     return a.hostname;
   }
 });
+
+Template.appsList.helpers({
+  apps: function() {
+    return Apps.find();
+  }
+});

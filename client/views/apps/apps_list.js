@@ -1,4 +1,4 @@
-var appsData = [
+/*var appsData = [
   {
     title: 'State of the art, out of the box Meteor Pagination',
     author: 'alethes',
@@ -22,8 +22,10 @@ var appsData = [
     url: 'http://telesc.pe',
     source: 'https://github.com/SachaG/Telescope'
   }, 
-];
+];*/
 
 Template.appsList.helpers({
-  apps: appsData
+  apps: function() {
+    return Apps.find();
+  }
 });
