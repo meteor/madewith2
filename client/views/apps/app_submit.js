@@ -9,7 +9,13 @@ Template.appSubmit.events({
       message: $(e.target).find('[name=description]').val()
     }
 
-    app._id = Apps.insert(app);
-    Router.go('appPage', app);
+    Meteor.call('post', post, function(error, id) {
+      if (error)
+        return alert(error.reason);
+
+      //app._id = Apps.insert(app);
+      //Router.go('appPage', app);
+      Router.go('appPage', id);
+    });
   }
 });
