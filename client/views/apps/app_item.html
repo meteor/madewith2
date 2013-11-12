@@ -1,7 +1,8 @@
 <template name="appItem">
   <div class="app">
     <div class="app-content">
-      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3>
     </div>
+    <a href="{{ pathFor 'appPage' }}" class="discuss btn">Discuss</a>
   </div>
 </template>
