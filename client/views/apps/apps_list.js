@@ -29,3 +29,4 @@ Template.appsList.helpers({
     return Apps.find();
   }
 });
+
