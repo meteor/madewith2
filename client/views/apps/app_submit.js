@@ -6,7 +6,7 @@ Template.appSubmit.events({
       url: $(e.target).find('[name=url]').val(),
       source: $(e.target).find('[name=source]').val(),
       title: $(e.target).find('[name=title]').val(),
-      message: $(e.target).find('[name=description]').val()
+      description: $(e.target).find('[name=description]').val()
       //author: 
     }
 
