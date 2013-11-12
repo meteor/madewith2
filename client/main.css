@@ -30,15 +30,21 @@ body {
 
 .login, .btn-link {
     text-align: center;
+    font-size: 18px;
     padding: 12px;
-    margin: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 14px;
     float:right;
     font-weight: 300;
 }.login:hover, .btn-link:hover {
     background: #eef;
 }
 
-
+.control-group {
+    margin: 20px;
+}
 #spinner { height: 300px }
 .app {
     font-weight: 300;
