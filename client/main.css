@@ -10,7 +10,8 @@
 body {
     background: #eee;
     color: #666666;
-    font-family: 'Helvetica';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-image: url('/bg-tile-dark.png');
 }
 .navbar { margin-bottom: 10px }
 .navbar .navbar-inner {
