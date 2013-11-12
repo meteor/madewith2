@@ -1,4 +1,4 @@
-
+Meteor.subscribe('apps');
 /*
 if (Meteor.isClient) {
   //Template.hello.greeting = function () {
