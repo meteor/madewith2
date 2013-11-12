@@ -30,6 +30,7 @@ body {
 
 .login, .btn-link {
     text-align: center;
+    color: #7277db;
     font-size: 18px;
     padding: 12px;
     margin-top: 10px;
@@ -38,12 +39,16 @@ body {
     margin-bottom: 14px;
     float:right;
     font-weight: 300;
+}.login:visited, .btn-link:visited {
+    color: #4d54d8;
 }.login:hover, .btn-link:hover {
     background: #eef;
+    color: #1921b1;
 }
 
 .control-group {
     margin: 20px;
+    color: #a67a00;
 }
 #spinner { height: 300px }
 .app {
@@ -70,6 +75,7 @@ body {
 }
 .app .app-content { 
     float: left;
+    color: #a67a00;
 }
 .app .app-content h3 {
     margin: 0;
@@ -80,12 +86,14 @@ body {
 .app .app-content h3 a {
     display: inline-block;
     margin-right: 5px;
+    /*color: #4d54d8;*/
 }
 .app .app-content h3 span {
     letter-spacing: normal;
     font-size: 14px;
     display: inline-block;
-    color: #aaaaaa;
+    color: #bf9930;
+    /*color: #a67a00;*/
 }
 .app .app-content p { margin: 0 }
 .app .discuss {
