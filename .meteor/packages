@@ -7,7 +7,6 @@ standard-app-packages
 insecure
 preserve-inputs
 bootstrap-3
-accounts-ui
 spiderable
 iron-router
 accounts-ui-bootstrap-3
