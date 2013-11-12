@@ -1,13 +1,14 @@
 Meteor.subscribe('apps');
 
 /*Router.configure({
-  layoutTemplate: 'layout'
+  layoutTemplate: 'content'
 });*/
 
 Router.map(function () {
 
   this.route('home', {
-    path: '/' // match the root path
+    path: '/', // match the root path
+    //template: 'appsList'
   });
 
   this.route('appPage', {
@@ -15,5 +16,6 @@ Router.map(function () {
     load: function () { // called on first load
       Session.set('currentAppId', this.params._id); 
     },
+  });
 
 });
