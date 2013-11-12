@@ -18,14 +18,26 @@ body {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
     padding: 10px;
 }
+
 .brand {
     color: #eef;
     font-size: 42px;
 }
-
 .brand:hover{
     color: #fff;
 }
+
+.login {
+    text-align: center;
+    padding: 15px;
+    margin: 8px;
+}
+
+.login:hover {
+    background: #fff;
+}
+
+
 
 #spinner { height: 300px }
 .app {
