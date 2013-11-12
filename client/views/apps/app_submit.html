@@ -1,0 +1,36 @@
+<template name="appSubmit">
+  <form class="main">
+    <div class="control-group">
+        <label class="control-label" for="title">App Name</label>
+        <div class="controls">
+            <input name="title" type="text" value="" placeholder="Jobs 4 Pets" size="50"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="url">App URL</label>
+        <div class="controls">
+            <input name="url" type="text" value="" placeholder="http://myapp.meteor.com" size="50"/>
+        </div>
+    </div>
+    <p></p>
+    <div class="control-group">
+        <label class="control-label" for="source">GitHub URL (optional)</label>
+        <div class="controls">
+            <input name="title" type="text" value="" placeholder="github.com/meteor/meteor" size="50"/>
+        </div>
+    </div>
+    <p></p>
+    <div class="control-group">
+        <label class="control-label" for="message"></label>
+        <div class="controls">
+            <textarea name="message" type="text" value="" cols="52" placeholder="A brief description of your app"/>
+        </div>
+    </div> 
+    <p></p>
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="Submit" class="btn btn-success btn-lg"/>
+        </div>
+    </div>
+  </form>
+</template>

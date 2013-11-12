@@ -7,7 +7,7 @@
     margin-bottom: 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 }
-body {
+body { 
     background: #013;
     color: #666666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -33,6 +33,7 @@ body {
 }.login:hover {
     background: #eef;
 }
+
 
 #spinner { height: 300px }
 .app {
