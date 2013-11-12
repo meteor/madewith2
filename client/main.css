@@ -22,8 +22,7 @@ body {
 .brand {
     color: #eef;
     font-size: 42px;
-}
-.brand:hover{
+}.brand:hover{
     color: #fff;
 }
 
@@ -31,13 +30,9 @@ body {
     text-align: center;
     padding: 15px;
     margin: 8px;
+}.login:hover {
+    background: #eef;
 }
-
-.login:hover {
-    background: #fff;
-}
-
-
 
 #spinner { height: 300px }
 .app {
