@@ -31,8 +31,9 @@ Router.map(function () {
       var user = Meteor.user();
       if (! user) {
         this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
-        alert("Please log in.")
-        return this.stop();
+        //alert("Please log in.");
+        this.render('accessDenied');
+        return this.stop();   
       }
     }
   });
