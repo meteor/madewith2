@@ -75,7 +75,8 @@ body {
 }
 .app .app-content { 
     float: left;
-    color: #a67a00;
+    /*color: #a67a00;*/
+    color: #4d54db;
 }
 .app .app-content h3 {
     margin: 0;
@@ -86,13 +87,14 @@ body {
 .app .app-content h3 a {
     display: inline-block;
     margin-right: 5px;
-    /*color: #4d54d8;*/
+    color: #4d54d8;
 }
 .app .app-content h3 span {
     letter-spacing: normal;
     font-size: 14px;
     display: inline-block;
-    color: #bf9930;
+    color: #aaaadd;
+    /*color: #bf9930;*/
     /*color: #a67a00;*/
 }
 .app .app-content p { margin: 0 }
