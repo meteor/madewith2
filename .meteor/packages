@@ -8,7 +8,7 @@ insecure
 preserve-inputs
 spiderable
 iron-router
-accounts-ui-bootstrap-3
 accounts-password
 accounts-github
 bootstrap-3
+accounts-ui
