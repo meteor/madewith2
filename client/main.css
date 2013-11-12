@@ -26,11 +26,13 @@ body {
     color: #fff;
 }
 
-.login {
+
+.login, .btn-link {
     text-align: center;
     padding: 15px;
     margin: 8px;
-}.login:hover {
+    float:right;
+}.login:hover, .btn-link:hover {
     background: #eef;
 }
 
