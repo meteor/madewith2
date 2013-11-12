@@ -46,6 +46,12 @@ body {
     color: #1921b1;
 }
 
+.blockquote {
+    border-left-width: 0px;
+    padding: 0px;
+    margin: 5px;
+}
+
 .control-group {
     margin: 20px;
     color: #a67a00;
@@ -94,6 +100,13 @@ body {
     font-size: 14px;
     display: inline-block;
     color: #aaaadd;
+    /*color: #bf9930;*/
+    /*color: #a67a00;*/
+}
+.app .app-content small span {
+    display: inline-block;
+    color: #aaaadd;
+    padding-left: 25px;
     /*color: #bf9930;*/
     /*color: #a67a00;*/
 }
