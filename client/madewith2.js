@@ -1,7 +1,9 @@
+
+/*
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to madewith2.";
-  };
+  //Template.hello.greeting = function () {
+  //  return "Welcome to madewith2.";
+  //};
 
   Template.hello.events({
     'click input' : function () {
@@ -15,5 +17,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+    //Apps = new Meteor.Collection('apps');
   });
 }
+*/
