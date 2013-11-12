@@ -39,7 +39,7 @@ Router.map(function () {
         this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
         //alert("Please log in.");
         this.render('accessDenied');
-        //return this.stop();   
+        return this.stop();   
       }
     }
   });
