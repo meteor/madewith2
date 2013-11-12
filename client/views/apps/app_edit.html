@@ -1,0 +1,44 @@
+<template name="appEdit">
+  {{#with app}}
+    <form class="main">
+      <div class="control-group">
+        <label class="control-label" for="title">App Name</label>
+        <div class="controls">
+            <input name="title" type="text" value="{{title}}" placeholder="Honeycomb Guides" size="70"/>
+        </div>
+      </div>
+      <div class="control-group">
+          <label class="control-label" for="url">App URL</label>
+          <div class="controls">
+              <input name="url" type="text" value="{{url}}" placeholder="http://myapp.meteor.com" size="70"/>
+          </div>
+      </div>
+      <p></p>
+      <div class="control-group">
+          <label class="control-label" for="source">GitHub URL (optional)</label>
+          <div class="controls">
+              <input name="source" type="text" value="{{url}}" placeholder="github.com/meteor/meteor" size="70" />
+          </div>
+      </div>
+      <p></p>
+      <div class="control-group">
+          <label class="control-label" for="description">Description</label>
+          <div class="controls">
+              <textarea name="description" type="text" value="{{url}}" cols="72" placeholder="A brief description of your app, e.g., iPad travel guide for hipsters"/>
+          </div>
+      </div> 
+
+      <div class="control-group">
+          <div class="controls">
+              <input type="submit" value="Submit" class="btn btn-primary submit"/>
+          </div>
+      </div>
+      <hr/>
+      <div class="control-group">
+          <div class="controls">
+              <a class="btn btn-danger delete" href="#">Delete app</a>
+          </div>
+      </div>
+    </form>
+  {{/with}}
+</template>

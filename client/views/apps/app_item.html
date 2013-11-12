@@ -2,6 +2,10 @@
   <div class="app">
     <div class="app-content">
       <h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3>
+      <p>
+        [# votes] by {{author}}
+        {{#if ownApp}}<a href="{{ pathFor 'appEdit' }}">Edit</a>{{/if}}
+      </p>
     </div>
     <a href="{{ pathFor 'appPage' }}" class="discuss btn">Discuss</a>
   </div>

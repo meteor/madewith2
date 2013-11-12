@@ -23,6 +23,14 @@ Router.map(function () {
     },
   });
 
+  // editing each app
+  this.route('appEdit', {
+    path: '/apps/:_id/edit', // path with id of appPage
+    load: function () { // called on first load
+      Session.set('currentAppId', this.params._id); 
+    },
+  });
+
 
   // recently submitted apps
   //this.route('newApps', {
