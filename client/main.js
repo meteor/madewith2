@@ -2,8 +2,10 @@ Meteor.subscribe('apps');
 
 
 Router.configure({
-  layoutTemplate: 'layout'
+  layoutTemplate: 'layout',
 });
+
+
 
 Router.map(function () {
 
@@ -24,6 +26,15 @@ Router.map(function () {
   //app submission
   this.route('appSubmit', {
     path: '/submit', 
-  });
 
+    before: function() { // before rendering, check if user logged in
+      var user = Meteor.user();
+      if (! user) {
+        this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
+        alert("Please log in.")
+        return this.stop();
+      }
+    }
+  });
 });
+
