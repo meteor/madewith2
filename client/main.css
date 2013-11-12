@@ -2,7 +2,7 @@
 
 .grid-block, .main, .app, .comments li, .comment-form {
     background: #eef;
-    border-radius: 3px;
+    border-radius: 0px;
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
@@ -11,6 +11,7 @@ body {
     background: #013;
     color: #666666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
     background-image: url('/bg-tile-dark.png');
 }
 .navbar { margin-bottom: 10px }
@@ -29,9 +30,10 @@ body {
 
 .login, .btn-link {
     text-align: center;
-    padding: 15px;
-    margin: 8px;
+    padding: 12px;
+    margin: 12px;
     float:right;
+    font-weight: 300;
 }.login:hover, .btn-link:hover {
     background: #eef;
 }
@@ -39,6 +41,7 @@ body {
 
 #spinner { height: 300px }
 .app {
+    font-weight: 300;
     *zoom: 1;
     -webkit-transition: all 300ms 0ms;
     -webkit-transition-delay: ease-in;
@@ -59,18 +62,21 @@ body {
     margin: 7px 12px 0 0;
     float: left;
 }
-.app .app-content { float: left }
+.app .app-content { 
+    float: left;
+}
 .app .app-content h3 {
     margin: 0;
     line-height: 1.4;
     font-size: 18px;
+    font-weight: 300;
 }
 .app .app-content h3 a {
     display: inline-block;
     margin-right: 5px;
 }
 .app .app-content h3 span {
-    font-weight: normal;
+    letter-spacing: normal;
     font-size: 14px;
     display: inline-block;
     color: #aaaaaa;
@@ -80,10 +86,12 @@ body {
     display: block;
     float: right;
     margin-top: 7px;
+    font-weight: 300;
 }
 .comments {
     list-style-type: none;
     margin: 0;
+    font-weight: 300;
 }
 .comments li h4 {
     font-size: 16px;
@@ -102,6 +110,7 @@ body {
     line-height: 20px;
     color: #bbb;
     white-space: nowrap;
+    font-weight: 300;
 }
 .load-more {
     display: block;
