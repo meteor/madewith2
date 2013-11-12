@@ -7,6 +7,7 @@ Template.appSubmit.events({
       source: $(e.target).find('[name=source]').val(),
       title: $(e.target).find('[name=title]').val(),
       message: $(e.target).find('[name=description]').val()
+      //author: 
     }
 
     Meteor.call('app', app, function(error, id) {

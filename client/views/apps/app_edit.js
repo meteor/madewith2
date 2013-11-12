@@ -33,7 +33,7 @@ Template.appEdit.events({
     if (confirm("Delete this app?")) {
       var currentAppId = Session.get('currentAppId');
       Apps.remove(currentAppId);
-      Meteor.Router.to('appsList');
+      Meteor.Router.to('home');
     }
   }
 });
