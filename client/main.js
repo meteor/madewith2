@@ -1,7 +1,8 @@
 Meteor.subscribe('apps');
 
+
 Router.configure({
-  contentTemplate: 'content'
+  layoutTemplate: 'layout'
 });
 
 Router.map(function () {

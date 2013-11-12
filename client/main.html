@@ -2,15 +2,13 @@
   <title>Made with Meteor and <3</title>
 </head>
 
-<body>
-  {{> layout}}
-</body>
-
 <template name="layout">
   <div class="container">
     {{> topbar}}
     <div id="page-content">
-      {{> content}}
+      <div id="main" class="row-fluid">
+        {{yield}}
+      </div>
     </div>
   </div>
 </template>
@@ -21,11 +19,5 @@
         <a class="brand" href="{{ pathFor 'home' }}">Made with <span style="font-weight:bold">Meteor</span> + <img src="../heart35_.png"></a>
       </div>
     </header>
-</template>
-
-<template name="content">
-    <div id="main" class="row-fluid">
-      {{yield}}
-    </div>
 </template>
 
