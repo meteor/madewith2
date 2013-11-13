@@ -5,9 +5,13 @@
 <template name="layout">
   <div class="container">
     {{> topbar}}
+    {{yield 'errors'}}
+
     <div id="page-content">
       <div id="main" class="row-fluid">
+
         {{yield}}
+
       </div>
     </div>
   </div>
@@ -34,5 +38,6 @@
         </div>
       </div>
     </header>
+
 </template>
 

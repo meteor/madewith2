@@ -23,6 +23,22 @@ Router.map(function () {
     },
   });
 
+  // // discussion pages for each app
+  // this.route('err302Page', {
+  //   path: '/apps/:_id', // path with id of appPage
+  //   template: 'appPage',
+  //   layoutTemplate: 'layout',
+  //   yieldTemplates:{
+  //     'errorTemplate': {to: 'errors'}
+  //   },
+  //   load: function () { // called on first load
+  //     Session.set('currentAppId', this.params._id); 
+  //   },
+  //   //action: function(){
+  //     //
+  //   //}
+  // });
+
   // editing each app
   this.route('appEdit', {
     path: '/apps/:_id/edit', // path with id of appPage

@@ -55,9 +55,12 @@ body {
 
 .control-group {
     margin: 20px;
-
     /*color: #a67a00;*/
     color: #1921b1;
+}
+
+.control-label{
+    font-weight: 500;
 }
 
 .control {
