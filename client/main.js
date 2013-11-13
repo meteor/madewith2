@@ -1,4 +1,5 @@
 Meteor.subscribe('apps');
+Meteor.subscribe('comments');
 
 
 Router.configure({
