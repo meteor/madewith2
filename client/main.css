@@ -67,6 +67,13 @@ body {
     min-width: 200px;
 }
 
+.alert-error{
+    background-color: #ffda73;
+    /*background-color: #ffcc40;*/
+    color: #a67a00;
+    font-weight: 300;
+}
+
 #spinner { height: 300px }
 .app {
     font-weight: 300;

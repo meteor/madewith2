@@ -12,7 +12,7 @@ Meteor.methods({
 
     // ensure the user is logged in
     if (!user)
-      throw new Meteor.Error(401, "Oops! You need to login to submit your app.");
+      throw new Meteor.Error(401, "Doh! You need to login to share your app.");
 
     // ensure the post has a title
     if (!appAttributes.title)
@@ -21,7 +21,7 @@ Meteor.methods({
     // check that there are no previous posts with the same link
     if (appAttributes.url && appWithSameLink) {
       throw new Meteor.Error(302, 
-        'This app has already been posted.', 
+        'Oops! Looks like this app has already been shared on MadeWith.', 
         appWithSameLink._id);
     }
 
