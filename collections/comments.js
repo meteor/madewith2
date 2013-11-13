@@ -16,6 +16,10 @@ Meteor.methods({
       author: user.username,
       submitted: new Date().getTime()
     });
+
+    //update the app with the number of comments
+	Apps.update(comment.appId, {$inc: {commentsCount:1}});
+	
     return Comments.insert(comment);
   }
 });

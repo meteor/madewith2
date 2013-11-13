@@ -53,6 +53,10 @@ body {
     margin: 5px;
 }
 
+.headsup-yellow {
+    color: #ffda73;
+}
+
 .control-group {
     margin: 20px;
     /*color: #a67a00;*/

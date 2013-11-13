@@ -22,29 +22,32 @@ if (Apps.find().count() === 0) {
   });
   var sam = Meteor.users.findOne(samId);
 
-
+  // create 3 apps
   Apps.insert({
     title: 'Wildfire: Pyromancy straight out of the jar',
     userId: hal._id,
     author: hal.profile.name,
     url: 'http://pages2.meteor.com',
     source: 'https://github.com/alethes/meteor-pages',
-    submitted: now - 7 * 3600 * 1000
+    submitted: now - 7 * 3600 * 1000,
+    commentsCount: 0
   });
 
   Apps.insert({
-    title: 'Dragonglass: easy to understand obsidian for the Night\'s Watch',
+    title: "Dragonglass: easy to understand obsidian for the Night's Watch",
     userId: sam._id,
     author: sam.profile.name,
     url: 'http://balance.sharett.org/',
-    source: 'https://github.com/sharett/balance'
+    source: 'https://github.com/sharett/balance',
+    commentsCount: 0
   });
 
   var statecraftID = Apps.insert({
     title: 'Statecraft: data and analytics for multi-player cyvasse.',
     userId: olenna._id,
     author: olenna.profile.name,
-    url: 'http://properapp.com'
+    url: 'http://properapp.com',
+    commentsCount: 2
   });
 
   Comments.insert({

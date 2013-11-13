@@ -14,11 +14,11 @@ Meteor.methods({
     if (!user)
       throw new Meteor.Error(401, "Doh! You need to login to share your app.");
 
-    // ensure the post has a title
+    // ensure the app has a title
     if (!appAttributes.title)
       throw new Meteor.Error(422, 'Oh snap! Your app needs a name. I hope it has one.');
 
-    // check that there are no previous posts with the same link
+    // check that there are no previous apps with the same link
     if (appAttributes.url && appWithSameLink) {
       throw new Meteor.Error(302, 
         'Oops! Looks like this app has already been shared. Give it some <3!', 
@@ -29,7 +29,8 @@ Meteor.methods({
     var app = _.extend(_.pick(appAttributes, 'url', 'title', 'source','description'), {
       userId: user._id, 
       author: user.username, 
-      submitted: new Date().getTime()
+      submitted: new Date().getTime(),
+      commentsCount: 0
     });
 
     var appId = Apps.insert(app);
