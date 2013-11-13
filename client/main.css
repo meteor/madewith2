@@ -55,9 +55,15 @@ body {
 
 .control-group {
     margin: 20px;
+
     /*color: #a67a00;*/
     color: #1921b1;
 }
+
+.control {
+    min-width: 200px;
+}
+
 #spinner { height: 300px }
 .app {
     font-weight: 300;

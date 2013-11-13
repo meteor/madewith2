@@ -14,7 +14,7 @@
     </div>
     <p></p>
     <div class="control-group">
-        <label class="control-label" for="source">GitHub URL (optional)</label>
+        <label class="control-label" for="source">GitHub URL</label>
         <div class="controls">
             <input name="source" type="text" value="" placeholder="github.com/meteor/meteor" size="70" />
         </div>
@@ -29,8 +29,10 @@
     <p></p>
     <div class="control-group">
         <div class="controls">
-            <input type="submit" value="Submit" class="btn btn-success btn-lg"/>
+                    <a class="btn btn-default btn-lg btn" href="{{ pathFor 'home' }}" role="button">Cancel</a>
+                     <input type="submit" value="Submit" class="btn btn-success btn-lg"/> 
         </div>
     </div>
+    
   </form>
 </template>
