@@ -16,11 +16,23 @@ Router.map(function () {
   });
 
   // discussion pages for each app
+  // this.route('appPage', {
+  //   path: '/apps/:_id', // path with id of appPage
+  //   load: function () { // called on first load
+  //     Session.set('currentAppId', this.params._id); 
+  //   },
+  // });
+
+
   this.route('appPage', {
-    path: '/apps/:_id', // path with id of appPage
-    load: function () { // called on first load
-      Session.set('currentAppId', this.params._id); 
-    },
+    path: '/apps/:_id',
+    data: function() { return Apps.findOne(this.params._id); },
+    waitOn: function() {
+      return [
+        Meteor.subscribe('singleApp', this.params._id),
+        Meteor.subscribe('comments', this.params._id)
+      ];
+    }
   });
 
   // // discussion pages for each app
@@ -69,3 +81,16 @@ Router.map(function () {
   });
 });
 
+// var requireLogin = function() {
+//   if (! Meteor.user()) {
+//     if (Meteor.loggingIn())
+//       this.render(this.loadingTemplate);
+//     else
+//       this.render('accessDenied');
+    
+//     this.stop();
+//   }
+// }
+
+//Router.before(requireLogin, {only: 'appSubmit'})
+//Router.before(function() { clearErrors() });
