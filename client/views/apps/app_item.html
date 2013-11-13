@@ -1,18 +1,32 @@
 <template name="appItem">
-  <div class="app">
-    <div class="app-content">
-    	<p><h3>
-    		<a href="{{url}}">{{title}}</a><span>({{domain}})</span>
-      	</h3></p>
+  <div class="app"><div class="app-content">
+    	{{> appTitleLine}}
       	<small>
-      			<p><span>{{description}}</span></p>
-      			<p># votes by {{author}} # time ago | 
-		        {{#if ownApp}}
-		        	<a href="{{ pathFor 'appEdit' }}">Edit</a> | 
-		        {{/if}}
-		        <a href="{{source}}">Source</a> | 
-		        <a href="{{ pathFor 'appPage' }}">{{commentLinkText}}</a>
+      		<p><span>{{description}}</span></p>
+          {{> appDetailsLine}}
       	</small>
-    </div>
-  </div>
+  </div></div>
+</template>
+
+<template name="appItemshort">
+  <div class="app"><div class="app-content">
+    {{> appTitleLine}}
+    <small>{{> appDetailsLine}}</small>
+  </div></div>
+</template>
+
+<!-- <template name="appItemlong">
+</template> -->
+
+<template name="appTitleLine">
+  <p><h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
+</template>
+
+<template name="appDetailsLine">
+  <p># votes by {{author}} # time ago | 
+    {{#if ownApp}}
+      <a href="{{ pathFor 'appEdit' }}">Edit</a> | 
+    {{/if}}
+    <a href="{{source}}">Source</a> | <a href="{{ pathFor 'appPage' }}">{{commentLinkText}}</a>
+  </p>
 </template>

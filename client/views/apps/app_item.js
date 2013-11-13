@@ -2,14 +2,20 @@ Template.appItem.helpers({
   ownApp: function() {
     return this.userId == Meteor.userId();
   },
+  commentsCount: function(){
+    return getCommentsCount(this);
+  }
+});
+
+Template.appTitleLine.helpers({
   domain: function() {
     var a = document.createElement('a');
     a.href = this.url;
     return a.hostname;
-  },
-  commentsCount: function(){
-    return getCommentsCount(this);
-  },
+  }
+});
+
+Template.appDetailsLine.helpers({
   commentLinkText: function(){
     commentsCount = getCommentsCount(this)
     if (commentsCount === 0) { //if no comments, link is 'Discuss'
