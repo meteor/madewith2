@@ -6,6 +6,9 @@ Template.appItem.helpers({
     var a = document.createElement('a');
     a.href = this.url;
     return a.hostname;
+  },
+  commentsCount: function(){
+    return Comments.find({appId: this._id}).count();
   }
 });
 

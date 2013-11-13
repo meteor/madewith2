@@ -1,6 +1,11 @@
 <template name="appPage">
   {{#with currentApp}}
     {{> appItem}}
+    <ul class="comments">
+    	{{#each comments}}
+    		{{>comment}}
+    	{{/each}}
+    </ul>
   {{/with}}
 </template>
 

@@ -48,7 +48,7 @@ if (Apps.find().count() === 0) {
   });
 
   Comments.insert({
-    postId: statecraftID,
+    appId: statecraftID,
     userId: dany._id,
     author: dany.profile.name,
     submitted: now - 5 * 3600 * 1000,
