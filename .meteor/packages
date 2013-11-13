@@ -7,7 +7,6 @@ standard-app-packages
 preserve-inputs
 spiderable
 iron-router
-accounts-password
 accounts-github
 bootstrap-3
 accounts-ui
