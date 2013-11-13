@@ -13,13 +13,13 @@ Meteor.methods({
       throw new Meteor.Error(422, "Huh. We weren't sure which app that comment was for. Try again?");
     comment = _.extend(_.pick(commentAttributes, 'appId', 'body'), {
       userId: user._id,
-      author: user.username,
+      author: user.profile.name,
       submitted: new Date().getTime()
     });
 
     //update the app with the number of comments
 	Apps.update(comment.appId, {$inc: {commentsCount:1}});
-	
+
     return Comments.insert(comment);
   }
 });
