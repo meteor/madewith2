@@ -15,9 +15,10 @@ Template.appItem.helpers({
     if (commentsCount === 0) { //if no comments, link is 'Discuss'
       return 'Discuss';
     } else{ 
-      // # Comments if more than 0 comments
-      var nComments = commentsCount.toString();
-      return nComments.concat(' Comments');
+      // # Comments if nonzero comments
+      var commentNoun = commentsCount.toString();
+      commentNoun += ' Comment' + pluralize(commentsCount);
+      return commentNoun;
     };
   }
 });
@@ -25,6 +26,22 @@ Template.appItem.helpers({
 function getCommentsCount(self){
     return Comments.find({appId: self._id}).count();
 }
+
+//returns 's' if >1, '' otherwise
+// function pluralize(count) { //proper version
+//   if (count <= 1) {
+//     return '';
+//   } else{
+//     return 's';
+//   };
+// }
+
+function pluralize(count) {//concise version
+  if (count > 1)
+    return 's';
+  return '';
+}
+
 
 /*Template.appsList.helpers({
   apps: function() {
