@@ -1,6 +1,9 @@
 Meteor.subscribe('apps');
 Meteor.subscribe('comments');
 
+Deps.autorun(function(){
+  Meteor.subscribe('comments', Session.get('currentAppId'));
+});
 
 Router.configure({
   layoutTemplate: 'layout',
