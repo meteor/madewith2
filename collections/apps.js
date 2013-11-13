@@ -21,7 +21,7 @@ Meteor.methods({
     // check that there are no previous posts with the same link
     if (appAttributes.url && appWithSameLink) {
       throw new Meteor.Error(302, 
-        'Oops! Looks like this app has already been shared on MadeWith.', 
+        'Oops! Looks like this app has already been shared. Give it some <3!', 
         appWithSameLink._id);
     }
 

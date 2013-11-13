@@ -27,6 +27,9 @@ Router.map(function () {
   this.route('appPage', {
     path: '/apps/:_id',
     data: function() { return Apps.findOne(this.params._id); },
+    load: function () { // called on first load
+      Session.set('currentAppId', this.params._id); 
+    },
     waitOn: function() {
       return [
         Meteor.subscribe('singleApp', this.params._id),

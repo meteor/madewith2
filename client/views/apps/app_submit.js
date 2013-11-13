@@ -20,8 +20,9 @@ Template.appSubmit.events({
           //Router.go('err302Page',id)
           Router.go('appPage', {_id: error.details})
       } else {
-        //Router.go('appPage', id)
-        Router.go('postPage', {_id: id});
+        Router.go('appPage', id)
+        //Router.go('appPage', {_id: id});
+        //TODO: when 'newest' is implemented, people should be sent to /newest
       }
     });
   }
