@@ -16,7 +16,7 @@ Meteor.methods({
 
     // ensure the post has a title
     if (!appAttributes.title)
-      throw new Meteor.Error(422, 'Your app needs a name.');
+      throw new Meteor.Error(422, 'Oh snap! Your app needs a name. I hope it has one.');
 
     // check that there are no previous posts with the same link
     if (appAttributes.url && appWithSameLink) {
