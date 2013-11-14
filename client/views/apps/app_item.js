@@ -48,10 +48,11 @@ Template.appDetailsLine.helpers({
   },
   baseDate: function(){
     return new Date(this.submitted);
+  },
+  voteText: function(){
+    return 'vote' + pluralize (this.votes);
   }
-
 });
-
 
 Template.appItemshort.events({
   'click .upvote': function(e){doUpvote(e, this);}
@@ -69,16 +70,8 @@ function getDomain(self){
 }
 
 //returns 's' if >1, '' otherwise
-// function pluralize(count) { //proper version
-//   if (count <= 1) {
-//     return '';
-//   } else{
-//     return 's';
-//   };
-// }
-
 function pluralize(count) {//concise version
-  if (count > 1)
+  if (count != 1)
     return 's';
   return '';
 }
