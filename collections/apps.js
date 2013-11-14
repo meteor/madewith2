@@ -30,7 +30,9 @@ Meteor.methods({
       userId: user._id, 
       author: user.profile.name, 
       submitted: new Date().getTime(),
-      commentsCount: 0
+      commentsCount: 0,
+      upvoters: [], 
+      votes: 0
     });
 
     var appId = Apps.insert(app);

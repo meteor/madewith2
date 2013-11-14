@@ -30,7 +30,8 @@ if (Apps.find().count() === 0) {
     url: 'http://pages2.meteor.com',
     source: 'https://github.com/alethes/meteor-pages',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [], votes: 0
   });
 
   Apps.insert({
@@ -39,7 +40,8 @@ if (Apps.find().count() === 0) {
     author: sam.profile.name,
     url: 'http://balance.sharett.org/',
     source: 'https://github.com/sharett/balance',
-    commentsCount: 0
+    commentsCount: 0,
+    upvoters: [], votes: 0
   });
 
   for (var i = 0; i < 30; i++) {
@@ -49,7 +51,8 @@ if (Apps.find().count() === 0) {
       userId: dany._id,
       url: 'http://google.com/?q=test-' + i,
       submitted: now - i * 3600 * 1000,
-      commentsCount: 0
+      commentsCount: 0,
+      upvoters: [], votes: 0
     });
   }
 
@@ -58,7 +61,8 @@ if (Apps.find().count() === 0) {
     userId: olenna._id,
     author: olenna.profile.name,
     url: 'http://properapp.com',
-    commentsCount: 2
+    commentsCount: 2,
+    upvoters: [], votes: 0
   });
 
   Comments.insert({
