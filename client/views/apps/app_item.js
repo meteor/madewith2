@@ -39,8 +39,13 @@ Template.appDetailsLine.helpers({
       var commentNoun = commentsCount.toString() + ' Comment' + pluralize(commentsCount);
       return commentNoun;
     };
+  },
+  baseDate: function(){
+    return new Date(this.submitted);
   }
+
 });
+
 
 Template.appItemshort.events({
   'click .upvote': function(e){doUpvote(e, this);}

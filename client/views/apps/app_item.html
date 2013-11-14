@@ -13,7 +13,6 @@
   </div>
 </template>
 
-
 <template name="appItemshort">
   <div class="app">{{> upvoteButton}}<div class="app-content">
     <p><h3><a href="{{ pathFor 'appPage' }}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
@@ -26,7 +25,7 @@
 </template>
 
 <template name="appDetailsLine">
-  <p>{{votes}} votes by {{author}} # time ago | 
+  <p>{{votes}} votes by {{author}} {{timeago baseDate}} ago | 
     {{#if ownApp}}
       <a href="{{ pathFor 'appEdit' }}">Edit</a> | 
     {{/if}}

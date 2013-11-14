@@ -5,7 +5,8 @@
       "iron-router": {},
       "accounts-ui-bootstrap-dropdown": {},
       "bootstrap-3": {},
-      "paginated-subscription": {}
+      "paginated-subscription": {},
+      "timeago": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/tmeasday/meteor-paginated-subscription.git",
         "tag": "v0.1.2",
         "commit": "35e0c6112df2b4cfeb60b559276a93cac5ee2dd6"
+      },
+      "timeago": {
+        "git": "https://github.com/BeDifferential/timeago.git",
+        "tag": "v0.0.2",
+        "commit": "1f2afcbfaa37f97c4a966058388d85c6ada3fe8f"
       }
     }
   }

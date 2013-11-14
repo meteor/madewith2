@@ -3,6 +3,7 @@
     "iron-router": {},
     "accounts-ui-bootstrap-dropdown": {},
     "bootstrap-3": {},
-    "paginated-subscription": {}
+    "paginated-subscription": {},
+    "timeago": {}
   }
 }
