@@ -41,6 +41,7 @@ if (Apps.find().count() === 0) {
     url: 'http://balance.sharett.org/',
     source: 'https://github.com/sharett/balance',
     commentsCount: 0,
+    submitted: now - 7 * 3600 * 1000,
     upvoters: [], votes: 0, votecache: 0, score: 0
   });
 
