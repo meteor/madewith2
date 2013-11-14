@@ -11,7 +11,7 @@ Template.appItem.helpers({
   domain: function() {
     return getDomain(this);
   },
-  hasDescript: function(){
+  hasDescript: function(){ //is there a description?
     return this.description != undefined;
   }
 });

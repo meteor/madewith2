@@ -42,6 +42,17 @@ if (Apps.find().count() === 0) {
     commentsCount: 0
   });
 
+  for (var i = 0; i < 30; i++) {
+    Apps.insert({
+      title: 'Test App #' + i,
+      author: dany.profile.name,
+      userId: dany._id,
+      url: 'http://google.com/?q=test-' + i,
+      submitted: now - i * 3600 * 1000,
+      commentsCount: 0
+    });
+  }
+
   var statecraftID = Apps.insert({
     title: 'Statecraft: data and analytics for multi-player cyvasse.',
     userId: olenna._id,
