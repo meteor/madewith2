@@ -29,7 +29,6 @@ Meteor.methods({
     var app = _.extend(_.pick(appAttributes, 'url', 'title', 'source','description'), {
       userId: user._id, 
       author: user.profile.name, 
-      //author: user.username,
       submitted: new Date().getTime(),
       commentsCount: 0
     });
