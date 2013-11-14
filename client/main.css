@@ -128,16 +128,21 @@ body {
 }
 .app .app-content small span {
     display: inline-block;
+    /*font-size: 24px;*/
     color: #aaaadd;
     padding-left: 25px;
 }
 .app .app-content p { margin: 0 }
+.app.app-content.icons{
+    font-size: 20px;
+}
 .app .discuss {
     display: block;
     float: right;
     margin-top: 7px;
     font-weight: 300;
 }
+
 .comments {
     list-style-type: none;
     margin: 0;

@@ -73,7 +73,7 @@ function updateSomeThings(){
 }
 
 //testing
-timer = Meteor.setInterval(updateSomeThings,updateFrequency);
+//timer = Meteor.setInterval(updateSomeThings,updateFrequency);
 
 //timer = Meteor.setInterval(updateAllTheThings,updateFrequency);
 //var timerId = setInterval(console.log('tick'), updateFrequency);
