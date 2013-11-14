@@ -22,7 +22,8 @@ Template.appEdit.events({
         // display the error to the user
         alert(error.reason);
       } else {
-        Meteor.Router.to('appPage', currentAppId);
+        console.log(currentAppId);
+        Router.go('appPage', {_id: currentAppId});
       }
     });
   },
@@ -33,7 +34,7 @@ Template.appEdit.events({
     if (confirm("Delete this app?")) {
       var currentAppId = Session.get('currentAppId');
       Apps.remove(currentAppId);
-      Meteor.Router.to('home');
+      Router.go('home');
     }
   }
 });

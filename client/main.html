@@ -6,38 +6,12 @@
   <div class="container">
     {{> topbar}}
     {{> errorTemplate}}
-
     <div id="page-content">
       <div id="main" class="row-fluid">
-
         {{yield}}
-
       </div>
     </div>
   </div>
 </template>
 
-<template name="topbar">
-
-    <header class="navbar">
-      <div class="navbar-inner">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-
-        <a class="brand" href="{{ pathFor 'home' }}">Made with <span style="font-weight:bold">Meteor</span> + <img src="/heart35_.png"></a> 
-
-        <div class="nav pull-right">
-          <div class="login">
-            {{loginButtons align="right"}}
-          </div>
-          <a class="btn btn-link" href="{{ pathFor 'appSubmit' }}" role="button">Share</a>
-          <a class="btn btn-link" href="{{ pathFor 'new' }}" role="button">New</a> 
-        </div>
-      </div>
-    </header>
-
-</template>
 
