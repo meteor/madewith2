@@ -58,7 +58,7 @@ Template.appDetailsLine.helpers({
   // votes: function(){return this.votes;},
   votecache: function(){return this.votecache;},
   appID: function(){return this._id;},
-  currentVoteValue: function(){return realVoteValue();}
+  currentVoteValue: function(){return realVoteValue();},
   debugmode: function(){return false;} //true if we want debug mode
 });
 
