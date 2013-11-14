@@ -1,5 +1,5 @@
-Meteor.publish('apps', function() {
-  return Apps.find();
+Meteor.publish('apps', function(limit) {
+  	return Apps.find({}, {sort: {submitted: -1}, limit:limit});
 });
 
 Meteor.publish('comments', function(appId){

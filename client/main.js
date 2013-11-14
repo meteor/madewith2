@@ -1,4 +1,4 @@
-Meteor.subscribe('apps');
+appsHandle = Meteor.subscribeWithPagination('apps',10);
 Meteor.subscribe('comments');
 
 Deps.autorun(function(){
