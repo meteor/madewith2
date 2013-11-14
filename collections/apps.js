@@ -60,7 +60,6 @@ Meteor.methods({
     });
     Apps.update({
         _id: appId, 
-        // upvoters: {$ne: user._id}
       }, {
         $inc: {score: 1},
     });
