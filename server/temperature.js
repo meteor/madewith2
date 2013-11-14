@@ -8,6 +8,7 @@ decay_factor = 0.90; // every update, temperature decays this much
 
 function bar(){
 	console.log('tock');
+
 	//Apps.update({},{$set: {score: 0}});
 };
 
@@ -52,6 +53,27 @@ function update_decay(){
 	});
 }
 
+	//testing
+function updateSomeThings(){
 
-var timer = Meteor.setInterval(updateAllTheThings,updateFrequency);
+	// Apps.find({score: 0}).forEach(function (app) { 
+	// 	Apps.update(app._id, {
+	// 		$set: {score: 1}
+	// 	})
+	// });
+	console.log('tick');
+	//addNewVotes();
+	//Apps.update({},{$set: {votecache: Apps.votes}});
+	Apps.find({}).forEach(function (app) { 
+		Apps.update(app._id, {
+			$set: {votecache: Apps.votes}
+		})
+	});
+
+}
+
+//testing
+timer = Meteor.setInterval(updateSomeThings,updateFrequency);
+
+//timer = Meteor.setInterval(updateAllTheThings,updateFrequency);
 //var timerId = setInterval(console.log('tick'), updateFrequency);

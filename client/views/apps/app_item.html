@@ -30,6 +30,10 @@
     {{#if hasSource}}
       <a href="{{source}}">Source</a> | 
     {{/if}}
-    <a href="{{ pathFor 'appPage' }}">{{commentLinkText}}</a> {{score}}
+    <a href="{{ pathFor 'appPage' }}">{{commentLinkText}}</a> 
   </p>
+  <p><u>Debug Mode stuff:</u></p>
+  <p>Score:{{score}}</p>
+  <p>VoteCache:{{votecache}}</p>
+  <p>_id: {{appID}}</p>
 </template>

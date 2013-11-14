@@ -50,11 +50,6 @@ Router.map(function () {
   });
 
 
-  // recently submitted apps
-  //this.route('newApps', {
-    //}
-  //});
-
   //app submission
   this.route('appSubmit', {
     path: '/submit', 
@@ -71,16 +66,3 @@ Router.map(function () {
   });
 });
 
-// var requireLogin = function() {
-//   if (! Meteor.user()) {
-//     if (Meteor.loggingIn())
-//       this.render(this.loadingTemplate);
-//     else
-//       this.render('accessDenied');
-    
-//     this.stop();
-//   }
-// }
-
-//Router.before(requireLogin, {only: 'appSubmit'})
-//Router.before(function() { clearErrors() });

@@ -52,7 +52,9 @@ Template.appDetailsLine.helpers({
   voteText: function(){
     return 'vote' + pluralize (this.votes);
   },
-  score: function(){return this.score;}
+  score: function(){return this.score;},
+  score: function(){return this.votecache;},
+  appID: function(){return this._id;}
 });
 
 Template.appItemshort.events({

@@ -34,7 +34,8 @@ Meteor.methods({
       commentsCount: 0,
       upvoters: [], 
       votes: 0,
-      score: 0
+      score: 0,
+      votecache: 0
     });
 
     var appId = Apps.insert(app);

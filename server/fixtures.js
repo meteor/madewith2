@@ -31,7 +31,7 @@ if (Apps.find().count() === 0) {
     source: 'https://github.com/alethes/meteor-pages',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 0,
-    upvoters: [], votes: 0
+    upvoters: [], votes: 0, votecache: 0, score: 0
   });
 
   Apps.insert({
@@ -41,7 +41,7 @@ if (Apps.find().count() === 0) {
     url: 'http://balance.sharett.org/',
     source: 'https://github.com/sharett/balance',
     commentsCount: 0,
-    upvoters: [], votes: 0
+    upvoters: [], votes: 0, votecache: 0, score: 0
   });
 
   for (var i = 0; i < 30; i++) {
@@ -52,7 +52,7 @@ if (Apps.find().count() === 0) {
       url: 'http://google.com/?q=test-' + i,
       submitted: now - i * 3600 * 1000,
       commentsCount: 0,
-      upvoters: [], votes: 0
+      upvoters: [], votes: 0, votecache: 0, score: 0
     });
   }
 
@@ -62,7 +62,7 @@ if (Apps.find().count() === 0) {
     author: olenna.profile.name,
     url: 'http://properapp.com',
     commentsCount: 2,
-    upvoters: [], votes: 0
+    upvoters: [], votes: 0, votecache: 0, score: 0
   });
 
   Comments.insert({
