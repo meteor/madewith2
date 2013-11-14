@@ -42,7 +42,7 @@ body {
     font-weight: 300;
 }.login:visited, .btn-link:visited {
     color: #4d54d8;
-}.login:hover, .btn-link:hover {
+}.login:hover, .btn-link:hover, .btn-link.active {
     background: #eef;
     color: #1921b1;
     text-decoration: none;

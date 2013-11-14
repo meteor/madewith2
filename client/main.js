@@ -22,7 +22,7 @@ Router.map(function () {
     template: 'popularApps'
   });
 
-  this.route('new', {
+  this.route('newest', {
     path: '/newest', // match the root path
     template: 'newApps'
   });
