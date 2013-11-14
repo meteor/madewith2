@@ -30,7 +30,7 @@ Template.newApps.helpers({
 Template.popularApps.helpers({
   options: function(){
     return {
-      sort: {votes: -1, submitted: -1},
+      sort: {score: -1, submitted: -1},
       handle: popularAppsHandle
     }
   }

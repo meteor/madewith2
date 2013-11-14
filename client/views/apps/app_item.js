@@ -51,7 +51,8 @@ Template.appDetailsLine.helpers({
   },
   voteText: function(){
     return 'vote' + pluralize (this.votes);
-  }
+  },
+  score: function(){return this.score;}
 });
 
 Template.appItemshort.events({
