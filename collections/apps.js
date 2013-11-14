@@ -7,10 +7,9 @@ Apps.allow({
 
 Meteor.methods({
   app: function(appAttributes) {
-    var user = Meteor.user(),
+    var user = Meteor.user(), // ensure the user is logged in
       appWithSameLink = Apps.findOne({url: appAttributes.url});
 
-    // ensure the user is logged in
     if (!user)
       throw new Meteor.Error(401, "Doh! You need to login to share your app.");
 
@@ -38,5 +37,19 @@ Meteor.methods({
     var appId = Apps.insert(app);
 
     return appId;
+  },
+  upvote: function(appId){
+    var user = Meteor.user(); //ensure user is logged in
+    if (!user)
+      throw new Meteor.Error(401, "You need to login to upvote");
+    var app = Apps.findOne(appId);
+    if (!app)
+      throw new Meteor.Error(422, 'App not found');
+    if (_.include(app.upvoters, user._id))
+      throw new Meteor.Error(422, 'Already upvoted this app');
+    Apps.update(app._id, {
+      $addToSet: {upvoters: user._id},
+      $inc: {votes: 1}
+    });
   }
 });
