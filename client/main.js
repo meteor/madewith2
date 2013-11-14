@@ -1,4 +1,6 @@
-appsHandle = Meteor.subscribeWithPagination('newApps',14);
+newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
+popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
+
 Meteor.subscribe('comments');
 
 Deps.autorun(function(){
@@ -17,17 +19,13 @@ Router.map(function () {
   // the home page is the front page; with trending apps
   this.route('home', {
     path: '/', // match the root path
-    template: 'appsList'
+    template: 'popularApps'
   });
 
-  // discussion pages for each app
-  // this.route('appPage', {
-  //   path: '/apps/:_id', // path with id of appPage
-  //   load: function () { // called on first load
-  //     Session.set('currentAppId', this.params._id); 
-  //   },
-  // });
-
+  this.route('new', {
+    path: '/newest', // match the root path
+    template: 'newApps'
+  });
 
   this.route('appPage', {
     path: '/apps/:_id',
@@ -42,22 +40,6 @@ Router.map(function () {
       ];
     }
   });
-
-  // // discussion pages for each app
-  // this.route('err302Page', {
-  //   path: '/apps/:_id', // path with id of appPage
-  //   template: 'appPage',
-  //   layoutTemplate: 'layout',
-  //   yieldTemplates:{
-  //     'errorTemplate': {to: 'errors'}
-  //   },
-  //   load: function () { // called on first load
-  //     Session.set('currentAppId', this.params._id); 
-  //   },
-  //   //action: function(){
-  //     //
-  //   //}
-  // });
 
   // editing each app
   this.route('appEdit', {

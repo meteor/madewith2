@@ -1,6 +1,11 @@
 Meteor.publish('newApps', function(limit) {
   	return Apps.find({}, {sort: {submitted: -1}, limit:limit});
 });
+
+Meteor.publish('popularApps', function(limit) {
+  	return Apps.find({}, {sort: {votes: -1, submitted: -1}, limit:limit});
+});
+
 Meteor.publish('singleApp', function(id){
 	return id && Apps.find(id);
 });

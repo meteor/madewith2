@@ -1,19 +1,37 @@
 
 Template.appsList.helpers({
   apps: function() {
-    return Apps.find({}, {sort: {submitted: -1}, limit: appsHandle.limit()});
+    return Apps.find({}, {sort: this.sort, limit: this.handle.limit()});
   },
   appsReady: function(){
-  	return appsHandle.ready();
+  	return this.handle.ready();
   },
   allAppsLoaded: function() {
-  	return appsHandle.ready() && Apps.find().count() < appsHandle.loaded();
+  	return this.handle.ready() && Apps.find().count() < this.handle.loaded();
   }
 });
 
 Template.appsList.events({
 	'click .load-more': function(e) {
 		e.preventDefault();
-		appsHandle.loadNextPage();
+		this.handle.loadNextPage();
 	}
+});
+
+Template.newApps.helpers({
+  options: function(){
+    return {
+      sort: {submitted: -1},
+      handle: newAppsHandle
+    }
+  }
+});
+
+Template.popularApps.helpers({
+  options: function(){
+    return {
+      sort: {votes: -1, submitted: -1},
+      handle: popularAppsHandle
+    }
+  }
 });
