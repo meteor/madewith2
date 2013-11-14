@@ -1,6 +1,6 @@
 <template name="appItem">
   <div class="app">
-    <a href="#" class="upvote btn">⬆</a>
+    {{> upvoteButton}}
     <div class="app-content">
     	<p><h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
       	<small>
@@ -15,10 +15,14 @@
 
 
 <template name="appItemshort">
-  <div class="app"><a href="#" class="upvote btn">⬆</a><div class="app-content">
+  <div class="app">{{> upvoteButton}}<div class="app-content">
     <p><h3><a href="{{ pathFor 'appPage' }}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
     <small>{{> appDetailsLine}}</small>
   </div></div>
+</template>
+
+<template name="upvoteButton">
+  <a href="#" class="upvote btn btn-link btn-lg {{upvotedClass}}" role="button">⬆</a>
 </template>
 
 <template name="appDetailsLine">

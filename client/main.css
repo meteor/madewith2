@@ -74,6 +74,10 @@ body {
     font-weight: 300;
 }
 
+.btn-link.disabled{
+    opacity: 0.0;
+}
+
 #spinner { height: 300px }
 .app {
     font-weight: 300;
@@ -94,7 +98,8 @@ body {
 .app.invisible { opacity: 0 }
 .app .upvote {
     display: block;
-    margin: 7px 12px 0 0;
+    margin: 0 0 0 0;
+    padding: 0;
     float: left;
 }
 .app .app-content { 

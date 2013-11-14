@@ -2,8 +2,22 @@
 //is there a wayto put combine this?
 
 Template.appItemshort.helpers({
-  domain: function() {return getDomain(this);}
+  domain: function() {return getDomain(this);},
 });
+
+Template.upvoteButton.helpers({
+  upvotedClass: function() {
+    return getUpvotedClass(Meteor.userId(), this);
+  }
+})
+
+function getUpvotedClass(userId, self){
+    if (userId && !_.include(self.upvoters, userId)) {
+      return 'upvote';
+    } else {
+      return 'upvote disabled';
+    }
+}
 
 Template.appItem.helpers({
   domain: function() {return getDomain(this);},
@@ -29,15 +43,12 @@ Template.appDetailsLine.helpers({
 });
 
 Template.appItemshort.events({
-  'click .upvote': function(e){
-    e.preventDefault();
-    Meteor.call('upvote',this._id);
-  }
+  'click .upvote': function(e){doUpvote(e, this);}
 });
 
-function doUpvote(e){
+function doUpvote(e, self){
   e.preventDefault();
-  Meteor.call('upvote',this._id);
+  Meteor.call('upvote',self._id);
 }
 
 function getDomain(self){
