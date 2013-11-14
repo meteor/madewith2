@@ -55,7 +55,7 @@ Template.appDetailsLine.helpers({
     return 'vote' + pluralize (this.votes);
   },
   score: function(){return this.score;},
-  score: function(){return this.votecache;},
+  votecache: function(){return this.votecache;},
   appID: function(){return this._id;},
   currentVoteValue: function(){return realVoteValue();}
 });

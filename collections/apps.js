@@ -52,7 +52,7 @@ Meteor.methods({
     }, {
       $addToSet: {upvoters: user._id},
       $inc: {votes: 1},
-      $inc: {score: currentVoteValue}
+      $inc: {score: 0}
     });
   }
 });
