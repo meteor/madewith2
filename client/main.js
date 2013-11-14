@@ -1,5 +1,6 @@
 newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
 popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
+currentVoteValue = Meteor.subscribe('currentVoteValue');
 
 Meteor.subscribe('comments');
 
@@ -11,7 +12,6 @@ Deps.autorun(function(){
 Router.configure({
   layoutTemplate: 'layout',
 });
-
 
 
 Router.map(function () {

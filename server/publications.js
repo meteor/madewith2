@@ -13,3 +13,7 @@ Meteor.publish('singleApp', function(id){
 Meteor.publish('comments', function(appId){
 	return Comments.find({appId: appId});
 });
+
+Meteor.publish('currentVoteValue', function(){
+	return currentVoteValue;
+});

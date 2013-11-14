@@ -1,11 +1,13 @@
 Template.appItemshort.helpers({
   domain: function() {return getDomain(this);},
-  sourceClass: function(){return getsourceClass(this.source);}
+  sourceClass: function(){return getsourceClass(this.source);},
+  currentVoteValue: function(){return currentVoteValue;}
 });
 
 Template.appItem.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
+  currentVoteValue: function(){return currentVoteValue;},
   hasDescript: function(){ //is there a description?
     return this.description != undefined;
   }

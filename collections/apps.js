@@ -51,7 +51,8 @@ Meteor.methods({
       upvoters: {$ne: user._id}
     }, {
       $addToSet: {upvoters: user._id},
-      $inc: {votes: 1}
+      $inc: {votes: 1},
+      $inc: {score: currentVoteValue}
     });
   }
 });
