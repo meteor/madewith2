@@ -1,6 +1,6 @@
 newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
 popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
-currentVoteValue = Meteor.subscribe('voteValue');
+// currentVoteValue = Meteor.subscribe('voteValue');
 
 Meteor.subscribe('comments');
 
@@ -9,6 +9,7 @@ Deps.autorun(function(){
   Meteor.subscribe('comments', Session.get('currentAppId'));
 });
 
+///////////////////Iron-Router///////////////////
 Router.configure({
   layoutTemplate: 'layout',
 });

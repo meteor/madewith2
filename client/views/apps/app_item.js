@@ -13,6 +13,11 @@ Template.appItem.helpers({
   }
 });
 
+//TODO:
+//set conditional on global bool "verbose," which the router sets 
+//to false at home, and becomes true elsewhere
+//this will then combine appItem and appItemshort
+
 Template.upvoteButton.helpers({
   upvotedClass: function() {
     return getUpvotedClass(Meteor.userId(), this);
@@ -54,8 +59,6 @@ Template.appDetailsLine.helpers({
   voteText: function(){
     return 'vote' + pluralize (this.votes);
   },
-  // score: function(){return this.score;},
-  // votes: function(){return this.votes;},
   votecache: function(){return this.votecache;},
   appID: function(){return this._id;},
   currentVoteValue: function(){return realVoteValue();},
