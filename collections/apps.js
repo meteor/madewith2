@@ -46,13 +46,23 @@ Meteor.methods({
     var user = Meteor.user(); //ensure user is logged in
     if (!user)
       throw new Meteor.Error(401, "You need to login to upvote");
+    var app = Apps.findOne(appId);
+    if (!app)
+      throw new Meteor.Error(422, 'App not found');
+    if (_.include(app.upvoters, user._id))
+      throw new Meteor.Error(422, 'Already upvoted this app');
     Apps.update({
-      _id: appId, 
-      upvoters: {$ne: user._id}
-    }, {
-      $addToSet: {upvoters: user._id},
-      $inc: {votes: 1},
-      $inc: {score: 0}
+        _id: appId, 
+        upvoters: {$ne: user._id}
+      }, {
+        $addToSet: {upvoters: user._id},
+        $inc: {votes: 1},
+    });
+    Apps.update({
+        _id: appId, 
+        // upvoters: {$ne: user._id}
+      }, {
+        $inc: {score: 1},
     });
   }
 });

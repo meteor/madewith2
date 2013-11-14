@@ -54,14 +54,22 @@ Template.appDetailsLine.helpers({
   voteText: function(){
     return 'vote' + pluralize (this.votes);
   },
-  score: function(){return this.score;},
+  // score: function(){return this.score;},
+  // votes: function(){return this.votes;},
   votecache: function(){return this.votecache;},
   appID: function(){return this._id;},
   currentVoteValue: function(){return realVoteValue();}
 });
 
-Template.appItemshort.events({
+Template.appItem.events({
   'click .upvote': function(e){doUpvote(e, this);}
+});
+
+Template.appItemshort.events({
+  'click .upvote': function(e){
+    e.preventDefault();
+    Meteor.call('upvote', this._id);
+  }
 });
 
 function doUpvote(e, self){
