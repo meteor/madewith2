@@ -6,7 +6,8 @@
       "accounts-ui-bootstrap-dropdown": {},
       "bootstrap-3": {},
       "paginated-subscription": {},
-      "timeago": {}
+      "timeago": {},
+      "ionicons": {}
     },
     "packages": {
       "iron-router": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/BeDifferential/timeago.git",
         "tag": "v0.0.2",
         "commit": "1f2afcbfaa37f97c4a966058388d85c6ada3fe8f"
+      },
+      "ionicons": {
+        "git": "https://github.com/Pagebakers/meteor-ionicons.git",
+        "tag": "v1.3.3",
+        "commit": "782f9b99b098bfd1f82f36f9142e70cbbcc7e7e3"
       }
     }
   }

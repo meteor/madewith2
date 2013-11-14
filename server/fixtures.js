@@ -3,7 +3,7 @@ if (Apps.find().count() === 0) {
 
   // create 4 users
   var danyId = Meteor.users.insert({
-    profile: { name: 'Danaerys Targaryen' }
+    profile: { name: 'Daenerys Targaryen' }
   });
   var dany = Meteor.users.findOne(danyId);
 

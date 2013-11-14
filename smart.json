@@ -4,6 +4,7 @@
     "accounts-ui-bootstrap-dropdown": {},
     "bootstrap-3": {},
     "paginated-subscription": {},
-    "timeago": {}
+    "timeago": {},
+    "ionicons": {}
   }
 }
