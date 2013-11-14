@@ -59,7 +59,6 @@ body {
 
 .control-group {
     margin: 20px;
-    /*color: #a67a00;*/
     color: #1921b1;
 }
 
@@ -103,7 +102,6 @@ body {
 }
 .app .app-content { 
     float: left;
-    /*color: #a67a00;*/
     color: #4d54db;
 }
 .app .app-content h3 {
@@ -122,15 +120,11 @@ body {
     font-size: 14px;
     display: inline-block;
     color: #aaaadd;
-    /*color: #bf9930;*/
-    /*color: #a67a00;*/
 }
 .app .app-content small span {
     display: inline-block;
     color: #aaaadd;
     padding-left: 25px;
-    /*color: #bf9930;*/
-    /*color: #a67a00;*/
 }
 .app .app-content p { margin: 0 }
 .app .discuss {
