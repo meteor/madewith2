@@ -1,13 +1,13 @@
 Template.appItemshort.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
-  currentVoteValue: function(){return currentVoteValue;}
+  currentVoteValue: function(){return realVoteValue();}
 });
 
 Template.appItem.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
-  currentVoteValue: function(){return currentVoteValue;},
+  currentVoteValue: function(){return realVoteValue();},
   hasDescript: function(){ //is there a description?
     return this.description != undefined;
   }
@@ -56,7 +56,8 @@ Template.appDetailsLine.helpers({
   },
   score: function(){return this.score;},
   score: function(){return this.votecache;},
-  appID: function(){return this._id;}
+  appID: function(){return this._id;},
+  currentVoteValue: function(){return realVoteValue();}
 });
 
 Template.appItemshort.events({

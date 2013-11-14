@@ -1,6 +1,6 @@
 newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
 popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
-currentVoteValue = Meteor.subscribe('currentVoteValue');
+currentVoteValue = Meteor.subscribe('voteValue');
 
 Meteor.subscribe('comments');
 

@@ -22,21 +22,21 @@
 </template>
 
 <template name="appDetailsLine">
-  <p><small>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small>| 
+  <p><small>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small> 
     <span class="icons">
     {{#if ownApp}}
-      <a href="{{ pathFor 'appEdit' }}"><i class="ion-compose" style="font-size:24px"></i></a> | 
+      <a href="{{ pathFor 'appEdit' }}"><i class="ion-compose" style="font-size:24px"></i></a>  
     {{/if}}
-    <a href="{{url}}"><i class="ion-link" style="font-size:24px"></i></a> | 
+    <a href="{{url}}"><i class="ion-link" style="font-size:24px"></i></a>  
     {{#if hasSource}}
-      <a href="{{source}}"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a> | 
+      <a href="{{source}}"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>  
     {{/if}}
     </span>
-    <small><a href="{{ pathFor 'appPage' }}">{{commentLinkText}} <i class="ion-chatboxes"  style="font-size:24px"></i></a></small>
+    <small><a href="{{ pathFor 'appPage' }}"><i class="ion-chatboxes"  style="font-size:24px"></i> {{commentLinkText}}</a></small>
   </p>
   <p><</p>
   <p><u>Debug Mode stuff:</u></p>
   <p>Score:{{score}}</p>
-  <!-- p>VoteCache:{{votecache}}</p> -->
+  <p>currentVoteValue:{{currentVoteValue}}</p>
   <p>_id: {{appID}}</p>
 </template>
