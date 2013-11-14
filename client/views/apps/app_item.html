@@ -34,10 +34,12 @@
     </span>
     <small><a href="{{ pathFor 'appPage' }}"><i class="ion-chatboxes"  style="font-size:24px"></i> {{commentLinkText}}</a></small>
   </p>
-  <p><</p>
-  <p><u>Debug Mode stuff:</u></p>
-  <p>Score:{{score}}</p>
-  <p>votecache:{{votecache}}</p>
-  <p>currentVoteValue:{{currentVoteValue}}</p>
-  <p>_id: {{appID}}</p>
+  {{# if debugmode}}
+    <p>_</p>
+    <p><u>Debug Mode stuff:</u></p>
+    <p>Score:{{score}}</p>
+    <p>votecache:{{votecache}}</p>
+    <p>currentVoteValue:{{currentVoteValue}}</p>
+    <p>_id: {{appID}}</p>
+  {{/if}}
 </template>
