@@ -106,6 +106,9 @@ body {
     float: left;
     color: #4d54db;
 }
+.app.hilight{
+    background-color: #ffffee;
+}
 .app .app-content h3 {
     margin: 0;
     line-height: 1.4;
@@ -138,15 +141,17 @@ body {
 .comments {
     list-style-type: none;
     margin: 0;
-    font-weight: 300;
+    font-weight: 200;
+    color: #4d54d8;
 }
 .comments li h4 {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 200;
     margin: 0;
 }
 .comments li h4 .date {
     font-size: 12px;
-    font-weight: normal;
+    font-weight: 200;
 }
 .comments li h4 a { font-size: 12px }
 .comments li p:last-child { margin-bottom: 0 }

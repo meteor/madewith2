@@ -1,5 +1,5 @@
 <template name="appItem">
-  <div class="app">
+  <div class="app {{sourceClass}}">
     {{> upvoteButton}}
     <div class="app-content">
     	<p><h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
@@ -12,9 +12,10 @@
     </div>
   </div>
 </template>
+<!-- .app-content.hilight -->
 
 <template name="appItemshort">
-  <div class="app">{{> upvoteButton}}<div class="app-content">
+  <div class="app {{sourceClass}}">{{> upvoteButton}}<div class="app-content">
     <p><h3><a href="{{ pathFor 'appPage' }}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
     <small>{{> appDetailsLine}}</small>
   </div></div>

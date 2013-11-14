@@ -1,8 +1,14 @@
-
-//is there a wayto put combine this?
-
 Template.appItemshort.helpers({
   domain: function() {return getDomain(this);},
+  sourceClass: function(){return getsourceClass(this.source);}
+});
+
+Template.appItem.helpers({
+  domain: function() {return getDomain(this);},
+  sourceClass: function(){return getsourceClass(this.source);},
+  hasDescript: function(){ //is there a description?
+    return this.description != undefined;
+  }
 });
 
 Template.upvoteButton.helpers({
@@ -19,12 +25,12 @@ function getUpvotedClass(userId, self){
     }
 }
 
-Template.appItem.helpers({
-  domain: function() {return getDomain(this);},
-  hasDescript: function(){ //is there a description?
-    return this.description != undefined;
-  }
-});
+function getsourceClass(source){
+  if (source != undefined) {
+    return 'hilight';
+  } else{ return ''; };
+}
+
 
 Template.appDetailsLine.helpers({
   ownApp: function() {
