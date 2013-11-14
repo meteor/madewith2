@@ -3,5 +3,10 @@
     {{#each apps}}
       {{> appItemshort}}
     {{/each}}
+    {{#if appsReady}}
+    	{{#unless allAppsLoaded}}
+    		<a class="load-more" href="#">Load more</a>
+    	{{/unless}}
+    {{/if}}
   </div>
 </template>

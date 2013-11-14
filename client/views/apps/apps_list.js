@@ -10,3 +10,10 @@ Template.appsList.helpers({
   	return appsHandle.ready() && Apps.find().count() < appsHandle.loaded();
   }
 });
+
+Template.appsList.events({
+	'click .load-more': function(e) {
+		e.preventDefault();
+		appsHandle.loadNextPage();
+	}
+});
