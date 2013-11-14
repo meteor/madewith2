@@ -1,21 +1,18 @@
-// Template.appItem.helpers({
-//   commentsCount: function(){
-//     return getCommentsCount(this);
-//   }
-// });
 
-// Template.appItemshort.helpers({
-//   commentsCount: function(){
-//     thisapp = Apps.find({appId: self._id});
-//     return thisapp.commentsCount;
-//   }
-// });
+//is there a wayto put combine this?
 
-Template.appTitleLine.helpers({
+Template.appItemshort.helpers({
   domain: function() {
-    var a = document.createElement('a');
-    a.href = this.url;
-    return a.hostname;
+    return getDomain(this);
+  }
+});
+
+Template.appItem.helpers({
+  domain: function() {
+    return getDomain(this);
+  },
+  hasDescript: function(){
+    return this.description != undefined;
   }
 });
 
@@ -40,10 +37,11 @@ Template.appDetailsLine.helpers({
   }
 });
 
-// function getCommentsCount(self){
-//     //commentsCount = this.commentsCount;
-//     return Comments.find({appId: self._id}).count();
-// }
+function getDomain(self){
+  var a = document.createElement('a');
+  a.href = self.url;
+  return a.hostname;
+}
 
 //returns 's' if >1, '' otherwise
 // function pluralize(count) { //proper version
@@ -60,9 +58,3 @@ function pluralize(count) {//concise version
   return '';
 }
 
-
-/*Template.appsList.helpers({
-  apps: function() {
-    return Apps.find();
-  }
-});*/

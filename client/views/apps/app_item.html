@@ -1,8 +1,10 @@
 <template name="appItem">
   <div class="app"><div class="app-content">
-    	{{> appTitleLine}}
+    	<p><h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
       	<small>
-      		<p><span>{{description}}</span></p>
+          {{#if hasDescript}}
+      		  <p><span>{{description}}</span></p>
+          {{/if}}
           {{> appDetailsLine}}
       	</small>
   </div></div>
@@ -10,14 +12,9 @@
 
 <template name="appItemshort">
   <div class="app"><div class="app-content">
-    {{> appTitleLine}}
+    <p><h3><a href="{{ pathFor 'appPage' }}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
     <small>{{> appDetailsLine}}</small>
   </div></div>
-</template>
-
-<template name="appTitleLine">
-  <p><h3><a href="{{ pathFor 'appPage' }}">{{title}}</a>
-    <a href="{{url}}"><span>({{domain}})</span></a></h3></p>
 </template>
 
 <template name="appDetailsLine">
@@ -25,9 +22,10 @@
     {{#if ownApp}}
       <a href="{{ pathFor 'appEdit' }}">Edit</a> | 
     {{/if}}
+    <a href="{{url}}">Link</a> | 
     {{#if hasSource}}
       <a href="{{source}}">Source</a> | 
     {{/if}}
     <a href="{{ pathFor 'appPage' }}">{{commentLinkText}}</a>
-  </p> {{commentsCount}}
+  </p>
 </template>
