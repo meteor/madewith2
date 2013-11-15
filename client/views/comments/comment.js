@@ -1,9 +1,3 @@
-// Template.comment_list.helpers({
-// 	comments: function() {
-// 		console.log(appId);
-// 		return Comments.find({appId: this._id});
-// 	}
-// });
 
 Session.setDefault('comment-id', null);
 
