@@ -31,5 +31,6 @@ Meteor.methods({
                     }, 
                     {$addToSet: {children: commentId},
     });
+    console.log(Comments.findOne({_id: comment.parentComment}));
   }
 });
