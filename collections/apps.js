@@ -5,8 +5,6 @@ Apps.allow({
   remove: ownsDocument
 });
 
-//var timer = Meteor.setInterval(foo,updateFrequency);
-
 Meteor.methods({
   app: function(appAttributes) {
     var user = Meteor.user(), // ensure the user is logged in
@@ -35,13 +33,13 @@ Meteor.methods({
       upvoters: [], 
       votes: 0,
       score: 0,
-      votecache: 0
     });
 
     var appId = Apps.insert(app);
 
     return appId;
   },
+  
   upvote: function(appId){
     var user = Meteor.user(); //ensure user is logged in
     if (!user)

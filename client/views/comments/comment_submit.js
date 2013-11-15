@@ -27,9 +27,6 @@ Template.commentSubmit.events({
 
           postComment(comment, $body, isChild);
 
-          //notifyParents(comment);
-        //how do we render them?  worry about that later.
-
       } else{           //do this for root comment
 
           comment.parentComment = null; //set parent to null

@@ -1,7 +1,9 @@
+
+// subscriptions to Apps collection
 newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
 popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
-// currentVoteValue = Meteor.subscribe('voteValue');
 
+// subscriptions to Comments collection
 Meteor.subscribe('comments');
 
 Deps.autorun(function(){
@@ -59,7 +61,6 @@ Router.map(function () {
       var user = Meteor.user();
       if (! user) {
         this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
-        //alert("Please log in.");
         this.render('accessDenied');
         return this.stop();   
       }

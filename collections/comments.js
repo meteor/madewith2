@@ -26,11 +26,8 @@ Meteor.methods({
 
   notifyParents: function(comment, commentId){
     //notify parent comments of their new children
-    Comments.update({_id: comment.parentComment,
-                children: {$ne: commentId}
-                    }, 
+    Comments.update({_id: comment.parentComment,children: {$ne: commentId}}, 
                     {$addToSet: {children: commentId},
     });
-    //console.log(Comments.findOne({_id: comment.parentComment}));
   }
 });
