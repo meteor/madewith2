@@ -21,11 +21,8 @@ function getComments(Comments, self){
 
 Template.commentception.helpers({
   isParent: function(){  //do I have nonzero children?
-    //console.log(Comments.findOne({_id: this._id}));
-      myChildren = Comments.findOne({_id: this._id}).children;
-        if (!_.isEmpty(myChildren))
-          return true;
-        return false;
+    //here, this._id will get you the parent comment's id
+    return (!_.isEmpty(Comments.findOne({_id: this._id}).children));
   },
   childComment: function(){ //returns Comments.find( all the child comments )
     console.log('asdf;lkj;')

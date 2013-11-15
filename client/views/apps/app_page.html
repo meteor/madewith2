@@ -11,21 +11,15 @@
             {{> commentception}} 
         {{/each}}
     </ul>
-    {{#each comments}}
-        {{> comment}}
-    {{/each}}
   {{/with}}
 </template>
  
 <template name="commentception">
 
         {{> comment}}
-        <p>______(base comment)</p>
-
         {{#if isParent}}
-            **(isParent)
             {{#each childComment}}
-                (+){{> commentception}}
+                {{> commentception}}
             {{/each}}
         {{/if}}
 
