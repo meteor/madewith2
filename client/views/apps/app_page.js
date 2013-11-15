@@ -14,3 +14,12 @@ Template.appPage.helpers({
 function getComments(Comments, self){
 	Comments.find({appId: self._id});
 }
+
+Template.commentception.helpers({
+  isParent: function(){
+    //
+  },
+  childComment: function(){
+    //
+  }
+});
