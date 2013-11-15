@@ -2,7 +2,7 @@ Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    var $body = $(e.target).find('[name=body]');
+    var $body   = $(e.target).find('[name=body]');
     var comment = {
       body:     $body.val(),
       appId:    template.data._id,
@@ -28,15 +28,6 @@ Template.commentSubmit.events({
       //identify the parent
       myParent = Comments.findOne({_id: comment.parentComment});
 
-      //tell the parent -- don't know how, probably something like:
-
-      // Comments.update({
-      //   _id:      comment.parentComment,
-      //   children: {$ne: /*me*/}
-      // }, {
-      //   $addToSet: {children: /*me*/},
-      // });
-
       //post it?
       //how do we render them?  worry about that later.
 
@@ -48,24 +39,34 @@ Template.commentSubmit.events({
       console.log('the app i\'m talking about is');
       console.log(comment.appId);
 
-      // console.log('commentId');
-      // console.log(myId);
     };
     
     //post the comment
-    myId = Meteor.call('comment', comment, function(error, commentId) {
+    Meteor.call('comment', comment, function(error, commentId) {
       if (error){
         throwError(error.reason);
       } else {
         $body.val('');
+        console.log(commentId);
+
+        if (isChild){         //tell the parents
+            Comments.update({
+                    _id: comment.parentComment,
+               children: {$ne: commentId}
+            }, {
+              $addToSet: {children: commentId},
+            });
+        }
+
       }
     });
 
+    //console.log(commentId);
     
     // console.log(comment.appId);
     // console.log(Session.get('comment-id'));
     // console.log(isChild);
-    console.log(template.data);
+    //console.log(template.data);
     //console.log(commentId);
     // console.log(comment.appId);
 

@@ -71,6 +71,7 @@ if (Apps.find().count() === 0) {
     userId: dany._id,
     author: dany.profile.name,
     submitted: now - 5 * 3600 * 1000,
+    children: [],
     body: 'That sounds useful! Would you be interested in advising my campaign?'
   });
 
@@ -78,6 +79,7 @@ if (Apps.find().count() === 0) {
     appId: statecraftID,
     userId: olenna._id,
     author: olenna.profile.name,
+    children: [],
     submitted: now - 3 * 3600 * 1000,
     body: 'Let\'s take this discussion offline.'
   });
