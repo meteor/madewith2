@@ -8,21 +8,21 @@
     {{/if}}
     <ul class="comments comment-list">
         {{#each rootComments}}
-            {{> commentception}} 
+            <li>
+                {{> commentception}} 
+            </li>
         {{/each}}
     </ul>
   {{/with}}
 </template>
  
 <template name="commentception">
-
         {{> comment}}
         {{#if isParent}}
             {{#each childComment}}
                 {{> commentception}}
             {{/each}}
         {{/if}}
-
 </template>
 
 
