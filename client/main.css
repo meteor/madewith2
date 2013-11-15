@@ -142,10 +142,23 @@ body {
 }
 
 .comments {
-    list-style-type: none;
+    list-style-type:none;
     margin: 10;
     font-weight: 200;
     color: #4d54d8;
+}
+.comments li {
+    padding: 0;
+}
+.comments li li{
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top:0;
+    box-shadow: 0 0 0;
+    /*margin-top: 10px;*/
 }
 .comments li h4 {
     font-size: 14px;
