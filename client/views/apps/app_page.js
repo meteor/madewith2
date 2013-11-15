@@ -2,15 +2,13 @@ Template.appPage.helpers({
   currentApp: function() {
     return Apps.findOne(Session.get('currentAppId'));
   },
-  comments: function() { //return getComments(Comments, this);
+  comments: function() { 
   	return Comments.find({appId: this._id});
-
   },
   app: function(){
   	return Apps.findOne(this.comments); //might not be right
   },
-  rootComments: function() { //return getComments(Comments, this);
-    //console.log(Comments.find({appId: this._id, parentComment: null}));
+  rootComments: function() { 
     return Comments.find({appId: this._id, parentComment: null});//and isroot
   },
 });
@@ -21,7 +19,7 @@ function getComments(Comments, self){
 
 Template.commentception.helpers({
   isParent: function(){  //do I have nonzero children?
-    //here, this._id will get you the parent comment's id
+    //note: this._id is the parent comment's id, not the appId
     return (!_.isEmpty(Comments.findOne({_id: this._id}).children));
   },
   childComment: function(){ //returns Comments.find( all the child comments )
@@ -29,11 +27,7 @@ Template.commentception.helpers({
     console.log(this._id);
     return Comments.find({parentComment: this._id});
   },
-  rootComments: function() { //return getComments(Comments, this);
-    //console.log(Comments.find({appId: this._id, parentComment: null}));
+  rootComments: function() { 
     return Comments.find({appId: this._id, parentComment: null});//and isroot
   },
 });
-
-    //console.log(this._id);
-    //console.log(Comments.find({appId: this._id}));

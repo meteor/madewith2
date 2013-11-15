@@ -2,6 +2,7 @@ Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
+    //build the comment from its parts
     var $body     = $(e.target).find('[name=body]');
       var comment = {
         body:     $body.val(),

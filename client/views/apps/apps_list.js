@@ -8,9 +8,10 @@ Template.appsList.helpers({
   },
   allAppsLoaded: function() {
   	return this.handle.ready() && Apps.find().count() < this.handle.loaded();
-  }
+  } 
 });
 
+//pagination
 Template.appsList.events({
 	'click .load-more': function(e) {
 		e.preventDefault();
@@ -18,6 +19,7 @@ Template.appsList.events({
 	}
 });
 
+// the /newest page list
 Template.newApps.helpers({
   options: function(){
     return {
@@ -27,6 +29,7 @@ Template.newApps.helpers({
   }
 });
 
+// the frontpage list
 Template.popularApps.helpers({
   options: function(){
     return {

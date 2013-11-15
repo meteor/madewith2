@@ -14,16 +14,13 @@ Template.appSubmit.events({
     }
 
     Meteor.call('app', app, function(error, id) {
-      if (error){
-        //display error to user
+      if (error){        //display error to user
         throwError(error.reason);
         // if the error is that the app already exists, take us there
         if (error.error === 302)
           Router.go('appPage', {_id: error.details})
       } else {
-        //Router.go('appPage', id)
         Router.go('appPage', {_id: id});
-        //TODO: when 'newest' is implemented, people should be sent to /newest
       }
     });
   }
