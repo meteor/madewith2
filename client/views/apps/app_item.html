@@ -1,12 +1,10 @@
 <template name="appItem">
   <div class="app {{sourceClass}}">{{> upvoteButton}}<div class="app-content">
     	<p><h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
-      	<!-- <small> -->
           {{#if hasDescript}}
       		  <p><span>{{description}}</span></p>
           {{/if}}
           {{> appDetailsLine}}
-      	<!-- </small> -->
   </div></div>
 </template>
 

@@ -9,8 +9,30 @@ Template.commentSubmit.events({
     };
 
     //original version
-    Meteor.call('comment', comment, commentRefresh(error, commentId));
+    //Meteor.call('comment', comment, commentRefresh(error, commentId));
 
+
+    var isChild = Session.equals('comment-id', comment.appId);
+
+    if (isChild) {
+      //do this for the child version
+    } else{
+      //do this for root comment
+
+    Meteor.call('comment', comment, function(error, commentId) {
+        if (error){
+          throwError(error.reason);
+        } else {
+          $body.val('');
+        }
+      });
+    };
+    
+
+    
+    console.log(comment.appId);
+    console.log(Session.get('comment-id'));
+    console.log(isChild);
 
     // if(getCurrentTemplate() == 'comment_reply'){
     //     //it's a child comment if it's a reply
