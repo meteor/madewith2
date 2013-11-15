@@ -8,7 +8,11 @@ Template.appPage.helpers({
   },
   app: function(){
   	return Apps.findOne(this.comments); //might not be right
-  }
+  },
+  rootComments: function() { //return getComments(Comments, this);
+    //console.log(Comments.find({appId: this._id, parentComment: null}));
+    return Comments.find({appId: this._id, parentComment: null});//and isroot
+  },
 });
 
 function getComments(Comments, self){
@@ -17,29 +21,22 @@ function getComments(Comments, self){
 
 Template.commentception.helpers({
   isParent: function(){  //do I have nonzero children?
-    console.log(Comments.findOne({_id: this._id}));
-    if (Comments.findOne({_id: this._id}) === undefined) {
-      return false;
-    } else{
+    //console.log(Comments.findOne({_id: this._id}));
       myChildren = Comments.findOne({_id: this._id}).children;
         if (!_.isEmpty(myChildren))
           return true;
-        if (myChildren === undefined)
-          return false;
-    };
-
-
-
-    // if (Comments.findOne({_id: this._id}) === undefined)
-    //   return false;
-    // myChildren = Comments.findOne({_id: this._id}).children;
-    // if (!_.isEmpty(myChildren))
-    //   return true;
-    // //console.log(!_.isEmpty(Comments.findOne({_id: this._id}).children));
-    // myChildren = Comments.findOne({_id: this._id}).children;
+        return false;
   },
   childComment: function(){ //returns Comments.find( all the child comments )
+    console.log('asdf;lkj;')
     console.log(this._id);
-    return Comments.findOne({parentComment: this._id});
-  }
+    return Comments.find({parentComment: this._id});
+  },
+  rootComments: function() { //return getComments(Comments, this);
+    //console.log(Comments.find({appId: this._id, parentComment: null}));
+    return Comments.find({appId: this._id, parentComment: null});//and isroot
+  },
 });
+
+    //console.log(this._id);
+    //console.log(Comments.find({appId: this._id}));

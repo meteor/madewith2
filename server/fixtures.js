@@ -30,7 +30,7 @@ if (Apps.find().count() === 0) {
     url: 'http://pages2.meteor.com',
     source: 'https://github.com/alethes/meteor-pages',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 0,
+    commentsCount: 0, 
     upvoters: [], votes: 0, votecache: 0, score: 0
   });
 
@@ -62,6 +62,7 @@ if (Apps.find().count() === 0) {
     userId: olenna._id,
     author: olenna.profile.name,
     url: 'http://properapp.com',
+    submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
     upvoters: [], votes: 0, votecache: 0, score: 0
   });
@@ -71,7 +72,7 @@ if (Apps.find().count() === 0) {
     userId: dany._id,
     author: dany.profile.name,
     submitted: now - 5 * 3600 * 1000,
-    children: [],
+    children: [], parentComment: null,
     body: 'That sounds useful! Would you be interested in advising my campaign?'
   });
 
@@ -79,8 +80,10 @@ if (Apps.find().count() === 0) {
     appId: statecraftID,
     userId: olenna._id,
     author: olenna.profile.name,
-    children: [],
+    children: [], parentComment: null,
     submitted: now - 3 * 3600 * 1000,
     body: 'Let\'s take this discussion offline.'
   });
 }
+
+//Comments.find({appId: '6jxZ3DWowGffLunh5'})
