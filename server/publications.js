@@ -11,7 +11,7 @@ Meteor.publish('singleApp', function(id){
 });
 
 Meteor.publish('comments', function(appId){
-	return Comments.find({appId: appId});
+	return Comments.find({appId: appId}, {sort: {submitted: -1}});
 });
 
 

@@ -1,3 +1,5 @@
+//let's add some fake data for testing purposes
+
 if (Apps.find().count() === 0) {
   var now = new Date().getTime();
 
@@ -85,5 +87,3 @@ if (Apps.find().count() === 0) {
     body: 'Let\'s take this discussion offline.'
   });
 }
-
-//Comments.find({appId: '6jxZ3DWowGffLunh5'})
