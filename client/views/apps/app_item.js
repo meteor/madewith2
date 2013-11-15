@@ -32,12 +32,12 @@ function getUpvotedClass(userId, self){
     }
 }
 
+//change color if sourcecode is included
 function getsourceClass(source){
   if (source != undefined) {
     return 'hilight';
   } else{ return ''; };
 }
-
 
 Template.appDetailsLine.helpers({
   ownApp: function() {
