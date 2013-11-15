@@ -11,10 +11,11 @@ Meteor.methods({
       throw new Meteor.Error(422, "I didn't see your comment. Try again?");
     if (!commentAttributes.appId)
       throw new Meteor.Error(422, "Huh. We weren't sure which app that comment was for. Try again?");
-    comment = _.extend(_.pick(commentAttributes, 'appId', 'body'), {
+    comment = _.extend(_.pick(commentAttributes, 'appId', 'body', 'parentComment','children'), {
       userId: user._id,
       author: user.profile.name,
-      submitted: new Date().getTime()
+      submitted: new Date().getTime(),
+
     });
 
     //update the app with the number of comments
