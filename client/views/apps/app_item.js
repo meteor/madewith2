@@ -59,10 +59,9 @@ Template.appDetailsLine.helpers({
   voteText: function(){
     return 'vote' + pluralize (this.votes);
   },
-  votecache: function(){return this.votecache;},
   appID: function(){return this._id;},
-  currentVoteValue: function(){return realVoteValue();},
-  debugmode: function(){return false;} //true if we want debug mode
+  //set to true if debugging 
+  debugmode: function(){return false;} 
 });
 
 Template.appItem.events({
