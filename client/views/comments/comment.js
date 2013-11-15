@@ -22,5 +22,3 @@ Template.comment.events({
 		Session.set('comment-id', this._id);
 	}
 });
-
-// Session ('Comment-id', _id of the main comment | null)
