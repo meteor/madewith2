@@ -13,10 +13,15 @@
     </ul>
   {{/with}}
 </template>
-
+ 
 <template name="commentception">
-    (-----){{comment}}
+    {{> comment}}
+    <p>______(base comment)</p>
+
     {{#if isParent}}
-        ()())(){{commentception}}
+        **(isParent)
+        {{#each childComment}}
+            (+){{> commentception}}
+        {{/each}}
     {{/if}}
 </template>
