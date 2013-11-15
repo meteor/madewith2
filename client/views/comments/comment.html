@@ -1,8 +1,22 @@
+
+
 <template name="comment">
 	<li>
 		<h4><span class="author">{{author}}</span>
 			<span class="date">{{timeago baseDate}}</span>
 		</h4>
 		<p>{{body}}</p>
+
+		<a href="#" class="reply">Reply</a>
+		
+		<div class="{{is_hidden}} {{visibleReply}}">
+			{{#if currentUser}}
+        		{{> commentSubmit}}
+    		{{else}}
+    			<p class="headsup-yellow">Please log in to reply. </p>
+    		{{/if}}
+		</div>
 	</li>
 </template>
+
+

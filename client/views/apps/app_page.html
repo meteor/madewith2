@@ -6,11 +6,10 @@
     {{else}}
     	<p class="headsup-yellow">Please log in to leave a comment. </p>
     {{/if}}
-    <ul class="comments">
-    	{{#each comments}}
-    		{{>comment}}
-    	{{/each}}
+    <ul class="comments comment-list">
+      {{#each comments}}
+        {{> comment}}
+      {{/each}}
     </ul>
   {{/with}}
 </template>
-
