@@ -20,6 +20,9 @@
 </template>
 
 <template name="appDetailsLine">
+  {{#if hasSource}}
+    Packages: {{packages}}  
+  {{/if}}
   <p><small>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small> 
     <span class="icons">
     {{#if ownApp}}

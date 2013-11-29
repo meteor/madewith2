@@ -61,7 +61,14 @@ Template.appDetailsLine.helpers({
   },
   appID: function(){return this._id;},
   //set to true if debugging 
-  debugmode: function(){return false;} 
+  debugmode: function(){return false;},
+  packages: function(){
+    var mySource = this.source;
+    console.log(mySource);
+    var n = str.indexOf("github.com/");
+    console.log(n);
+    return this.source;
+  },
 });
 
 Template.appItem.events({

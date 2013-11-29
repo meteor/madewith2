@@ -23,8 +23,6 @@ Template.commentception.helpers({
     return (!_.isEmpty(Comments.findOne({_id: this._id}).children));
   },
   childComment: function(){ //returns Comments.find( all the child comments )
-    console.log('asdf;lkj;')
-    console.log(this._id);
     return Comments.find({parentComment: this._id});
   },
   rootComments: function() { 
