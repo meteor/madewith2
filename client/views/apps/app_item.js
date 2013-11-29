@@ -63,11 +63,37 @@ Template.appDetailsLine.helpers({
   //set to true if debugging 
   debugmode: function(){return false;},
   packages: function(){
-    var mySource = this.source;
-    console.log(mySource);
-    var n = str.indexOf("github.com/");
-    console.log(n);
-    return this.source;
+    var mySource  = this.source;
+    var githubdomain = "github.com/";
+    var prefix    = "https://api.github.com/repos/";
+    var suffix    = "/contents/.meteor/packages";
+    var n         = mySource.indexOf(githubdomain,0);
+    var repoStart = n+githubdomain.length;
+    var repoId    = mySource.substring(repoStart,mySource.length);
+    var pSource   = prefix + repoId + suffix;
+    var myPackages64 = '';
+    // console.log(pSource);
+    data = $.getJSON(pSource, function(data){
+      // console.log(data);
+      myPackages64 = data.content;
+      // myPackages64.replace("\n","");
+      // console.log(myPackages64);
+      myPackages = atob(myPackages64.replace(/\n/g, ""));
+      console.log(myPackages);
+      return myPackages;
+    });
+    // console.log(data);
+    // console.log('myPackages');
+    // console.log(myPackages);
+    // console.log(data.content);
+    // var myPackages = atob(data.content);
+    // console.log(myPackages);
+    // var n = mySource.indexOf(githubdomain,0);
+    // console.log(n);
+    // var x = mySource.indexOf('/',n+githubdomain.length);
+    // console.log(x);
+    // mySource = 'https://github.com/sharett/balance';
+    return pSource;
   },
 });
 
