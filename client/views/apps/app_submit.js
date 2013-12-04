@@ -5,9 +5,9 @@ Template.appSubmit.events({
     var user = Meteor.user();
 
     var app = {
-      url: $(e.target).find('[name=url]').val(),
+      url:    $(e.target).find('[name=url]').val(),
       source: $(e.target).find('[name=source]').val(),
-      title: $(e.target).find('[name=title]').val(),
+      title:  $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       author: user.profile.name,
       //commentCount: 0,

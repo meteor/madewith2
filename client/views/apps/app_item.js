@@ -72,9 +72,17 @@ Template.appDetailsLine.helpers({
     var myPackages64 = '';
     var myPackages = '';
     // console.log(pSource);
-    var res = Meteor.http.get(pSource);
+    myPackages = Meteor.call("get_packages",pSource, function(err,result){
+        // $('.btn_scrape').removeAttr('disabled')
+        console.log('result');
+        console.log(result);
+    });
+
+    // console.log(myPackages);
+    
+    // res = Meteor.http.get(pSource);
     // var myData = JSON.parse(data);
-    console.log(res.data);
+    // console.log(res.data);
     // myPackages64 = data.content;
     //     myPackages = atob(myPackages64.replace(/\n/g, ""));
     //     console.log(myPackages);

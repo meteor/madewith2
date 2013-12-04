@@ -61,5 +61,9 @@ Meteor.methods({
       }, {
         $inc: {score: 1},
     });
-  }
+  },
 });
+
+if (Meteor.isServer) {
+
+}
