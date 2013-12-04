@@ -24,19 +24,19 @@
       <div class="control-group">
           <label class="control-label" for="description">Description</label>
           <div class="controls">
-              <input name="description" type="text" value="{{description}}" placeholder="" size="70" />
+              <textarea id="description" name="description" rows="4" cols="72" placeholder="{{description}}">{{description}}</textarea>
           </div>
       </div> 
 
       <div class="control-group">
           <div class="controls">
-              <input type="submit" value="Submit Your Revision" class="btn btn-success btn-lg submit"/>
+              <input type="submit" value="Update Your App's Listing" class="btn btn-success btn-lg submit"/>
           </div>
       </div>
       <hr/>
       <div class="control-group">
           <div class="controls">
-              <a class="btn btn-danger btn-lg delete" href="#"><i class="ion-trash-a"></i></a>
+              <a class="btn btn-danger btn-lg delete" href="#"><span class="glyphicon glyphicon-trash"></span></a>
           </div>
       </div>
     </form>
