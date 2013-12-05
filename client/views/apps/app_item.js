@@ -39,6 +39,7 @@ Template.appDetailsLine.helpers({
     return this.userId == Meteor.userId();
   },
   hasSource: function() {return this.source;},
+  //todo: change hasSource to checking for field existing
   commentLinkText: function(){
     commentsCount = this.commentsCount;
     if (commentsCount === 0) { //if no comments, link is 'Discuss'
@@ -57,44 +58,9 @@ Template.appDetailsLine.helpers({
   appID: function(){return this._id;},
   debugmode: function(){return false;}, //set to true if debugging 
   packages: function(){
+    console.log(this.packages);
     return this.packages.join(', ');
   },
-  // packages: function(){
-  //   var mySource  = this.source;
-  //   var githubdomain = "github.com/";
-  //   var prefix    = "https://api.github.com/repos/";
-  //   var suffix    = "/contents/.meteor/packages";
-  //   var repoId    = mySource.substring(mySource.indexOf(githubdomain,0)+githubdomain.length,mySource.length);
-  //   var pSource   = prefix + repoId + suffix;
-  //   var myPackages64 = '';
-  //   var myPackages = '';
-  //   // console.log(pSource);
-  //   myPackages = Meteor.call("get_packages",pSource, function(err,result){
-  //       // $('.btn_scrape').removeAttr('disabled')
-  //       console.log('result');
-  //       console.log(result);
-  //   });
-
-    // console.log(myPackages);
-    
-    // res = Meteor.http.get(pSource);
-    // var myData = JSON.parse(data);
-    // console.log(res.data);
-    // myPackages64 = data.content;
-    //     myPackages = atob(myPackages64.replace(/\n/g, ""));
-    //     console.log(myPackages);
-    //     return myPackages;
-    // $.getJSON(pSource, function(data){
-    // })
-    //   .done(function( data ) {
-    //     console.log('done');
-    //     myPackages64 = data.content;
-    //     myPackages = atob(myPackages64.replace(/\n/g, ""));
-    //     console.log(myPackages);
-    //     return myPackages;
-    //   });
-    // return myPackages;
-  // },
 });
 
 Template.appItem.events({

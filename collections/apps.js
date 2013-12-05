@@ -64,6 +64,3 @@ Meteor.methods({
   },
 });
 
-if (Meteor.isServer) {
-
-}
