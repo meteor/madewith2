@@ -65,12 +65,13 @@ Template.appDetailsLine.helpers({
   },
   appID: function(){return this._id;},
   debugmode: function(){return false;}, //set to true if debugging 
-  packages: function(){
+  getMyPkgs: function(){
     // console.log(getPackages(this).join(', '));
-    console.log(this.packages);
+    // console.log(this.pkgs);
+    // console.log(this.packages);
     // console.log(getPackages(this));
-    // console.log(this.packages.join(', '));
-    // return this.packages.join(', ');
+    console.log(this.pkgs.join(', '));
+    return this.pkgs.join(', ');
   },
   // packages: function(){
   //   var mySource  = this.source;
@@ -121,14 +122,13 @@ Template.appItemshort.events({
   }
 });
 
-function getPackages(self){
-  return joinPackages(self.packages);
-  // return mypackages.join(', ');
-}
+// function getPackages(self){
+//   return joinPackages(self.packages);
+// }
 
-function joinPackages(mypkgs){
-  return mypkgs.join(', ');
-}
+// function joinPackages(mypkgs){
+//   return mypkgs.join(', ');
+// }
 
 function doUpvote(e, self){
   e.preventDefault();
