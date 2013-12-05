@@ -15,14 +15,16 @@ Template.appEdit.events({
       title: $(e.target).find('[name=title]').val(),
       source: $(e.target).find('[name=source]').val(),
       description: $(e.target).find('[name=description]').val(),
-      pkgs: getPkgData(computeURL("github.com/", $(e.target).find('[name=source]').val()), function (err, res) { 
-        // console.log('test inside');
-        // console.log(res.data.content);
-        // var myPackages64 = res.data.content;
-        var myPackages = atob(res.data.content.replace(/\n/g, ""));
-        console.log(myPackages);
-      }), 
+      pkgs: getPkgData(computeURL("github.com/", 
+              $(e.target).find('[name=source]').val()), 
+              function (err, res) { 
+                var myPackages = parsePkgData(atob(res.data.content.replace(/\n/g, "")).split('\n'));
+                console.log('myPackages');
+                console.log(myPackages);
+              }), 
     }
+    console.log(appProperties.description);
+    console.log(appProperties.pkgs);
 
     Apps.update(currentAppId, {$set: appProperties}, function(error) {
       if (error) {
@@ -33,6 +35,7 @@ Template.appEdit.events({
         Router.go('appPage', {_id: currentAppId});
       }
     });
+    console.log(appProperties.description);
   },
 
   'click .delete': function(e) {
@@ -45,6 +48,17 @@ Template.appEdit.events({
     }
   }
 });
+
+// parse pkg data 
+var parsePkgData = function (myPkgsRaw) {
+  for (var x = myPkgsRaw.length - 1; x >= 0; x--) {
+    if (myPkgsRaw[x] === '' || myPkgsRaw[x].indexOf('#') === 0){ 
+      myPkgsRaw.splice(x, 1); // delete blank and commented lines
+    };
+  };
+  return myPkgsRaw;
+}
+
 
 // get package list from github
 var getPkgData = function (myURL, cb) {
