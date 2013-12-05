@@ -10,7 +10,7 @@
 
 <template name="appItemshort">
   <div class="app {{sourceClass}}">{{> upvoteButton}}<div class="app-content">
-    <p><h3><a href="{{ pathFor 'appPage' }}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
+    <p><h3><a href="{{url}}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
     {{> appDetailsLine}}
   </div></div>
 </template>
@@ -28,7 +28,7 @@
     {{#if ownApp}}
       <a href="{{ pathFor 'appEdit' }}"><i class="ion-compose" style="font-size:24px"></i></a>  
     {{/if}}
-    <a href="{{url}}"><i class="ion-link" style="font-size:24px"></i></a>  
+      
     {{#if hasSource}}
       <a href="{{source}}"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>  
     {{/if}}

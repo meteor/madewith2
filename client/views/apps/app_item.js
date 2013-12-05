@@ -1,13 +1,13 @@
 Template.appItemshort.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
-  currentVoteValue: function(){return realVoteValue();}
+  // currentVoteValue: function(){return realVoteValue();},
 });
 
 Template.appItem.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
-  currentVoteValue: function(){return realVoteValue();},
+  // currentVoteValue: function(){return realVoteValue();},
   hasDescript: function(){ //is there a description?
     return this.description != undefined;
   }
@@ -63,20 +63,25 @@ Template.appDetailsLine.helpers({
   //set to true if debugging 
   debugmode: function(){return false;},
   packages: function(){
-    var mySource  = this.source;
-    var githubdomain = "github.com/";
-    var prefix    = "https://api.github.com/repos/";
-    var suffix    = "/contents/.meteor/packages";
-    var repoId    = mySource.substring(mySource.indexOf(githubdomain,0)+githubdomain.length,mySource.length);
-    var pSource   = prefix + repoId + suffix;
-    var myPackages64 = '';
-    var myPackages = '';
-    // console.log(pSource);
-    myPackages = Meteor.call("get_packages",pSource, function(err,result){
-        // $('.btn_scrape').removeAttr('disabled')
-        console.log('result');
-        console.log(result);
-    });
+    // console.log('test');
+    // return 'package list';
+    return this.packages.join(', ');
+  },
+  // packages: function(){
+  //   var mySource  = this.source;
+  //   var githubdomain = "github.com/";
+  //   var prefix    = "https://api.github.com/repos/";
+  //   var suffix    = "/contents/.meteor/packages";
+  //   var repoId    = mySource.substring(mySource.indexOf(githubdomain,0)+githubdomain.length,mySource.length);
+  //   var pSource   = prefix + repoId + suffix;
+  //   var myPackages64 = '';
+  //   var myPackages = '';
+  //   // console.log(pSource);
+  //   myPackages = Meteor.call("get_packages",pSource, function(err,result){
+  //       // $('.btn_scrape').removeAttr('disabled')
+  //       console.log('result');
+  //       console.log(result);
+  //   });
 
     // console.log(myPackages);
     
@@ -97,7 +102,7 @@ Template.appDetailsLine.helpers({
     //     return myPackages;
     //   });
     // return myPackages;
-  },
+  // },
 });
 
 Template.appItem.events({
@@ -110,6 +115,8 @@ Template.appItemshort.events({
     Meteor.call('upvote', this._id);
   }
 });
+
+
 
 function doUpvote(e, self){
   e.preventDefault();
