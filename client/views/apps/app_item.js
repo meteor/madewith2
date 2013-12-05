@@ -13,11 +13,6 @@ Template.appTitleLine.helpers({
   domain: function() {return getDomain(this);},
 });
 
-//TODO:
-//set conditional on global bool "verbose," which the router sets 
-//to false at home, and becomes true elsewhere
-//this will then combine appItem and appItemshort
-
 Template.upvoteButton.helpers({
   upvotedClass: function() {
     return getUpvotedClass(Meteor.userId(), this);
@@ -112,7 +107,6 @@ Template.appItemshort.events({
     Meteor.call('upvote', this._id);
   }
 });
-
 
 
 function doUpvote(e, self){
