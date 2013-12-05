@@ -103,6 +103,7 @@ body {
 .app .app-content { 
     float: left;
     color: #4d54db;
+    width: 100%;
 }
 .app.hilight{
     background-color: #ffffee;
