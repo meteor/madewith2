@@ -14,7 +14,8 @@ Template.appEdit.events({
       url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val(),
       source: $(e.target).find('[name=source]').val(),
-      description: $(e.target).find('[name=description]').val()
+      description: $(e.target).find('[name=description]').val(),
+      commentsCount: 0,
     }
 
     Apps.update(currentAppId, {$set: appProperties}, function(error) {

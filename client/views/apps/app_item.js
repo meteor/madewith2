@@ -32,9 +32,13 @@ function getUpvotedClass(userId, self){
 
 //change color if sourcecode is included
 function getsourceClass(source){
-  if (source != undefined) {
+  if (sourceExists(source)) {
     return 'hilight';
   } else{ return ''; };
+}
+
+function sourceExists(source){
+  return !(source === undefined || source === '');
 }
 
 Template.appDetailsLine.helpers({
@@ -42,16 +46,10 @@ Template.appDetailsLine.helpers({
     return this.userId === Meteor.userId();
   },
   hasSource: function() {
-    if (this.source === undefined || this.source === '') {
-      return false;
-    } else{
-      return true;
-    };
-    // console.log(this.source);
-    // return this.source;
+    return sourceExists(this.source);
   },
   commentLinkText: function(){
-    commentsCount = this.commentsCount;
+    var commentsCount = this.commentsCount;
     if (commentsCount === 0) { //if no comments, link is 'Discuss'
       return 'Discuss';
     } else{ // # Comments if nonzero comments
@@ -68,7 +66,9 @@ Template.appDetailsLine.helpers({
   appID: function(){return this._id;},
   debugmode: function(){return false;}, //set to true if debugging 
   packages: function(){
+    // console.log(getPackages(this).join(', '));
     console.log(this.packages);
+    // console.log(getPackages(this));
     // console.log(this.packages.join(', '));
     // return this.packages.join(', ');
   },
@@ -121,7 +121,14 @@ Template.appItemshort.events({
   }
 });
 
+function getPackages(self){
+  return joinPackages(self.packages);
+  // return mypackages.join(', ');
+}
 
+function joinPackages(mypkgs){
+  return mypkgs.join(', ');
+}
 
 function doUpvote(e, self){
   e.preventDefault();
