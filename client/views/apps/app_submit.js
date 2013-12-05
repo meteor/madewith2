@@ -10,9 +10,8 @@ Template.appSubmit.events({
       title:  $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       author: user.profile.name,
-      // pkgs: '',
-      packages:'',
-      //commentCount: 0,
+      pkgs:'',
+      commentCount: 0,
     }
 
     Meteor.call('app', app, function(error, id) {

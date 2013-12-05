@@ -1,6 +1,6 @@
 <template name="appItem">
-  <div class="app {{sourceClass}}">{{> upvoteButton}}<div class="app-content">
-    	<p><h3><a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
+  <div class="app {{sourceClass}}"><div class="app-content">
+          {{> appTitleLine}}
           {{#if hasDescript}}
       		  <p><span>{{description}}</span></p>
           {{/if}}
@@ -9,8 +9,8 @@
 </template>
 
 <template name="appItemshort">
-  <div class="app {{sourceClass}}">{{> upvoteButton}}<div class="app-content">
-    <p><h3><a href="{{url}}">{{title}}</a><a href="{{url}}"><span>({{domain}})</span></a></h3></p>
+  <div class="app {{sourceClass}}"><div class="app-content">
+    {{> appTitleLine}}
     {{> appDetailsLine}}
   </div></div>
 </template>
@@ -19,8 +19,12 @@
   <a href="#" class="upvote btn btn-link btn-lg {{upvotedClass}}" role="button"><i class="ion-arrow-up-b"></i></a>
 </template>
 
+<template name="appTitleLine">
+  <p><h3>{{> upvoteButton}}<a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
+</template>
+
 <template name="appDetailsLine">
-  {{#if hasSource}}
+  {{#if hasPkgs}}
     Packages: {{getMyPkgs}}
   {{/if}}
   <p><small>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small> 

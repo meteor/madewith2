@@ -1,20 +1,17 @@
 Template.appItemshort.helpers({
-  domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
 });
 
 Template.appItem.helpers({
-  domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
   hasDescript: function(){ //is there a description?
     return this.description != undefined;
   }
 });
 
-//TODO:
-//set conditional on global bool "verbose," which the router sets 
-//to false at home, and becomes true elsewhere
-//this will then combine appItem and appItemshort
+Template.appTitleLine.helpers({
+  domain: function() {return getDomain(this);},
+});
 
 Template.upvoteButton.helpers({
   upvotedClass: function() {
@@ -32,13 +29,13 @@ function getUpvotedClass(userId, self){
 
 //change color if sourcecode is included
 function getsourceClass(source){
-  if (sourceExists(source)) {
+  if (thingExists(source)) {
     return 'hilight';
   } else{ return ''; };
 }
 
-function sourceExists(source){
-  return !(source === undefined || source === '');
+function thingExists(myField){
+  return !(myField === undefined || myField === '' || myField === []);
 }
 
 Template.appDetailsLine.helpers({
@@ -46,7 +43,10 @@ Template.appDetailsLine.helpers({
     return this.userId === Meteor.userId();
   },
   hasSource: function() {
-    return sourceExists(this.source);
+    return thingExists(this.source);
+  },
+  hasPkgs: function() {
+    return thingExists(this.pkgs);
   },
   commentLinkText: function(){
     var commentsCount = this.commentsCount;
