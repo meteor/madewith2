@@ -1,13 +1,11 @@
 Template.appItemshort.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
-  // currentVoteValue: function(){return realVoteValue();},
 });
 
 Template.appItem.helpers({
   domain: function() {return getDomain(this);},
   sourceClass: function(){return getsourceClass(this.source);},
-  // currentVoteValue: function(){return realVoteValue();},
   hasDescript: function(){ //is there a description?
     return this.description != undefined;
   }
@@ -60,11 +58,8 @@ Template.appDetailsLine.helpers({
     return 'vote' + pluralize (this.votes);
   },
   appID: function(){return this._id;},
-  //set to true if debugging 
-  debugmode: function(){return false;},
+  debugmode: function(){return false;}, //set to true if debugging 
   packages: function(){
-    // console.log('test');
-    // return 'package list';
     return this.packages.join(', ');
   },
   // packages: function(){
