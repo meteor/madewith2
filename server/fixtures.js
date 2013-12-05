@@ -65,7 +65,7 @@ if (Apps.find().count() === 0) {
       author: dany.profile.name,
       userId: dany._id,
       url: 'http://google.com/?q=test-' + i,
-      pkgs: '',
+      pkgs: [],
       submitted: now - i * 3600 * 1000,
       commentsCount: 0,
       upvoters: [], votes: 0, votecache: 0, score: 0

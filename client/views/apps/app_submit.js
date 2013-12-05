@@ -10,7 +10,7 @@ Template.appSubmit.events({
       title:  $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
       author: user.profile.name,
-      pkgs:'',
+      pkgs:[],
       commentCount: 0,
     }
 
