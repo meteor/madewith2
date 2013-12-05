@@ -60,7 +60,9 @@ Template.appDetailsLine.helpers({
   appID: function(){return this._id;},
   debugmode: function(){return false;}, //set to true if debugging 
   packages: function(){
-    return this.packages.join(', ');
+    console.log(this.packages);
+    console.log(this.packages.join(', '));
+    // return this.packages.join(', ');
   },
   // packages: function(){
   //   var mySource  = this.source;
