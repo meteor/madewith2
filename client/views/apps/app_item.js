@@ -39,9 +39,17 @@ function getsourceClass(source){
 
 Template.appDetailsLine.helpers({
   ownApp: function() {
-    return this.userId == Meteor.userId();
+    return this.userId === Meteor.userId();
   },
-  hasSource: function() {return this.source;},
+  hasSource: function() {
+    if (this.source === undefined || this.source === '') {
+      return false;
+    } else{
+      return true;
+    };
+    // console.log(this.source);
+    // return this.source;
+  },
   commentLinkText: function(){
     commentsCount = this.commentsCount;
     if (commentsCount === 0) { //if no comments, link is 'Discuss'
@@ -61,7 +69,7 @@ Template.appDetailsLine.helpers({
   debugmode: function(){return false;}, //set to true if debugging 
   packages: function(){
     console.log(this.packages);
-    console.log(this.packages.join(', '));
+    // console.log(this.packages.join(', '));
     // return this.packages.join(', ');
   },
   // packages: function(){
