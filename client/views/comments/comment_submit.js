@@ -38,4 +38,5 @@ function postComment(comment, $body, isChild){ //post the comment
         }
       }
   });
+  Session.set('comment-id', null);
 };
