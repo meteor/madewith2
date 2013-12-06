@@ -10,7 +10,7 @@ Template.appEdit.events({
 
     var currentAppId = Session.get('currentAppId');
 
-    var myPackages = Meteor.call('get_packages', $(e.target).find('[name=source]').val(), function(err, myPackages){
+    Meteor.call('get_packages', $(e.target).find('[name=source]').val(), function(err, myPackages){
 
       var appProperties = {
         url: $(e.target).find('[name=url]').val(),

@@ -25,7 +25,7 @@ Meteor.methods({
     }
 
     // pick out the whitelisted keys
-    var app = _.extend(_.pick(appAttributes, 'url', 'title', 'source','description'), {
+    var app = _.extend(_.pick(appAttributes, 'url', 'title', 'source','description','pkgs'), {
       userId: user._id, 
       author: user.profile.name, 
       submitted: new Date().getTime(),
