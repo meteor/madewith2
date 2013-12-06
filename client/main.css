@@ -24,6 +24,8 @@ body {
 .brand {
     color: #eef;
     font-size: 42px;
+    margin-top: 0px;
+    padding: 10px;
 }.brand:hover{
     color: #fff;
 }
@@ -31,10 +33,10 @@ body {
 
 .login, .btn-link {
     text-align: center;
-    color: #7277db;
+
+    color: #a2a7ff;
     font-size: 18px;
     padding: 12px;
-    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 14px;
@@ -150,6 +152,7 @@ body {
 .comments li {
     padding: 0;
 }
+
 .comments li li{
     padding-top: 5px;
     padding-left: 20px;
@@ -202,3 +205,20 @@ body {
     text-decoration: none;
     background-color: #eeeeff;
 }
+
+.navbtn{
+    background-color: #1f2455;
+    border: 2px solid #227;
+} .navbtn:hover,
+  .navbtn:focus{
+    color: #2f3485;
+    background-color: #eeeeff;
+    text-decoration: underline;
+}
+
+.navsub{
+    margin-top: 21px;
+}
+/*.pull-left .pull-right{
+    margin: 0px;
+}*/

@@ -3,15 +3,18 @@
 
     <header class="navbar">
       <div class="navbar-inner">
-
-        <a class="brand" href="{{ pathFor 'home' }}">Made with <span style="font-weight:bold">Meteor</span> + <i class="ion-heart" style="color:#ff6080"></i></a> 
+        <div class="nav pull-left">
+           
+          <a class="btn-link navbtn navsub {{activeRouteClass 'appSubmit'}}" href="{{ pathFor 'appSubmit' }}" role="button">Share App</a> 
+          <a class="btn-link navbtn navsub {{activeRouteClass 'newest'}}" href="{{ pathFor 'newest' }}" role="button">Newest</a> 
+          <a class="btn-link navbtn invisible" href="{{ pathFor 'appSubmit' }}" role="button"></a> 
+          <a class="btn-link navbtn brand {{activeRouteClass 'home'}}" href="{{ pathFor 'home' }}"> <span style="font-size:42px">Made with <span style="font-weight:bold">Meteor</span> + <i class="ion-heart" style="color:#ff6080"></i></span></a>
+        </div>
 
         <div class="nav pull-right">
-          <div class="login">
+          <div class="login navsub">
             {{loginButtons align="right"}}
           </div>
-          <a class="btn btn-link {{activeRouteClass 'appSubmit'}}" href="{{ pathFor 'appSubmit' }}" role="button">Share <i class="ion-speakerphone" style="color:#78e"></i></a>
-          <a class="btn btn-link {{activeRouteClass 'newest'}}" href="{{ pathFor 'newest' }}" role="button">Newest <i class="ion-archive" style="color:#78e"></i></a> 
         </div>
       </div>
     </header>
