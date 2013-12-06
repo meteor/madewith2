@@ -44,7 +44,8 @@ Meteor.methods({
 
     	getPkgData(computeURL("github.com/", sourceURL), 
 	      function (err, res) { 
-	        myPackages = parsePkgData(new Buffer(res.data.content.replace(/\n/g, "") || '', 'base64').toString('utf8').split('\n'));
+            var content = res.data.content || ''
+	        myPackages = parsePkgData(new Buffer(content.replace(/\n/g, "") || '', 'base64').toString('utf8').split('\n'));
 	        pkgFuture.return(myPackages);
 	      });
     	var myPkgFuture = pkgFuture.wait();
