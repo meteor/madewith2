@@ -14,33 +14,42 @@ Meteor.publish('comments', function(appId){
 	return Comments.find({appId: appId}, {sort: {submitted: -1}});
 });
 
-// Meteor.methods({
-//     openSession: function() {
-//         var fut = new Future(), url = 'http://www.google.com';
-
-//         // Do call here, return value with Future
-//         Meteor.http.get(url, function( err, res ){
-//             fut.ret(res);
-//         });
-
-//         // Force method to wait on Future return
-//         return fut.wait();
-//     }
-
-// });
 
 Meteor.methods({
-	get_packages: function(pSource) {
-		var fut = new Future(), url = pSource;
-		// var pkglist = '';
-		console.log('get packages from');
-		console.log(pSource);
-		// $ = pkglist.load(Meteor.http.get(pSource).content);
-		res = Meteor.http.get(url, function( err, res ){
-            fut.ret(res);
-        });
-        return fut.wait();
-		// console.log(res.statusCode, res.data);
-		// return $('.commit-title').text().trim()      
+	get_packages: function(sourceURL) {
+
+		// parse pkg data 
+		var parsePkgData = function (myPkgsRaw, myPackages) {
+		  for (var x = myPkgsRaw.length - 1; x >= 0; x--) {
+		    if (myPkgsRaw[x] === '' || myPkgsRaw[x].indexOf('#') === 0){ 
+		      myPkgsRaw.splice(x, 1); // delete blank and commented lines
+		    };
+		  };
+		  return myPkgsRaw;
+		}
+
+		// get package list from github
+		var getPkgData = function (myURL, cb) {
+		  Meteor.http.get(myURL, {headers: {"User-Agent": "Meteor/1.0"}}, cb);
+		}
+
+		// compute link to package list
+		var computeURL = function(sourceDomain, mySource){
+		  var repoId    = mySource.substring(mySource.indexOf(sourceDomain,0)+sourceDomain.length,mySource.length);
+		  return "https://api.github.com/repos/" + repoId + "/contents/.meteor/packages?client_id=954e1df2d25fc3e401dd&client_secret=0050520b79f773096a9c19e1284bcb62f792163d";
+		}
+
+		var Future = Npm.require("fibers/future");
+    	var pkgFuture = new Future();
+
+    	getPkgData(computeURL("github.com/", sourceURL), 
+	      function (err, res) { 
+	        myPackages = parsePkgData(new Buffer(res.data.content.replace(/\n/g, "") || '', 'base64').toString('utf8').split('\n'));
+	        pkgFuture.return(myPackages);
+	      });
+    	var myPkgFuture = pkgFuture.wait();
+
+        return myPkgFuture;   
 	}
 });
+

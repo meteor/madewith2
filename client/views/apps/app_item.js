@@ -70,7 +70,7 @@ Template.appDetailsLine.helpers({
     // console.log(this.pkgs);
     // console.log(this.packages);
     // console.log(getPackages(this));
-    console.log(this.pkgs.join(', '));
+    // console.log(this.pkgs.join(', '));
     return this.pkgs.join(', ');
   },
   // packages: function(){
