@@ -44,6 +44,20 @@ Router.map(function () {
     }
   });
 
+  this.route('badgePage', {
+    path: '/badge/:_id',
+    data: function() { return Apps.findOne(this.params._id); },
+    load: function () { // called on first load
+      Session.set('currentAppId', this.params._id); 
+    },
+    layoutTemplate: null,
+    waitOn: function() {
+      return [
+        Meteor.subscribe('singleApp', this.params._id)
+      ];
+    }
+  });
+
   // editing each app
   this.route('appEdit', {
     path: '/apps/:_id/edit', // path with id of appPage

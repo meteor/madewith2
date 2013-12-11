@@ -5,8 +5,13 @@ Apps.allow({
   remove: ownsDocument
 });
 
+
+
 Meteor.methods({
   app: function(appAttributes) {
+    appAttributes.url = normalizeAppURL(appAttributes.url);
+    appAttributes.source = normalizeAppURL(appAttributes.source);
+
     var user = Meteor.user(), // ensure the user is logged in
       appWithSameLink = Apps.findOne({url: appAttributes.url});
 
