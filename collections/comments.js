@@ -3,10 +3,10 @@ Comments = new Meteor.Collection('comments');
 Meteor.methods({
   comment: function(commentAttributes) {
     var user = Meteor.user();
+
+    
     var app = Apps.findOne(commentAttributes.appId);
-    // ensure the user is logged in
-    if (!user)
-      throw new Meteor.Error(401, "Oops, you need to login to add comments.");
+
     if (!commentAttributes.body)
       throw new Meteor.Error(422, "I didn't see your comment. Try again?");
     if (!commentAttributes.appId)
@@ -18,10 +18,12 @@ Meteor.methods({
       submitted: new Date().getTime(),
     });
 
-        //update the app with the number of comments
-	   Apps.update(comment.appId, {$inc: {commentsCount: 1}});
+    //update the app with the number of comments
+    Apps.update(comment.appId, {$inc: {commentsCount: 1}});
 
     return Comments.insert(comment);
+    
+
   },
 
   notifyParents: function(comment, commentId){
@@ -31,3 +33,5 @@ Meteor.methods({
     });
   }
 });
+
+

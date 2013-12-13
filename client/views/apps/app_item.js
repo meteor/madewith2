@@ -15,12 +15,13 @@ Template.appTitleLine.helpers({
 
 Template.upvoteButton.helpers({
   upvotedClass: function() {
+    // return 'upvote';
     return getUpvotedClass(Meteor.userId(), this);
   }
 })
 
 function getUpvotedClass(userId, self){
-    if (userId && !_.include(self.upvoters, userId)) {
+    if (!_.include(self.upvoters, userId)) {
       return 'upvote';
     } else {
       return 'upvote disabled';
@@ -73,42 +74,6 @@ Template.appDetailsLine.helpers({
     // console.log(this.pkgs.join(', '));
     return this.pkgs.join(', ');
   },
-  // packages: function(){
-  //   var mySource  = this.source;
-  //   var githubdomain = "github.com/";
-  //   var prefix    = "https://api.github.com/repos/";
-  //   var suffix    = "/contents/.meteor/packages";
-  //   var repoId    = mySource.substring(mySource.indexOf(githubdomain,0)+githubdomain.length,mySource.length);
-  //   var pSource   = prefix + repoId + suffix;
-  //   var myPackages64 = '';
-  //   var myPackages = '';
-  //   // console.log(pSource);
-  //   myPackages = Meteor.call("get_packages",pSource, function(err,result){
-  //       // $('.btn_scrape').removeAttr('disabled')
-  //       console.log('result');
-  //       console.log(result);
-  //   });
-
-    // console.log(myPackages);
-    
-    // res = Meteor.http.get(pSource);
-    // var myData = JSON.parse(data);
-    // console.log(res.data);
-    // myPackages64 = data.content;
-    //     myPackages = atob(myPackages64.replace(/\n/g, ""));
-    //     console.log(myPackages);
-    //     return myPackages;
-    // $.getJSON(pSource, function(data){
-    // })
-    //   .done(function( data ) {
-    //     console.log('done');
-    //     myPackages64 = data.content;
-    //     myPackages = atob(myPackages64.replace(/\n/g, ""));
-    //     console.log(myPackages);
-    //     return myPackages;
-    //   });
-    // return myPackages;
-  // },
 });
 
 Template.appItem.events({
@@ -121,14 +86,6 @@ Template.appItemshort.events({
     Meteor.call('upvote', this._id);
   }
 });
-
-// function getPackages(self){
-//   return joinPackages(self.packages);
-// }
-
-// function joinPackages(mypkgs){
-//   return mypkgs.join(', ');
-// }
 
 function doUpvote(e, self){
   e.preventDefault();

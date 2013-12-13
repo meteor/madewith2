@@ -15,8 +15,20 @@ Meteor.methods({
     var user = Meteor.user(), // ensure the user is logged in
       appWithSameLink = Apps.findOne({url: appAttributes.url});
 
-    if (!user)
-      throw new Meteor.Error(401, "Doh! You need to login to share your app.");
+    if (!user) {
+      if (Meteor.isServer) {
+        throw new Meteor.Error(401, "Doh! You need to login to share your app.");
+      } else {
+        Meteor.loginWithGithub(function (err) {
+          if (!err)
+            Meteor.call('app', appAttributes);
+        });
+        return;
+      }
+    }
+    
+    // if (!user)
+    //   throw new Meteor.Error(401, "Doh! You need to login to share your app.");
 
     // ensure the app has a title
     if (!appAttributes.title)
@@ -47,13 +59,25 @@ Meteor.methods({
   
   upvote: function(appId){
     var user = Meteor.user(); //ensure user is logged in
-    if (!user)
-      throw new Meteor.Error(401, "You need to login to upvote");
+    if (!user) {
+      if (Meteor.isServer) {
+        throw new Meteor.Error(401, "You need to login to upvote");
+      } else {
+        Meteor.loginWithGithub(function (err) {
+          if (!err)
+            Meteor.call('upvote', appId);
+        });
+        return;
+      }
+    }
+    
     var app = Apps.findOne(appId);
+
     if (!app)
       throw new Meteor.Error(422, 'App not found');
     if (_.include(app.upvoters, user._id))
-      throw new Meteor.Error(422, 'Already upvoted this app');
+      return;
+      // throw new Meteor.Error(422, 'Already upvoted this app');
     Apps.update({
         _id: appId, 
         upvoters: {$ne: user._id}

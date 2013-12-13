@@ -7,7 +7,15 @@ Template.badgePage.helpers({
 
 Template.badgePage.events({
   'click .madewith_upvote': function(event) {
-    Meteor.call('upvote', this._id);
+    var self = this;
+    if (Meteor.userId()) {
+      Meteor.call('upvote', self._id);
+    } else {
+      Meteor.loginWithGithub(function (err) {
+        if (!err)
+          Meteor.call('upvote', self._id);
+      });
+    }
 
     // stop these so you don't click through the link to go to the
     // app.

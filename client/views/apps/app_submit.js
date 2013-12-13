@@ -2,31 +2,47 @@ Template.appSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
+    var app = {
+      url:    $(e.target).find('[name=url]').val(),
+      source: $(e.target).find('[name=source]').val(),
+      title:  $(e.target).find('[name=title]').val(),
+      description: $(e.target).find('[name=description]').val(),
+      commentCount: 0
+    };
+
     var user = Meteor.user();
 
-    Meteor.call('get_packages', $(e.target).find('[name=source]').val(), function(err, myPackages){
-      console.log(myPackages);
-      var app = {
-        url:    $(e.target).find('[name=url]').val(),
-        source: $(e.target).find('[name=source]').val(),
-        title:  $(e.target).find('[name=title]').val(),
-        description: $(e.target).find('[name=description]').val(),
-        author: user.profile.name,
-        pkgs: myPackages,
-        commentCount: 0
-      };
-
-      Meteor.call('app', app, function(error, id) {
-        if (error) {        //display error to user
-          throwError(error.reason);
-          // if the error is that the app already exists, take us there
-          if (error.error === 302) {
-            Router.go('appPage', {_id: error.details})
-          } 
-        } else {
-          Router.go('appPage', {_id: id});
-        }
+    if (!user) {
+      Meteor.loginWithGithub(function (err) {
+        if (!err)
+          user = Meteor.user();
+          submitApp(app, user);
+          return;
       });
-    });
+    } 
+
+    submitApp(app, user);
   }
 });
+
+// the actual app submitting lives in a helper function
+
+function submitApp(app, user){
+  Meteor.call('get_packages', app.source, function(err, myPackages){
+    console.log(myPackages);
+    app.author = user.profile.name;
+    app.pkgs = myPackages;
+
+    Meteor.call('app', app, function(error, id) {
+      if (error) {        //display error to user
+        throwError(error.reason);
+        // if the error is that the app already exists, take us there
+        if (error.error === 302) {
+          Router.go('appPage', {_id: error.details})
+        } 
+      } else {
+        Router.go('appPage', {_id: id});
+      }
+    });
+  });
+}

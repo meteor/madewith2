@@ -71,14 +71,20 @@ Router.map(function () {
   this.route('appSubmit', {
     path: '/submit', 
 
-    before: function() { // before rendering, check if user logged in
-      var user = Meteor.user();
-      if (! user) {
-        this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
-        this.render('accessDenied');
-        return this.stop();   
-      }
-    }
+    // before: function() { // before rendering, check if user logged in
+    //   var user = Meteor.user();
+    //     if (! user) {
+    //         Meteor.loginWithGithub(function (err) {
+    //           if (!err)
+
+    //             // Meteor.call('upvote', self._id);
+    //         });
+    //     }
+    //     this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
+    //     this.render('accessDenied');
+    //     return this.stop();   
+    //   }
+    // }
   });
 });
 

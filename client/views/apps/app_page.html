@@ -1,11 +1,7 @@
 <template name="appPage">
   {{#with currentApp}}
     {{> appItem}}
-    {{#if currentUser}}
     	{{> commentSubmit}}
-    {{else}}
-    	<p class="headsup-yellow">Please log in to leave a comment. </p>
-    {{/if}}
     <ul class="comments comment-list">
         {{#each rootComments}}
             <li>
