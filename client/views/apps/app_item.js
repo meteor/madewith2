@@ -36,7 +36,7 @@ function getsourceClass(source){
 }
 
 function thingExists(myField){
-  return !(myField === undefined || myField === '' || myField === []);
+  return (myField === undefined) ? false : (myField.length != 0);
 }
 
 Template.appDetailsLine.helpers({

@@ -37,9 +37,9 @@ Meteor.methods({
 		var computeURL = function(sourceDomain, mySource){
 		  var repoId    = mySource.substring(mySource.indexOf(sourceDomain,0)+sourceDomain.length,mySource.length);
 		  // madewith2.meteor.com keys
-		  // return "https://api.github.com/repos/" + repoId + "/contents/.meteor/packages?client_id=c58bf3c99df2400aabf2&client_secret=8d1057be67568ba7761bf4d2e0437c74c836ef01";
+		  return "https://api.github.com/repos/" + repoId + "/contents/.meteor/packages?client_id=c58bf3c99df2400aabf2&client_secret=8d1057be67568ba7761bf4d2e0437c74c836ef01";
 		  // localhost:3000 keys
-		  return "https://api.github.com/repos/" + repoId + "/contents/.meteor/packages?client_id=954e1df2d25fc3e401dd&client_secret=0050520b79f773096a9c19e1284bcb62f792163d";
+		  // return "https://api.github.com/repos/" + repoId + "/contents/.meteor/packages?client_id=954e1df2d25fc3e401dd&client_secret=0050520b79f773096a9c19e1284bcb62f792163d";
 		}
 
 		var Future = Npm.require("fibers/future");

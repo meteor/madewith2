@@ -26,9 +26,6 @@ Meteor.methods({
         return;
       }
     }
-    
-    // if (!user)
-    //   throw new Meteor.Error(401, "Doh! You need to login to share your app.");
 
     // ensure the app has a title
     if (!appAttributes.title)
