@@ -32,17 +32,13 @@ body {
 }
 
 .betatag {
-/*    position: absolute;
-    left: 410px;
-    top: 62px;*/
-
     position: relative;
     left: 175px;
     top: -12px;
     font-size: 12px;
     font-variant:small-caps;
     line-height: 0%;
-}
+} 
 
 
 .login, .btn-link {
