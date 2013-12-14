@@ -18,6 +18,9 @@ Meteor.publish('comments', function(appId){
 Meteor.methods({
 	get_packages: function(sourceURL) {
 
+		if (sourceURL === '')
+			return [];
+
 		// parse pkg data 
 		var parsePkgData = function (myPkgsRaw, myPackages) {
 		  for (var x = myPkgsRaw.length - 1; x >= 0; x--) {

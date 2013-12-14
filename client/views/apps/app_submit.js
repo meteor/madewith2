@@ -28,11 +28,8 @@ Template.appSubmit.events({
 // the actual app submitting lives in a helper function
 
 function submitApp(app, user){
-  Meteor.call('get_packages', app.source, function(err, myPackages){
-    console.log(myPackages);
-    app.author = user.profile.name;
-    app.pkgs = myPackages;
 
+  var doSubmitApp = function (app) {
     Meteor.call('app', app, function(error, id) {
       if (error) {        //display error to user
         throwError(error.reason);
@@ -42,7 +39,20 @@ function submitApp(app, user){
         } 
       } else {
         Router.go('appPage', {_id: id});
-      }
+      };
     });
-  });
+  }
+
+  app.author = user.profile.name;
+
+  if (thingExists(app.source)) {
+    Meteor.call('get_packages', app.source, function(err, myPackages){
+      app.pkgs = myPackages;
+      doSubmitApp(app);
+    });
+  } else{
+    app.pkgs = [];
+    doSubmitApp(app);
+  };
+  
 }

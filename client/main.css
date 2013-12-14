@@ -26,8 +26,22 @@ body {
     font-size: 42px;
     margin-top: 0px;
     padding: 10px;
+    /*min-width: 00px;*/
 }.brand:hover{
     color: #fff;
+}
+
+.betatag {
+/*    position: absolute;
+    left: 410px;
+    top: 62px;*/
+
+    position: relative;
+    left: 175px;
+    top: -12px;
+    font-size: 12px;
+    font-variant:small-caps;
+    line-height: 0%;
 }
 
 

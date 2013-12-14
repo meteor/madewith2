@@ -35,8 +35,8 @@ function getsourceClass(source){
   } else{ return ''; };
 }
 
-function thingExists(myField){
-  return (myField === undefined) ? false : (myField.length != 0);
+thingExists = function(myField){
+  return (myField === undefined || myField === null) ? false : (myField.length != 0);
 }
 
 Template.appDetailsLine.helpers({
