@@ -90,6 +90,15 @@ Meteor.methods({
   },
 });
 
-if (Meteor.isServer) {
-
+appByDomain = function (domain) {
+  return Apps.findOne({url: "http://" + domain});
 }
+
+
+
+
+// if (Meteor.isServer) {
+//   Apps.find().forEach(function (app) {
+//     Apps.update(app._id, {$set: {url: normalizeAppURL(app.url)}});
+//   })
+// }

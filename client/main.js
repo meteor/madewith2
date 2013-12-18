@@ -31,38 +31,43 @@ Router.map(function () {
   });
 
   this.route('appPage', {
-    path: '/apps/:_id',
-    data: function() { return Apps.findOne(this.params._id); },
+    path: '/apps/:domain',
+    data: function() { return appByDomain(this.params.domain); },
     load: function () { // called on first load
-      Session.set('currentAppId', this.params._id); 
+      var app = appByDomain(this.params.domain);
+      Session.set('currentAppId', app._id); 
     },
     waitOn: function() {
+      var app = appByDomain(this.params.domain);
       return [
-        Meteor.subscribe('singleApp', this.params._id),
-        Meteor.subscribe('comments', this.params._id)
+        Meteor.subscribe('singleApp', app._id),
+        Meteor.subscribe('comments', app._id)
       ];
     }
   });
 
   this.route('badgePage', {
-    path: '/badge/:_id',
-    data: function() { return Apps.findOne(this.params._id); },
+    path: '/badge/:domain',
+    data: function() { return appByDomain(this.params.domain) },
     load: function () { // called on first load
-      Session.set('currentAppId', this.params._id); 
+      var app = appByDomain(this.params.domain);
+      Session.set('currentAppId', app._id); 
     },
     layoutTemplate: null,
     waitOn: function() {
+      var app = appByDomain(this.params.domain);
       return [
-        Meteor.subscribe('singleApp', this.params._id)
+        Meteor.subscribe('singleApp', app._id)
       ];
     }
   });
 
   // editing each app
   this.route('appEdit', {
-    path: '/apps/:_id/edit', // path with id of appPage
+    path: '/apps/:domain/edit', // path with id of appPage
     load: function () { // called on first load
-      Session.set('currentAppId', this.params._id); 
+      var app = appByDomain(this.params.domain);
+      Session.set('currentAppId', app._id); 
     },
   });
 

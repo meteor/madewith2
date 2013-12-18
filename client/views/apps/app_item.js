@@ -58,6 +58,9 @@ Template.appDetailsLine.helpers({
       return commentNoun;
     };
   },
+  domain: function () {
+    return this.url.replace('http://', '');
+  },
   baseDate: function(){
     return new Date(this.submitted);
   },
@@ -67,11 +70,6 @@ Template.appDetailsLine.helpers({
   appID: function(){return this._id;},
   debugmode: function(){return false;}, //set to true if debugging 
   getMyPkgs: function(){
-    // console.log(getPackages(this).join(', '));
-    // console.log(this.pkgs);
-    // console.log(this.packages);
-    // console.log(getPackages(this));
-    // console.log(this.pkgs.join(', '));
     return this.pkgs.join(', ');
   },
 });
