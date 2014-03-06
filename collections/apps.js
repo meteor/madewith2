@@ -33,7 +33,7 @@ Meteor.methods({
 
     // check that there are no previous apps with the same link
     if (appAttributes.url && appWithSameLink) {
-      throw new Meteor.Error(302, 
+      throw new Meteor.Error(302,
         'Oops! Looks like this app has already been shared. Give it some <3!', 
         appWithSameLink._id);
     }
@@ -51,9 +51,11 @@ Meteor.methods({
 
     var appId = Apps.insert(app);
 
+    Meteor.call("upvote", appId);
+
     return appId;
   },
-  
+
   upvote: function(appId){
     var user = Meteor.user(); //ensure user is logged in
     if (!user) {
@@ -67,7 +69,7 @@ Meteor.methods({
         return;
       }
     }
-    
+
     var app = Apps.findOne(appId);
 
     if (!app)
@@ -90,8 +92,8 @@ Meteor.methods({
   },
 });
 
-appByDomain = function (domain) {
-  return Apps.findOne({url: "http://" + domain});
+appByHostname = function (hostname) {
+  return Apps.findOne({url: "http://" + hostname});
 }
 
 

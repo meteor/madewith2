@@ -6,12 +6,13 @@ Meteor.publish('popularApps', function(limit) {
   	return Apps.find({}, {sort: {score: -1, submitted: -1}, limit:limit});
 });
 
-Meteor.publish('singleApp', function(id){
-	return id && Apps.find(id);
+Meteor.publish('singleApp', function(hostname){
+	return Apps.find({url: "http://" + hostname});
 });
 
-Meteor.publish('comments', function(appId){
-	return Comments.find({appId: appId}, {sort: {submitted: -1}});
+Meteor.publish('comments', function(hostname){
+  var appId = Apps.findOne({url: "http://" + hostname}, {fields: {_id: 1}})._id;
+  return Comments.find({appId: appId}, {sort: {submitted: -1}});
 });
 
 

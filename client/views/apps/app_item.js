@@ -58,8 +58,8 @@ Template.appDetailsLine.helpers({
       return commentNoun;
     };
   },
-  domain: function () {
-    return this.url.replace('http://', '');
+  pathContext: function () {
+    return {hostname: this.url.replace('http://', '')};
   },
   baseDate: function(){
     return new Date(this.submitted);

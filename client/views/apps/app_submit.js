@@ -30,18 +30,21 @@ Template.appSubmit.events({
 function submitApp(app, user){
 
   var doSubmitApp = function (app) {
+    var hostname = stripHttp(normalizeAppURL(app.url));
+
     Meteor.call('app', app, function(error, id) {
       if (error) {        //display error to user
-        throwError(error.reason);
         // if the error is that the app already exists, take us there
         if (error.error === 302) {
-          Router.go('appPage', {_id: error.details})
-        } 
+          Router.go('appPage', {hostname: hostname});
+        } else {
+          throwError(error.reason);
+        }
       } else {
-        Router.go('appPage', {_id: id});
+        Router.go('appPage', {hostname: hostname});
       };
     });
-  }
+  };
 
   app.author = user.profile.name;
 
@@ -54,5 +57,5 @@ function submitApp(app, user){
     app.pkgs = [];
     doSubmitApp(app);
   };
-  
+
 }

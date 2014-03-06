@@ -3,12 +3,12 @@
 newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
 popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
 
-// subscriptions to Comments collection
-Meteor.subscribe('comments');
-
 Deps.autorun(function(){
-  Meteor.subscribe('singleApp', Session.get('currentAppId'))
-  Meteor.subscribe('comments', Session.get('currentAppId'));
+  var hostname = Session.get('currentAppHostname');
+  if (hostname) {
+    Meteor.subscribe('singleApp', hostname);
+    Meteor.subscribe('comments', hostname);
+  }
 });
 
 ///////////////////Iron-Router///////////////////
@@ -31,43 +31,38 @@ Router.map(function () {
   });
 
   this.route('appPage', {
-    path: '/apps/:domain',
-    data: function() { return appByDomain(this.params.domain); },
+    path: '/apps/:hostname',
+    data: function() { return appByHostname(this.params.hostname); },
     load: function () { // called on first load
-      var app = appByDomain(this.params.domain);
-      Session.set('currentAppId', app._id); 
+      Session.set('currentAppHostname', this.params.hostname);
     },
     waitOn: function() {
-      var app = appByDomain(this.params.domain);
       return [
-        Meteor.subscribe('singleApp', app._id),
-        Meteor.subscribe('comments', app._id)
+        Meteor.subscribe('singleApp', this.params.hostname),
+        Meteor.subscribe('comments', this.params.hostname)
       ];
     }
   });
 
   this.route('badgePage', {
-    path: '/badge/:domain',
-    data: function() { return appByDomain(this.params.domain) },
+    path: '/badge/:hostname',
+    data: function() { return appByHostname(this.params.hostname); },
     load: function () { // called on first load
-      var app = appByDomain(this.params.domain);
-      Session.set('currentAppId', app._id); 
+      Session.set('currentAppHostname', this.params.hostname);
     },
     layoutTemplate: null,
     waitOn: function() {
-      var app = appByDomain(this.params.domain);
       return [
-        Meteor.subscribe('singleApp', app._id)
+        Meteor.subscribe('singleApp', this.params.hostname)
       ];
     }
   });
 
   // editing each app
   this.route('appEdit', {
-    path: '/apps/:domain/edit', // path with id of appPage
+    path: '/apps/:hostname/edit', // path with id of appPage
     load: function () { // called on first load
-      var app = appByDomain(this.params.domain);
-      Session.set('currentAppId', app._id); 
+      Session.set('currentAppHostname', this.params.hostname);
     },
   });
 

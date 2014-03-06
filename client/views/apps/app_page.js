@@ -1,12 +1,9 @@
 Template.appPage.helpers({
   currentApp: function() {
-    return Apps.findOne(Session.get('currentAppId'));
+    return appByHostname(Session.get('currentAppHostname'));
   },
   comments: function() { 
   	return Comments.find({appId: this._id});
-  },
-  app: function(){
-  	return Apps.findOne(this.comments); //might not be right
   },
   rootComments: function() { 
     return Comments.find({appId: this._id, parentComment: null});//and isroot
