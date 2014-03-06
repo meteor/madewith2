@@ -20,7 +20,7 @@ Meteor.methods({
       if (Meteor.isServer) {
         throw new Meteor.Error(401, "Doh! You need to login to share your app.");
       } else {
-        Meteor.loginWithGithub(function (err) {
+        Meteor.loginWithMeteorDeveloperAccount(function (err) {
           if (!err)
             Meteor.call('app', appAttributes);
         });
@@ -40,7 +40,7 @@ Meteor.methods({
     }
 
     // pick out the whitelisted keys
-    var app = _.extend(_.pick(appAttributes, 'url', 'title', 'source','description','pkgs'), {
+    var app = _.extend(_.pick(appAttributes, 'url', 'title', 'source','description','pkgs', 'urlname'), {
       userId: user._id, 
       author: user.profile.name, 
       submitted: new Date().getTime(),
@@ -63,7 +63,7 @@ Meteor.methods({
       if (Meteor.isServer) {
         throw new Meteor.Error(401, "You need to login to upvote");
       } else {
-        Meteor.loginWithGithub(function (err) {
+        Meteor.loginWithMeteorDeveloperAccount(function (err) {
           if (!err)
             Meteor.call('upvote', appId);
         });

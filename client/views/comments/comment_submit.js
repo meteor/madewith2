@@ -13,7 +13,7 @@ Template.commentSubmit.events({
     if (Meteor.userId()) {
       doPostComment (comment, $body, template.data.appId);
     } else {
-        Meteor.loginWithGithub(function (err) {
+        Meteor.loginWithMeteorDeveloperAccount(function (err) {
         if (!err){
           doPostComment (comment, $body, template.data.appId);
         }

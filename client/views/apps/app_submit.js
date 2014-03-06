@@ -13,7 +13,7 @@ Template.appSubmit.events({
     var user = Meteor.user();
 
     if (!user) {
-      Meteor.loginWithGithub(function (err) {
+      Meteor.loginWithMeteorDeveloperAccount(function (err) {
         if (!err)
           user = Meteor.user();
           submitApp(app, user);

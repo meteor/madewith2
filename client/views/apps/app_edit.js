@@ -15,20 +15,24 @@ Template.appEdit.events({
 
     Meteor.call('get_packages', $(e.target).find('[name=source]').val(), function(err, myPackages){
 
+      var url = normalizeAppURL($(e.target).find('[name=url]').val());
+      var urlname = toUrlName(url);
+
       var appProperties = {
-        url: normalizeAppURL($(e.target).find('[name=url]').val()),
+        url: url,
+        urlname: urlname,
         title: $(e.target).find('[name=title]').val(),
         source: normalizeAppURL($(e.target).find('[name=source]').val()),
         description: $(e.target).find('[name=description]').val(),
         pkgs: myPackages
-      }
+      };
 
       Apps.update(currentApp._id, {$set: appProperties}, function(error) {
         if (error) {
           // display the error to the user
           alert(error.reason);
         } else {
-          Router.go('appPage', {urlname: toUrlName(appProperties.url)});
+          Router.go('appPage', {urlname: appProperties.urlname});
         }
       });
 

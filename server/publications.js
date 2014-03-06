@@ -11,8 +11,12 @@ Meteor.publish('singleApp', function(urlname){
 });
 
 Meteor.publish('comments', function(urlname){
-  var appId = Apps.findOne({urlname: urlname}, {fields: {_id: 1}})._id;
-  return Comments.find({appId: appId}, {sort: {submitted: -1}});
+  var app = Apps.findOne({urlname: urlname}, {fields: {_id: 1}});
+  if (app) {
+    return Comments.find({appId: app._id}, {sort: {submitted: -1}});
+  } else {
+    return [];
+  }
 });
 
 

@@ -7,10 +7,10 @@ standard-app-packages
 preserve-inputs
 spiderable
 iron-router
-accounts-github
 bootstrap-3
 accounts-ui
 paginated-subscription
 timeago
 ionicons
 http
+accounts-meteor-developer

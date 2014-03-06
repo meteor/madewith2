@@ -18,7 +18,7 @@ Template.topbar.events({
     if (Meteor.user()) {
       Router.go('appSubmit');
     } else {
-      Meteor.loginWithGithub(function (err) {
+      Meteor.loginWithMeteorDeveloperAccount(function (err) {
         if (!err) {
           Router.go('appSubmit');
         }

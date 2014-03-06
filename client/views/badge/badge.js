@@ -11,7 +11,7 @@ Template.badgePage.events({
     if (Meteor.userId()) {
       Meteor.call('upvote', self._id);
     } else {
-      Meteor.loginWithGithub(function (err) {
+      Meteor.loginWithMeteorDeveloperAccount(function (err) {
         if (!err)
           Meteor.call('upvote', self._id);
       });

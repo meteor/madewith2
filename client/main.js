@@ -74,7 +74,7 @@ Router.map(function () {
     // before: function() { // before rendering, check if user logged in
     //   var user = Meteor.user();
     //     if (! user) {
-    //         Meteor.loginWithGithub(function (err) {
+    //         Meteor.loginWithMeteorDeveloperAccount(function (err) {
     //           if (!err)
 
     //             // Meteor.call('upvote', self._id);
