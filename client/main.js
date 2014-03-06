@@ -4,10 +4,10 @@ newAppsHandle = Meteor.subscribeWithPagination('newApps',14);
 popularAppsHandle = Meteor.subscribeWithPagination('popularApps',14);
 
 Deps.autorun(function(){
-  var hostname = Session.get('currentAppHostname');
-  if (hostname) {
-    Meteor.subscribe('singleApp', hostname);
-    Meteor.subscribe('comments', hostname);
+  var urlname = Session.get('currentAppUrlname');
+  if (urlname) {
+    Meteor.subscribe('singleApp', urlname);
+    Meteor.subscribe('comments', urlname);
   }
 });
 
@@ -31,39 +31,39 @@ Router.map(function () {
   });
 
   this.route('appPage', {
-    path: '/apps/:hostname',
-    data: function() { return appByHostname(this.params.hostname); },
+    path: '/apps/:urlname',
+    data: function() { return appByUrlname(this.params.urlname); },
     load: function () { // called on first load
-      Session.set('currentAppHostname', this.params.hostname);
+      Session.set('currentAppUrlname', this.params.urlname);
     },
     waitOn: function() {
       return [
-        Meteor.subscribe('singleApp', this.params.hostname),
-        Meteor.subscribe('comments', this.params.hostname)
+        Meteor.subscribe('singleApp', this.params.urlname),
+        Meteor.subscribe('comments', this.params.urlname)
       ];
     }
   });
 
   this.route('badgePage', {
-    path: '/badge/:hostname',
-    data: function() { return appByHostname(this.params.hostname); },
+    path: '/badge/:urlname',
+    data: function() { return appByUrlname(this.params.urlname); },
     load: function () { // called on first load
-      Session.set('currentAppHostname', this.params.hostname);
+      Session.set('currentAppUrlname', this.params.urlname);
     },
     layoutTemplate: null,
     waitOn: function() {
       return [
-        Meteor.subscribe('singleApp', this.params.hostname)
+        Meteor.subscribe('singleApp', this.params.urlname)
       ];
     }
   });
 
   // editing each app
   this.route('appEdit', {
-    path: '/apps/:hostname/edit', // path with id of appPage
+    path: '/apps/:urlname/edit', // path with id of appPage
     load: function () { // called on first load
-      Session.set('currentAppHostname', this.params.hostname);
-    },
+      Session.set('currentAppUrlname', this.params.urlname);
+    }
   });
 
 

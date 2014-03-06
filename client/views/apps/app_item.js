@@ -59,7 +59,7 @@ Template.appDetailsLine.helpers({
     };
   },
   pathContext: function () {
-    return {hostname: this.url.replace('http://', '')};
+    return {urlname: toUrlName(this.url)};
   },
   baseDate: function(){
     return new Date(this.submitted);

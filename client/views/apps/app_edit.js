@@ -1,6 +1,6 @@
 Template.appEdit.helpers({
   app: function() {
-    return appByHostname(Session.get('currentAppHostname'));
+    return appByUrlname(Session.get('currentAppUrlname'));
   },
   source: function () {
     return this.source || "";
@@ -11,7 +11,7 @@ Template.appEdit.events({
   'submit form': function(e) {
     e.preventDefault();
 
-    var currentApp = appByHostname(Session.get('currentAppHostname'));
+    var currentApp = appByUrlname(Session.get('currentAppUrlname'));
 
     Meteor.call('get_packages', $(e.target).find('[name=source]').val(), function(err, myPackages){
 
@@ -28,7 +28,7 @@ Template.appEdit.events({
           // display the error to the user
           alert(error.reason);
         } else {
-          Router.go('appPage', {hostname: stripHttp(appProperties.url)});
+          Router.go('appPage', {urlname: toUrlName(appProperties.url)});
         }
       });
 
@@ -39,7 +39,7 @@ Template.appEdit.events({
     e.preventDefault();
 
     if (confirm("Delete this app?")) {
-      var currentApp = appByHostname(Session.get('currentAppHostname'));
+      var currentApp = appByUrlname(Session.get('currentAppUrlname'));
       Apps.remove(currentApp._id);
       Router.go('home');
     }

@@ -35,7 +35,7 @@ if (Apps.find().count() === 0) {
 		'chartjs', 'cron-tick', 'foundation', 'accounts-base', 'email', 'device-detection', 
 		'accounts-facebook', 'modernizr-meteor', 'spiderable', 'http', 'async'],
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 0, 
+    commentsCount: 0,
     upvoters: [], votes: 0, votecache: 0, score: 0
   });
 
@@ -64,7 +64,7 @@ if (Apps.find().count() === 0) {
       title: 'Test App #' + i,
       author: dany.profile.name,
       userId: dany._id,
-      url: 'http://google.com/?q=test-' + i,
+      url: 'http://google.com/test-' + i,
       pkgs: [],
       submitted: now - i * 3600 * 1000,
       commentsCount: 0,
@@ -99,5 +99,9 @@ if (Apps.find().count() === 0) {
     children: [], parentComment: null,
     submitted: now - 3 * 3600 * 1000,
     body: 'Let\'s take this discussion offline.'
+  });
+
+  Apps.find().forEach(function (app) {
+    Apps.update(app._id, {$set: {urlname: toUrlName(app.url)}});
   });
 }

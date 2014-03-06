@@ -1,6 +1,6 @@
 Template.appPage.helpers({
   currentApp: function() {
-    return appByHostname(Session.get('currentAppHostname'));
+    return appByUrlname(Session.get('currentAppUrlname'));
   },
   comments: function() { 
   	return Comments.find({appId: this._id});

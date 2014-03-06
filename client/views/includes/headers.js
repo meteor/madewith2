@@ -12,3 +12,17 @@ Template.topbar.helpers({
     return active && 'active';
   }
 });
+
+Template.topbar.events({
+  'click .share-app': function () {
+    if (Meteor.user()) {
+      Router.go('appSubmit');
+    } else {
+      Meteor.loginWithGithub(function (err) {
+        if (!err) {
+          Router.go('appSubmit');
+        }
+      });
+    }
+  }
+});

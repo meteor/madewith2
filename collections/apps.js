@@ -11,6 +11,7 @@ Meteor.methods({
   app: function(appAttributes) {
     appAttributes.url = normalizeAppURL(appAttributes.url);
     appAttributes.source = normalizeAppURL(appAttributes.source);
+    appAttributes.urlname = toUrlName(appAttributes.url);
 
     var user = Meteor.user(), // ensure the user is logged in
       appWithSameLink = Apps.findOne({url: appAttributes.url});
@@ -92,8 +93,8 @@ Meteor.methods({
   },
 });
 
-appByHostname = function (hostname) {
-  return Apps.findOne({url: "http://" + hostname});
+appByUrlname = function (urlname) {
+  return Apps.findOne({urlname: urlname});
 }
 
 
