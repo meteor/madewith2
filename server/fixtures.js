@@ -105,3 +105,7 @@ if (Apps.find().count() === 0) {
     Apps.update(app._id, {$set: {urlname: toUrlName(app.url)}});
   });
 }
+
+// Apps.find().forEach(function (app) {
+//   Apps.update(app._id, {$set: {urlname: toUrlName(app.url)}});
+// });

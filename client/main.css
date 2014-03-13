@@ -216,18 +216,35 @@ body {
     background-color: #eeeeff;
 }
 
+.btn{
+    border-radius: 0px;
+}
+.login-buttons {
+    border-radius: 0px;
+}
+.login-button {
+    border-radius: 0px;
+}
+
 .navbtn{
     background-color: #1f2455;
-    border: 2px solid #227;
+    /*border: 0px solid #227;*/
+    /*border: 2px solid #1f2455;*/
 } .navbtn:hover,
   .navbtn:focus{
     color: #2f3485;
     background-color: #eeeeff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .navsub{
-    margin-top: 21px;
+    /*margin-top: 21px;*/
+    margin-top: 0px;
+    padding: 29px;
+}
+.navlogin{
+    margin-top: 0px;
+    padding: 25px;
 }
 /*.pull-left .pull-right{
     margin: 0px;
