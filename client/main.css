@@ -2,6 +2,7 @@
 
 .grid-block, .main, .app, .comments li, .comment-form {
     background: #ccf;
+    /*background: #b9b9ff;*/
     /*background-color: #a2a7ff;*/
     border-radius: 0px;
     padding: 10px;
@@ -11,6 +12,7 @@
 }
 body { 
     /*background: #013;*/
+    /*background-color: #1f2455;*/
     background: #f8f8f8;
     color: #666666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -135,10 +137,6 @@ body {
 }
 
 .app .app-content a {
-/*    display: inline-block;
-    margin-right: 5px;*/
-    /*color: #4d54d8;*/
-    /*color: #1f2455;*/
     color: #1921b1;
 }
 .app .app-content h3 span {
@@ -149,9 +147,6 @@ body {
 }
 .app .app-content small span {
     display: inline-block;
-    /*font-size: 24px;*/
-    /*color: #aaaadd;*/
-    /*color: #fff;*/
     padding-left: 25px;
 }
 .app .app-content p { margin: 0 }
@@ -296,6 +291,7 @@ body {
     padding: 0px;
     margin-bottom: 35px;
     height: 80px;
+    /*background-image: url('/bg-tile-dark.png');*/
 }
 
 
