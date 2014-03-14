@@ -11,7 +11,7 @@
 }
 body { 
     /*background: #013;*/
-    background: #eef;
+    background: #f8f8f8;
     color: #666666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
@@ -52,7 +52,7 @@ body {
     float:right;
     font-weight: 300;
 }.login:hover, .btn-link:hover, .btn-link.active {
-    background: #eef;
+    background: #f8f8f8;
     color: #1921b1;
     text-decoration: none;
 }
@@ -117,13 +117,13 @@ body {
     color: #1921b1;
 }
 .app.hilight{
-    background-color: #ffd;
+    /*background-color: #ffd;*/
 }
 .app .app-content h3 {
     margin: 0;
     line-height: 1.4;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 700;
 }
 .app .app-content h3 a {
     display: inline-block;
@@ -180,11 +180,11 @@ body {
 }
 .comments li h4 {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 700;
     margin: 0;
 }
 .comments li h4 .date {
-    font-size: 12px;
+    /*font-size: 12px;*/
     font-weight: 200;
 }
 .comments li h4 a { font-size: 12px }
@@ -217,7 +217,7 @@ body {
     margin-bottom: 10px;
 }.load-more:hover {
     text-decoration: none;
-    background-color: #ddf;
+    background-color: #ccf;
 }
 
 .btn{
@@ -231,7 +231,7 @@ body {
 }
 
 .brand {
-    color: #eef;
+    color: #f8f8f8;
     font-size: 42px;
     margin-top: 0px;
     margin-right: 0px;
@@ -239,7 +239,7 @@ body {
     padding: 10px;
     /*min-width: 00px;*/
 }.brand:hover{
-    color: #fff;
+    color: #f8f8f8;
 }
 
 
@@ -252,7 +252,7 @@ body {
 } .navbtn:hover,
   .navbtn:focus{
     color: #2f3485;
-    background-color: #eeeeff;
+    background-color: #f8f8f8;
     text-decoration: none;
 }
 

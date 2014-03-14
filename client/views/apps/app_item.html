@@ -27,7 +27,7 @@
   {{#if hasPkgs}}
     Packages: {{getMyPkgs}}
   {{/if}}
-  <p><small>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small> 
+  <p>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small> 
     <span class="icons">
     {{#if ownApp}}
       {{#with pathContext}}
@@ -39,7 +39,7 @@
       <a href="{{source}}"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>  
     {{/if}}
     </span>
-    <small>
+    
       {{#with pathContext}}
         <a href="{{ pathFor 'appPage' }}"><i class="ion-chatboxes"  style="font-size:24px;color:#1921b1"></i>
           {{#with ..}}
