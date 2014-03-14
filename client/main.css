@@ -201,7 +201,7 @@ body {
 }
 .load-more {
     display: block;
-    border-radius: 3px;
+    border-radius: 0px;
     max-width: 50%;
     font-size: 18px;
     font-weight: 300;
