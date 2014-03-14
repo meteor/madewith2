@@ -1,7 +1,7 @@
 //temperature2, a model of vote decay
 
 var updateFrequency = 10000; // every 10 s, scores will decay
-var decay_factor = 0.9999999; // by this much 
+var decay_factor = 0.999999; // by this much 
 
 function updateAllTheThings(){
 	// console.log('updated');
