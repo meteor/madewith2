@@ -1,55 +1,53 @@
 /* CSS declarations go here */
 
 .grid-block, .main, .app, .comments li, .comment-form {
-    background: #eef;
+    background: #ddf;
+    /*background-color: #a2a7ff;*/
     border-radius: 0px;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);*/
+    box-shadow: 0 0 0;
 }
 body { 
-    background: #013;
+    /*background: #013;*/
+    background: #eef;
     color: #666666;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
-    background-image: url('/bg-tile-dark.png');
+    /*background-image: url('/bg-tile-dark.png');*/
 }
 
-.navbar { margin-bottom: 10px }
-.navbar .navbar-inner {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-    padding: 10px;
+.navbar { 
+    margin-bottom: 0px;
+    border:0px;
+    background-color: #1f2455;
+    /*min-height: 30px;*/
+    width:100%;
+    padding-bottom: 0px;
+    border-radius: 0px;
 }
 
-.brand {
-    color: #eef;
-    font-size: 42px;
-    margin-top: 0px;
-    padding: 10px;
-    /*min-width: 00px;*/
-}.brand:hover{
-    color: #fff;
-}
 
-.betatag {
+/*.betatag {
     position: relative;
     left: 175px;
     top: -12px;
     font-size: 12px;
     font-variant:small-caps;
     line-height: 0%;
-} 
+} */
 
 
 .login, .btn-link {
     text-align: center;
-
+    border: 0px;
     color: #a2a7ff;
     font-size: 18px;
     padding: 12px;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 14px;
+    margin-bottom: 0px;
     float:right;
     font-weight: 300;
 }.login:hover, .btn-link:hover, .btn-link.active {
@@ -98,6 +96,7 @@ body {
     -o-transition: all 300ms 0ms ease-in;
     transition: all 300ms 0ms ease-in;
     position: relative;
+    box-shadow: 0 0 0;
     opacity: 1;
 }
 .app:before, .app:after {
@@ -226,8 +225,23 @@ body {
     border-radius: 0px;
 }
 
+.brand {
+    color: #eef;
+    font-size: 42px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 10px;
+    /*min-width: 00px;*/
+}.brand:hover{
+    color: #fff;
+}
+
+
 .navbtn{
     background-color: #1f2455;
+    border: 0px;
+    /*padding: 29px;*/
     /*border: 0px solid #227;*/
     /*border: 2px solid #1f2455;*/
 } .navbtn:hover,
@@ -240,12 +254,30 @@ body {
 .navsub{
     /*margin-top: 21px;*/
     margin-top: 0px;
-    padding: 29px;
+    padding: 27px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border: 0px;
+    height: 80px;
 }
 .navlogin{
     margin-top: 0px;
-    padding: 25px;
+    padding: 24px;
+    margin-right: 0px;
+    height: 80px;
 }
-/*.pull-left .pull-right{
-    margin: 0px;
-}*/
+
+.horizbar{
+    background-color: #1f2455;
+    /*background-color: #eef;*/
+    padding: 0px;
+    margin-bottom: 35px;
+    height: 80px;
+}
+
+
+
+.pull-left .pull-right{
+    border: 0px;
+    box-shadow: 0 0 0;
+}
