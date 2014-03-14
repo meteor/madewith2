@@ -168,8 +168,8 @@ body {
     list-style-type:none;
     margin: 10;
     font-weight: 200;
-    color: #4d54d8;
-    /*color: #1921b1;*/
+    /*color: #4d54d8;*/
+    color: #1921b1;
 }
 
 .comments a {

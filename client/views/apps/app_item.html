@@ -20,14 +20,14 @@
 </template>
 
 <template name="appTitleLine">
-  <p><h3>{{> upvoteButton}}<a href="{{url}}">{{title}}</a><span>({{domain}})</span></h3></p>
+  <p><h3>{{> upvoteButton}}<a href="{{url}} target="_blank"">{{title}}</a><span>({{domain}})</span></h3></p>
 </template>
 
 <template name="appDetailsLine">
   {{#if hasPkgs}}
     Packages: {{getMyPkgs}}
   {{/if}}
-  <p>{{votes}} {{voteText}} by {{author}} {{timeago baseDate}} </small> 
+  <p>{{votes}} {{voteText}} : by {{author}} : {{timeago baseDate}} </small> 
     <span class="icons">
     {{#if ownApp}}
       {{#with pathContext}}
@@ -36,7 +36,7 @@
     {{/if}}
       
     {{#if hasSource}}
-      <a href="{{source}}"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>  
+      <a href="{{source}}" target="_blank"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>  
     {{/if}}
     </span>
     
