@@ -1,7 +1,7 @@
 /* CSS declarations go here */
 
 .grid-block, .main, .app, .comments li, .comment-form {
-    background: #ddf;
+    background: #ccf;
     /*background-color: #a2a7ff;*/
     border-radius: 0px;
     padding: 10px;
@@ -113,10 +113,10 @@ body {
 }
 .app .app-content { 
     float: left;
-    color: #4d54db;
+    color: #1921b1;
 }
 .app.hilight{
-    background-color: #ffffee;
+    background-color: #ffd;
 }
 .app .app-content h3 {
     margin: 0;
@@ -127,13 +127,15 @@ body {
 .app .app-content h3 a {
     display: inline-block;
     margin-right: 5px;
-    color: #4d54d8;
+    /*color: #4d54d8;*/
+    /*color: #1f2455;*/
+    color: #1921b1;
 }
 .app .app-content h3 span {
     letter-spacing: normal;
     font-size: 14px;
     display: inline-block;
-    color: #aaaadd;
+    color: #9090dd;
 }
 .app .app-content small span {
     display: inline-block;
