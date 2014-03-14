@@ -31,7 +31,7 @@
     <span class="icons">
     {{#if ownApp}}
       {{#with pathContext}}
-        <a href="{{ pathFor 'appEdit' }}"><i class="ion-compose" style="font-size:24px"></i></a>  
+        <a href="{{ pathFor 'appEdit' }}"><i class="ion-compose" style="font-size:24px;color:#1921b1"></i></a>  
       {{/with}}
     {{/if}}
       
@@ -41,7 +41,7 @@
     </span>
     <small>
       {{#with pathContext}}
-        <a href="{{ pathFor 'appPage' }}"><i class="ion-chatboxes"  style="font-size:24px"></i>
+        <a href="{{ pathFor 'appPage' }}"><i class="ion-chatboxes"  style="font-size:24px;color:#1921b1"></i>
           {{#with ..}}
             {{commentLinkText}}
           {{/with}}
