@@ -132,6 +132,14 @@ body {
     /*color: #1f2455;*/
     color: #1921b1;
 }
+
+.app .app-content a {
+/*    display: inline-block;
+    margin-right: 5px;*/
+    /*color: #4d54d8;*/
+    /*color: #1f2455;*/
+    color: #1921b1;
+}
 .app .app-content h3 span {
     letter-spacing: normal;
     font-size: 14px;
@@ -162,6 +170,10 @@ body {
     font-weight: 200;
     color: #4d54d8;
     /*color: #1921b1;*/
+}
+
+.comments a {
+    color: #1921b1;
 }
 .comments li {
     padding: 0;
