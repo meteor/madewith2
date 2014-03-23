@@ -1,6 +1,9 @@
 {
   "packages": {
-    "iron-router": {},
+    "iron-router": {
+      "git": "https://github.com/EventedMind/iron-router.git",
+      "branch": "dev"
+    },
     "accounts-ui-bootstrap-dropdown": {},
     "bootstrap-3": {},
     "paginated-subscription": {},
