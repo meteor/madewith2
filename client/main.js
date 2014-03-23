@@ -13,7 +13,7 @@ Deps.autorun(function(){
 
 ///////////////////Iron-Router///////////////////
 Router.configure({
-  layoutTemplate: 'layout',
+  layoutTemplate: 'MyLayout',
 });
 
 
