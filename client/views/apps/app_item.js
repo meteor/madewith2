@@ -9,6 +9,12 @@ Template.appItem.helpers({
   sourceClass: function(){return getsourceClass(this.source);},
   hasDescript: function(){ //is there a description?
     return this.description != undefined;
+  },
+  hasPkgs: function() {
+    return thingExists(this.pkgs);
+  },
+  getMyPkgs: function(){
+    return this.pkgs.join(', ');
   }
 });
 
@@ -49,9 +55,6 @@ Template.appDetailsLine.helpers({
   hasSource: function() {
     return thingExists(this.source);
   },
-  hasPkgs: function() {
-    return thingExists(this.pkgs);
-  },
   commentLinkText: function(){
     var commentsCount = this.commentsCount;
     if (commentsCount === 0) { //if no comments, link is 'Discuss'
@@ -72,9 +75,6 @@ Template.appDetailsLine.helpers({
   },
   appID: function(){return this._id;},
   debugmode: function(){return false;}, //set to true if debugging 
-  getMyPkgs: function(){
-    return this.pkgs.join(', ');
-  },
 });
 
 Template.appItem.events({
