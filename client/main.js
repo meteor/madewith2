@@ -24,13 +24,29 @@ Router.map(function () {
   // the home page is the front page; with trending apps
   this.route('home', {
     path: '/', // match the root path
-    template: 'popularApps'
+    template: 'popularApps',
+    onRun: function() {
+      Session.set('myPkg','');
+    }
   });
 
   this.route('newest', {
-    path: '/newest', // match the root path
-    template: 'newApps'
+    path: '/newest', // match the newest path
+    template: 'newApps',
+    onRun: function() {
+      Session.set('myPkg','');
+    }
   });
+
+  this.route('pkg', {
+    path: '/pkg', // match the pkg path
+    template: 'appsByPkg',
+    onRun: function () {
+      Session.setDefault('myPkg','');
+    }
+  });
+
+  
 
   this.route('appPage', {
     path: '/apps/:urlname',

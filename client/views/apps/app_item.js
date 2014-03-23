@@ -1,5 +1,8 @@
 Template.appItemshort.helpers({
   sourceClass: function(){return getsourceClass(this.source);},
+  hasDescript: function(){ //is there a description?
+    return this.description != undefined;
+  }
 });
 
 Template.appItem.helpers({

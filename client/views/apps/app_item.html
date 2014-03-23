@@ -11,6 +11,9 @@
 <template name="appItemshort">
   <div class="app {{sourceClass}}"><div class="app-content">
     {{> appTitleLine}}
+    {{#if hasDescript}}
+      <p><span>{{description}}</span></p>
+    {{/if}}
     {{> appDetailsLine}}
   </div></div>
 </template>
@@ -25,7 +28,7 @@
 
 <template name="appDetailsLine">
   {{#if hasPkgs}}
-    Packages: {{getMyPkgs}}
+    (Packages: {{getMyPkgs}})
   {{/if}}
   <p>{{votes}} {{voteText}} • by {{author}} • {{timeago baseDate}}
     <span class="icons">

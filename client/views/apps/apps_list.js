@@ -1,7 +1,11 @@
 
 Template.appsList.helpers({
   apps: function() {
-    return Apps.find({}, {sort: this.sort, limit: this.handle.limit()});
+    if (Session.equals('myPkg','')) {
+      return Apps.find({}, {sort: this.sort, limit: this.handle.limit()});
+    } else{
+      return Apps.find({'pkgs':Session.get('myPkg')}, {sort: this.sort, limit: this.handle.limit()});
+    };
   },
   appsReady: function(){
   	return this.handle.ready();
@@ -40,3 +44,26 @@ Template.popularApps.helpers({
     }
   }
 });
+
+// the /pkg page list
+Template.appsByPkg.helpers({
+  options: function(){
+    var mypkg = Session.get('myPkg');
+    myHandle = Session.equals('navPop','home') ? popularAppsHandle : newAppsHandle;
+    return {
+      pkgs: mypkg,
+      handle: myHandle
+    }
+  }
+});
+
+Template.appsByPkg.events({
+  'click #myfilter': function(e) {
+    e.preventDefault();
+    var mypkg = $('#filterpkg').val();
+    Session.set('myPkg',mypkg);
+    // console.log(Session.get('myPkg'));
+  }
+});
+
+
