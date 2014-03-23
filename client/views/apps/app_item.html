@@ -31,7 +31,7 @@
     <span class="icons">
     {{#if ownApp}}
       {{#with pathContext}}
-        <a href="{{ pathFor 'appEdit' }}"><span class="glyphicon glyphicon-pencil" style="font-size:20px;color:#1921b1"></span></a>  
+        <a href="{{ pathFor 'appEdit' urlname=urlname }}"><span class="glyphicon glyphicon-pencil" style="font-size:20px;color:#1921b1"></span></a>  
       {{/with}}
     {{/if}}
       
@@ -41,7 +41,7 @@
     </span>
     
       {{#with pathContext}}
-        <a href="{{ pathFor 'appPage' }}"><i class="ion-chatboxes"  style="font-size:24px;color:#1921b1"></i>
+        <a href="{{ pathFor 'appPage' urlname=urlname }}"><i class="ion-chatboxes"  style="font-size:24px;color:#1921b1"></i>
           {{#with ..}}
             {{commentLinkText}}
           {{/with}}

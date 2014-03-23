@@ -34,6 +34,7 @@ Router.map(function () {
     path: '/apps/:urlname',
     data: function() { 
       // var myUrlname = this.params.urlname;
+      // console.log(myUrlname);
       // console.log(appByUrlname(myUrlname));
       return appByUrlname(this.params.urlname); 
     },
