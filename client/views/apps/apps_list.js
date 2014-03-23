@@ -22,6 +22,7 @@ Template.appsList.events({
 // the /newest page list
 Template.newApps.helpers({
   options: function(){
+    Session.set('navPop','newest');
     return {
       sort: {submitted: -1},
       handle: newAppsHandle
@@ -32,6 +33,7 @@ Template.newApps.helpers({
 // the frontpage list
 Template.popularApps.helpers({
   options: function(){
+    Session.set('navPop','home');
     return {
       sort: {score: -1, submitted: -1},
       handle: popularAppsHandle

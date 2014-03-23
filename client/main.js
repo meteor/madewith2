@@ -11,6 +11,8 @@ Deps.autorun(function(){
   }
 });
 
+Session.setDefault('navPop','home'); //if you've just gotten here, you're home
+
 ///////////////////Iron-Router///////////////////
 Router.configure({
   layoutTemplate: 'layout',
