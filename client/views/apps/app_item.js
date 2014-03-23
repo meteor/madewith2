@@ -15,6 +15,7 @@ Template.appItem.helpers({
   },
   getMyPkgs: function(){
     return this.pkgs.join(', ');
+    // 'https://atmosphere.meteor.com/package/blaze-layout'
   }
 });
 

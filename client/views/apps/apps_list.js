@@ -62,7 +62,7 @@ Template.appsByPkg.events({
     e.preventDefault();
     var mypkg = $('#filterpkg').val();
     Session.set('myPkg',mypkg);
-    // console.log(Session.get('myPkg'));
+    Router.go('pkgPage', {pkgname: mypkg});
   }
 });
 
