@@ -33,9 +33,6 @@ Router.map(function () {
   this.route('appPage', {
     path: '/apps/:urlname',
     data: function() { 
-      // var myUrlname = this.params.urlname;
-      // console.log(myUrlname);
-      // console.log(appByUrlname(myUrlname));
       return appByUrlname(this.params.urlname); 
     },
     onRun: function () { // called on first load
