@@ -17,6 +17,7 @@ Template.topbar.helpers({
 
 Template.topbar.events({
   'click .share-app': function () {
+    Session.set('navPop','appSubmit');
     if (Meteor.user()) {
       Router.go('appSubmit');
     } else {
