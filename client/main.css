@@ -207,11 +207,13 @@ body {
 }
 
 .commentmain {
-    margin-left: 20px;
+    margin-left: 12px;
+    margin-top: 5px;
     /*align: pull-left;*/
 }
 .commentvote {
     margin-left: -20px;
+    margin-right: -5px;
     /*padding: 0px;*/
     padding: 0px;
     /*background-color: #fff;*/
@@ -221,9 +223,9 @@ body {
     text-align: center;
 }
 .votebtn {
-    margin-top: -15px;
-    margin-left: 48px;
-    /*margin-left: 30px;*/
+    margin-top: -10px;
+    /*margin-left: 48px;*/
+    margin-left: 30px;
     /*padding-left: 10px;*/
 }
 
