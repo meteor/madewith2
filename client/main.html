@@ -2,14 +2,15 @@
   <title>Made with Meteor and <3</title>
 </head>
 
-<template name="layout">
+
+<template name="MyLayout">
     {{> topbar}}
   <div class="container">
     
     {{> errorTemplate}}
     <div id="page-content">
       <div id="main" class="row-fluid">
-        {{yield}}
+        {{> yield}}
       </div>
     </div>
   </div>

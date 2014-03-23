@@ -8,7 +8,8 @@ Template.topbar.helpers({
     
     var active = _.any(args, function(name) {
       return Session.get('navPop') === name;
-      //return Router.current().route.name === name
+      //var current = Router.current(); 
+      //return current ? current.route.name === name : false;
     });
     
     return active && 'active';

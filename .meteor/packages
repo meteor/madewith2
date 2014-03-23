@@ -11,6 +11,6 @@ bootstrap-3
 accounts-ui
 paginated-subscription
 timeago
-ionicons
 http
 accounts-meteor-developer
+ionicons

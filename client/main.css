@@ -79,6 +79,10 @@ body {
     min-width: 200px;
 }
 
+.controls {
+    font-weight: 300;
+}
+
 .alert-error{
     background-color: #ffda73;
     /*background-color: #ffcc40;*/
