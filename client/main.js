@@ -13,7 +13,7 @@ Deps.autorun(function(){
 
 ///////////////////Iron-Router///////////////////
 Router.configure({
-  layoutTemplate: 'layout',
+  layoutTemplate: 'MyLayout',
 });
 
 
@@ -32,8 +32,10 @@ Router.map(function () {
 
   this.route('appPage', {
     path: '/apps/:urlname',
-    data: function() { return appByUrlname(this.params.urlname); },
-    load: function () { // called on first load
+    data: function() { 
+      return appByUrlname(this.params.urlname); 
+    },
+    onRun: function () { // called on first load
       Session.set('currentAppUrlname', this.params.urlname);
     },
     waitOn: function() {
@@ -47,7 +49,7 @@ Router.map(function () {
   this.route('badgePage', {
     path: '/badge/:urlname',
     data: function() { return appByUrlname(this.params.urlname); },
-    load: function () { // called on first load
+    onRun: function () { // called on first load
       Session.set('currentAppUrlname', this.params.urlname);
     },
     layoutTemplate: null,
@@ -61,7 +63,7 @@ Router.map(function () {
   // editing each app
   this.route('appEdit', {
     path: '/apps/:urlname/edit', // path with id of appPage
-    load: function () { // called on first load
+    onRun: function () { // called on first load
       Session.set('currentAppUrlname', this.params.urlname);
     }
   });
@@ -71,20 +73,6 @@ Router.map(function () {
   this.route('appSubmit', {
     path: '/submit', 
 
-    // before: function() { // before rendering, check if user logged in
-    //   var user = Meteor.user();
-    //     if (! user) {
-    //         Meteor.loginWithMeteorDeveloperAccount(function (err) {
-    //           if (!err)
-
-    //             // Meteor.call('upvote', self._id);
-    //         });
-    //     }
-    //     this.render(Meteor.loggingIn() ? this.loadingTemplate : 'login');
-    //     this.render('accessDenied');
-    //     return this.stop();   
-    //   }
-    // }
   });
 });
 
