@@ -1,12 +1,11 @@
 
 <template name="comment">
+	<div class="commentvote">
+		<div class="votebtn"><h4>{{> upvoteButton}}</h4></div>
+		<h4>{{votecount}}</h4>
+	</div>
 	<li>
-		<div class="16 columns">
-			<div class="grid_1">
-				<h4>{{> upvoteButton}}</h4>
-				<h4>{{votecount}}</h4>
-			</div>
-			<div class="grid_15">
+			<div class="commentmain">
 				<h4><span class="author">{{author}}</span>
 					<span class="date">{{timeago baseDate}}</span>
 				</h4>
@@ -18,7 +17,6 @@
 		        		{{> commentSubmit}}
 				</div>
 			</div>
-		</div>
 	</li>
 </template>
 
