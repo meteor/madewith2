@@ -3,10 +3,10 @@ Template.appPage.helpers({
     return appByUrlname(Session.get('currentAppUrlname'));
   },
   comments: function() { 
-  	return Comments.find({appId: this._id});
+  	return Comments.find({appId: this._id},{sort: {votes: -1}});
   },
   rootComments: function() { 
-    return Comments.find({appId: this._id, parentComment: null});//and isroot
+    return Comments.find({appId: this._id, parentComment: null},{sort: {votes: -1}});//and isroot
   },
 });
 
