@@ -201,19 +201,26 @@ body {
     margin-left: 10px;
     margin-top: 4px;
 }
+
 .commentmain {
-    margin-left: 30px;
+    margin-left: 20px;
+    /*align: pull-left;*/
 }
 .commentvote {
-    margin: 5px;
+    margin-left: -20px;
     /*padding: 0px;*/
-    padding-left: 10px;
-    width: 20px;
-    height: 40px;
+    padding: 0px;
+    /*background-color: #fff;*/
+    float:left;
+    width: 40px;
+    /*height: 60px;*/
     text-align: center;
 }
 .votebtn {
-    margin-left: 33px;
+    margin-top: -15px;
+    margin-left: 48px;
+    /*margin-left: 30px;*/
+    /*padding-left: 10px;*/
 }
 
 .comment-form{
@@ -307,7 +314,6 @@ body {
     height: 80px;
     /*background-image: url('/bg-tile-dark.png');*/
 }
-
 
 
 .pull-left .pull-right{

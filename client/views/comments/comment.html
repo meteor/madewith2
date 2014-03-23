@@ -1,10 +1,9 @@
 
 <template name="comment">
-	<div class="commentvote">
-		<div class="votebtn"><h4>{{> upvoteButton}}</h4></div>
-		<h4>{{votecount}}</h4>
-	</div>
 	<li>
+		<div class="commentvote">
+			<div class="votebtn"><h4>{{> upvoteButton}}</h4></div>
+		</div>
 			<div class="commentmain">
 				<h4><span class="author">{{author}}</span>
 					<span class="date">{{timeago baseDate}}</span>
@@ -16,6 +15,7 @@
 				<div class="{{is_hidden}}">
 		        		{{> commentSubmit}}
 				</div>
+				<div style="clear:left"></div>
 			</div>
 	</li>
 </template>
