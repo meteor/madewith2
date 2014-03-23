@@ -1,7 +1,7 @@
 
 
 <template name="comment">
-	<li>
+	<li><div class="commentUpvote">{{> upvoteButton}}</div>
 		<h4><span class="author">{{author}}</span>
 			<span class="date">{{timeago baseDate}}</span>
 		</h4>
