@@ -1,13 +1,13 @@
 <template name="appItem">
   <div class="app {{sourceClass}}"><div class="app-content">
-      {{> appTitleLine}}
-      {{#if hasDescript}}
-  		  <p><span>{{description}}</span></p>
-      {{/if}}
-      {{#if hasPkgs}}
-        (Packages: {{getMyPkgs}})
-      {{/if}}
-      {{> appDetailsLine}}
+    {{> appTitleLine}}
+    {{#if hasDescript}}
+		  <p><span>{{description}}</span></p>
+    {{/if}}
+    {{#if hasPkgs}}
+      (Packages: {{getMyPkgs}})
+    {{/if}}
+    {{> appDetailsLine}}
   </div></div>
 </template>
 

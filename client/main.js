@@ -46,7 +46,16 @@ Router.map(function () {
     }
   });
 
-  
+  this.route('pkgPage', {
+    path: '/pkg/:pkgname', // match the pkgname
+    template: 'appsByPkg',
+    data: function() { 
+      return appByUrlname(this.params.pkgname); 
+    },
+    onRun: function () {
+      Session.set('myPkg',this.params.pkgname);
+    }
+  });
 
   this.route('appPage', {
     path: '/apps/:urlname',
