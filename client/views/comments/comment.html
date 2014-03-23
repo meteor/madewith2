@@ -1,16 +1,23 @@
 
-
 <template name="comment">
-	<li><div class="commentUpvote">{{> upvoteButton}}</div>
-		<h4><span class="author">{{author}}</span>
-			<span class="date">{{timeago baseDate}}</span>
-		</h4>
-		<div class="commentbody">
-			<p>{{body}}</p>
-		</div>
-		<a href="#" class="reply">Reply</a>
-		<div class="{{is_hidden}}">
-        		{{> commentSubmit}}
+	<li>
+		<div class="16 columns">
+			<div class="grid_1">
+				<h4>{{> upvoteButton}}</h4>
+				<h4>{{votecount}}</h4>
+			</div>
+			<div class="grid_15">
+				<h4><span class="author">{{author}}</span>
+					<span class="date">{{timeago baseDate}}</span>
+				</h4>
+				<div class="commentbody">
+					<p>{{body}}</p>
+				</div>
+				<a href="#" class="reply">Reply</a>
+				<div class="{{is_hidden}}">
+		        		{{> commentSubmit}}
+				</div>
+			</div>
 		</div>
 	</li>
 </template>

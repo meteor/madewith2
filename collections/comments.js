@@ -1,5 +1,6 @@
 Comments = new Meteor.Collection('comments');
 
+
 Meteor.methods({
   comment: function(commentAttributes) {
     var user = Meteor.user();
@@ -16,6 +17,7 @@ Meteor.methods({
       userId: user._id,
       author: user.profile.name,
       submitted: new Date().getTime(),
+      votes: 0
     });
 
     //update the app with the number of comments
@@ -30,6 +32,35 @@ Meteor.methods({
     //notify parent comments of their new children
     Comments.update({_id: comment.parentComment,children: {$ne: commentId}}, 
                     {$addToSet: {children: commentId},
+    });
+  },
+  commentvote: function(commentId){
+    var user = Meteor.user(); //ensure user is logged in
+    if (!user) {
+      if (Meteor.isServer) {
+        throw new Meteor.Error(401, "You need to login to upvote");
+      } else {
+        Meteor.loginWithMeteorDeveloperAccount(function (err) {
+          if (!err)
+            Meteor.call('commentvote', appId);
+        });
+        return;
+      }
+    }
+
+    var comment = Comments.findOne(commentId);
+
+    if (!comment)
+      throw new Meteor.Error(422, 'Comment not found');
+    if (_.include(comment.upvoters, user._id))
+      return;
+      // throw new Meteor.Error(422, 'Already upvoted this app');
+    Comments.update({
+        _id: commentId, 
+        upvoters: {$ne: user._id}
+      }, {
+        $addToSet: {upvoters: user._id},
+        $inc: {votes: 1},
     });
   }
 });

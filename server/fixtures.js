@@ -109,3 +109,7 @@
 // // Apps.find().forEach(function (app) {
 // //   Apps.update(app._id, {$set: {urlname: toUrlName(app.url)}});
 // // });
+
+// Comments.find().forEach(function (comment) {
+//   Comments.update(comment._id, {$set: {votes: 0}});
+// });

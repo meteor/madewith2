@@ -15,5 +15,21 @@ Template.comment.is_hidden = function () {
 Template.comment.events({
 	'click a.reply': function () {
 		Session.set('comment-id', this._id);
-	}
+	},
 }); // register which reply the user clicked
+
+
+Template.comment.events({
+  'click .upvote': function(e){upvoteComment(e, this);}
+});
+
+function upvoteComment(e, self){
+  e.preventDefault();
+  Meteor.call('commentvote',self._id);
+}
+
+Template.comment.helpers({
+  votecount: function () {
+    return this.votes;
+  }
+});
