@@ -32,7 +32,11 @@ Router.map(function () {
 
   this.route('appPage', {
     path: '/apps/:urlname',
-    data: function() { return appByUrlname(this.params.urlname); },
+    data: function() { 
+      // var myUrlname = this.params.urlname;
+      // console.log(appByUrlname(myUrlname));
+      return appByUrlname(this.params.urlname); 
+    },
     onRun: function () { // called on first load
       Session.set('currentAppUrlname', this.params.urlname);
     },
