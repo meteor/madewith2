@@ -81,6 +81,12 @@ body {
 
 .controls {
     font-weight: 300;
+} 
+
+.appinfo:focus{
+    outline:none;
+    border-color:#a2a7ff;
+    box-shadow:0 0 10px #1921b1;
 }
 
 .alert-error{
@@ -332,12 +338,17 @@ body {
     font-weight: 300;
     border-radius: 0px;
     opacity: 0.6;
-    color:#a2a7ff;
+    /*color:#a2a7ff;*/
+    color:#ccf;
     min-width: 90px;
     max-width: 160px;
     background-color: #1f2455;
 } .search.active{
     background-color: #f8f8f8;
+} .search:focus{
+    outline:none;
+    border-color:#a2a7ff;
+    box-shadow:0 0 10px #a2a7ff;
 }
 
 .searchbtn {
@@ -348,8 +359,6 @@ body {
     margin-bottom: 20px;
     background-color: #a2a7ff;
     color:#1f2455;
-    /*line-height: 120%;*/
-    /*vertical-align: top;*/
 }
 
 .searchbox {
@@ -365,6 +374,7 @@ body {
     background: #f8f8f8;
     color: #1921b1;
 }
+
 
 
 .pull-left .pull-right{
