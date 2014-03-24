@@ -31,13 +31,23 @@ Template.topbar.events({
   }
 });
 
+//searching for a package
 Template.pkgsearch.events({
   'click #myfilter': function(e) {
     e.preventDefault();
-    var mypkg = $('#filterpkg').val();
-    Session.set('myPkg',mypkg);
-    Session.set('navPop','pkgPage');
-    Router.go('pkgPage', {pkgname: mypkg});
+    searchForPkg($('#filterpkg').val());
+  },
+  'keypress #filterpkg': function (e, template) { //hitting enter works too
+      if (e.which === 13) {
+      searchForPkg($('#filterpkg').val());
+    }
   }
 });
 
+
+//search for a package and go to its listing url
+function searchForPkg(mypkg) {
+  Session.set('myPkg',mypkg);
+  Session.set('navPop','pkgPage');
+  Router.go('pkgPage', {pkgname: mypkg});
+}
