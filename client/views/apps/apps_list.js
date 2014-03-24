@@ -57,13 +57,4 @@ Template.appsByPkg.helpers({
   }
 });
 
-Template.appsByPkg.events({
-  'click #myfilter': function(e) {
-    e.preventDefault();
-    var mypkg = $('#filterpkg').val();
-    Session.set('myPkg',mypkg);
-    Router.go('pkgPage', {pkgname: mypkg});
-  }
-});
-
 

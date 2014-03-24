@@ -17,11 +17,30 @@
           <div class="login navlogin">
             {{> loginButtons align="right"}}
           </div>
+          <div class="searchbox {{activeRouteClass 'pkgPage'}}">
+            {{> pkgsearch}}
+          </div>
         </div>
       </div>
 
+      <div style="clear:left"></div>
 
     </header>
   </div>
 </div>
+</template>
+
+<template name="pkgsearch">
+
+  <div class="row">
+    <div class="col-md-2">
+      <div class="input-group"  style="max-width:150px">
+        <input type="text" id="filterpkg" class="form-control search" placeholder="Package" >
+        <span class="input-group-btn">
+          <button id="myfilter" class="btn-link searchbtn" type="submit"><i class="ion-search" style="font-size:28px;color:#1f2455"></i></button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+
 </template>

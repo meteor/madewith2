@@ -30,3 +30,14 @@ Template.topbar.events({
     }
   }
 });
+
+Template.pkgsearch.events({
+  'click #myfilter': function(e) {
+    e.preventDefault();
+    var mypkg = $('#filterpkg').val();
+    Session.set('myPkg',mypkg);
+    Session.set('navPop','pkgPage');
+    Router.go('pkgPage', {pkgname: mypkg});
+  }
+});
+

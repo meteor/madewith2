@@ -27,6 +27,7 @@ Router.map(function () {
     template: 'popularApps',
     onRun: function() {
       Session.set('myPkg','');
+      Session.set('navPop','home');
     }
   });
 
@@ -35,6 +36,7 @@ Router.map(function () {
     template: 'newApps',
     onRun: function() {
       Session.set('myPkg','');
+      Session.set('navPop','newest');
     }
   });
 
@@ -54,6 +56,7 @@ Router.map(function () {
     },
     onRun: function () {
       Session.set('myPkg',this.params.pkgname);
+      Session.set('navPop','pkgPage');
     }
   });
 
