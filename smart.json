@@ -1,13 +1,17 @@
 {
-  "packages": {
-    "iron-router": {
-      "git": "https://github.com/EventedMind/iron-router.git",
-      "branch": "dev"
-    },
-    "accounts-ui-bootstrap-dropdown": {},
-    "bootstrap-3": {},
-    "paginated-subscription": {},
-    "timeago": {},
-    "ionicons": {}
-  }
+    "packages": {
+        "iron-router": {
+            "git": "https://github.com/EventedMind/iron-router.git",
+            "branch": "dev"
+        },
+        "blaze-layout": {
+            "git": "https://github.com/EventedMind/blaze-layout.git",
+            "branch": "devel"
+        },
+        "accounts-ui-bootstrap-dropdown": {},
+        "bootstrap-3": {},
+        "paginated-subscription": {},
+        "timeago": {},
+        "ionicons": {}
+    }
 }

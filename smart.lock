@@ -6,6 +6,10 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "branch": "dev"
       },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "branch": "devel"
+      },
       "accounts-ui-bootstrap-dropdown": {},
       "bootstrap-3": {},
       "paginated-subscription": {},
@@ -16,7 +20,12 @@
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
         "branch": "dev",
-        "commit": "3cfa4c618f6d6dffd209b4c0cb0f1d37c5223c09"
+        "commit": "3cde469a5f454f2130d2fa8a08fb37115f85a295"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "branch": "devel",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       },
       "accounts-ui-bootstrap-dropdown": {
         "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
@@ -42,11 +51,6 @@
         "git": "https://github.com/Pagebakers/meteor-ionicons.git",
         "tag": "v1.4.1",
         "commit": "c3c07eba87d42ef900c9c61323ce4499bdce3204"
-      },
-      "blaze-layout": {
-        "git": "https://github.com/EventedMind/blaze-layout.git",
-        "branch": "master",
-        "commit": "2664f817844fba0fab0455a79bc62782c9091ad0"
       }
     }
   }
