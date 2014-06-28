@@ -3,13 +3,13 @@
   <div class="horizbar">
     <div class="container">
     <header class="navbar">
-      
+
       <div class="navbar-inner">
         <div class="nav pull-left">
-           
-          <a class="btn-link navbtn navsub {{activeRouteClass 'appSubmit'}} share-app" role="button">Share App</a> 
-          <a class="btn-link navbtn navsub {{activeRouteClass 'newest'}}" href="{{ pathFor 'newest' }}" role="button">Newest</a> 
-          
+
+          <a class="btn-link navbtn navsub {{activeRouteClass 'appSubmit'}} share-app" role="button">Share App</a>
+          <a class="btn-link navbtn navsub {{activeRouteClass 'newest'}}" href="{{ pathFor 'newest' }}" role="button">Newest</a>
+
           <a class="btn-link navbtn brand {{activeRouteClass 'home'}}" href="{{ pathFor 'home' }}"> <span style="font-size:42px">Made with <span style="font-weight:bold">Meteor</span></span></a>
         </div>
 
@@ -35,10 +35,10 @@
   <div class="row">
     <div class="col-md-2">
       <div class="input-group"  style="max-width:150px">
-        <input type="text" id="filterpkg" autofocus="autofocus" class="form-control search" placeholder="Package" >
+        <input type="text" id="filterpkg" autofocus="autofocus" class="form-control search" placeholder="Search packages" />
         <span class="input-group-btn">
           <button id="myfilter" class="btn-link searchbtn" type="submit">
-            <i class="ion-search" style="font-size:38px;color:#1f2455;position:relative;top:-10px;left:-5px"></i>
+            <i class="ion-search"></i>
           </button>
         </span>
       </div><!-- /input-group -->
