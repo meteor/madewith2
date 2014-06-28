@@ -27,6 +27,7 @@ if (Apps.find().count() === 0) {
   // create 3 apps
   Apps.insert({
     title: 'Wildfire: Pyromancy straight out of the jar',
+    description: 'Drag and drop paperless documents, forms, waivers, service agreements, legal agreements and whatever you can dream up.',
     userId: hal._id,
     author: hal.profile.name,
     url: 'http://fantasybiathlon.meteor.com',
@@ -41,6 +42,7 @@ if (Apps.find().count() === 0) {
 
   Apps.insert({
     title: "Dragonglass: easy to understand obsidian for the Night's Watch",
+    description: 'Drag and drop paperless documents, forms, waivers, service agreements, legal agreements and whatever you can dream up.',
     userId: sam._id,
     author: sam.profile.name,
     url: 'http://balance.sharett.org',
@@ -62,6 +64,7 @@ if (Apps.find().count() === 0) {
   for (var i = 0; i < 5; i++) {
     Apps.insert({
       title: 'Test App #' + i,
+      description: 'Drag and drop paperless documents, forms, waivers, service agreements, legal agreements and whatever you can dream up.',
       author: dany.profile.name,
       userId: dany._id,
       url: 'http://google.com/test-' + i,
