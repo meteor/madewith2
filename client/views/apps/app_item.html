@@ -26,7 +26,7 @@
 </template>
 
 <template name="appTitleLine">
-  <p><h3>{{> upvoteButton}}<a href="{{url}}" target="_blank">{{title}}</a><span>({{domain}})</span></h3></p>
+  <p><h3>{{> upvoteButton}}<a href="{{url}}" target="_blank">{{title}}</a></h3></p>
 </template>
 
 <template name="appDetailsLine">
@@ -34,15 +34,15 @@
     <span class="icons">
     {{#if ownApp}}
       {{#with pathContext}}
-        <a href="{{ pathFor 'appEdit' urlname=urlname }}"><span class="glyphicon glyphicon-pencil" style="font-size:20px;color:#1921b1"></span></a>  
+        <a href="{{ pathFor 'appEdit' urlname=urlname }}"><span class="glyphicon glyphicon-pencil" style="font-size:20px;color:#1921b1"></span></a>
       {{/with}}
     {{/if}}
-      
+
     {{#if hasSource}}
-      <a href="{{source}}" target="_blank"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>  
+      <a href="{{source}}" target="_blank"><i class="ion-social-github" style="font-size:24px; color:#ff6080"></i></a>
     {{/if}}
     </span>
-    
+
       {{#with pathContext}}
         <a href="{{ pathFor 'appPage' urlname=urlname }}"><i class="ion-chatboxes"  style="font-size:24px;color:#1921b1"></i>
           {{#with ..}}

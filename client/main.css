@@ -1,9 +1,8 @@
 /* CSS declarations go here */
 
 .grid-block, .main, .app, .comments li, .comment-form {
-  background: #ccf;
-  /*background: #b9b9ff;*/
-  /*background-color: #a2a7ff;*/
+  background: #eee;
+  border-left: solid 20px #e3e3e3;
   border-radius: 0px;
   padding: 10px;
   margin-bottom: 10px;
@@ -103,7 +102,14 @@ line-height: 0%;
 }
 
 #spinner { height: 300px }
+
 .app {
+  max-width: 370px;
+  min-height: 210px;
+  float: left;
+  margin-left: 100px;
+  margin-top: 50px;
+  padding: 20px;
   font-weight: 300;
   *zoom: 1;
   -webkit-transition: all 300ms 0ms;
@@ -143,8 +149,6 @@ line-height: 0%;
 .app .app-content h3 a {
   display: inline-block;
   margin-right: 5px;
-  /*color: #4d54d8;*/
-  /*color: #1f2455;*/
   color: #1921b1;
 }
 
@@ -176,7 +180,6 @@ line-height: 0%;
   list-style-type:none;
   margin: 10;
   font-weight: 200;
-  /*color: #4d54d8;*/
   color: #1921b1;
 }
 
@@ -348,9 +351,7 @@ line-height: 0%;
 
 .horizbar{
   background-color: #1f2455;
-  /*background-color: #eef;*/
   padding: 0px;
-  margin-bottom: 35px;
   min-height: 80px;
 }
 
